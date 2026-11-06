@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin | Smartphonehacks247</title>
+<style>
+:root{--bg:#0b0f19;--bg2:#111827;--card:#1f2937;--line:#374151;--cyan:#00f3ff;--purple:#a855f7;--text:#fff;--muted:#9ca3af}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--muted);line-height:1.6;padding:20px}
+.w{max-width:900px;margin:0 auto}
+h1{color:#fff;font-size:1.6rem;margin-bottom:4px}
+h2{color:#fff;font-size:1.1rem;margin-bottom:12px}
+.grad{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.box{background:rgba(31,41,55,.75);border:1px solid var(--line);border-radius:16px;padding:20px;margin:18px 0}
+label{display:block;font-size:.82rem;font-weight:600;margin:12px 0 5px;color:#d1d5db}
+input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);color:#fff;border-radius:10px;padding:11px 13px;font:inherit;outline:0}
+input:focus,select:focus,textarea:focus{border-color:var(--cyan)}
+textarea{min-height:240px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+button{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:11px 18px;font-weight:700;color:#fff;background:linear-gradient(90deg,#06b6d4,var(--purple))}
+button.s{background:transparent;border:1px solid var(--line);padding:7px 12px;font-size:.82rem}
+button.s:hover{border-color:var(--cyan)}
+button.d{border-color:#7f1d1d;color:#fca5a5}
+.p{display:flex;gap:10px;align-items:center;padding:11px 0;border-top:1px solid rgba(55,65,81,.6)}
+.p:first-of-type{border:0}
+.p div{flex:1;min-width:0}
+.p b{color:#fff;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.p small{font-size:.76rem}
+.msg{padding:11px 14px;border-radius:10px;margin-top:14px;display:none;font-size:.9rem}
+.msg.ok{background:rgba(52,211,153,.12);color:#6ee7b7;border:1px solid rgba(52,211,153,.4)}
+.msg.er{background:rgba(248,113,113,.12);color:#fca5a5;border:1px solid rgba(248,113,113,.4)}
+.help{font-size:.78rem;margin-top:5px;opacity:.85}
+code{background:#070a12;padding:2px 6px;border-radius:6px;color:#7df9ff;font-size:.82rem}
+.chk{display:flex;gap:8px;align-items:center;margin-top:14px}.chk input{width:auto}
+@media(max-width:600px){.row,.row3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="w">
+ <h1><span class="grad">Smartphonehacks247</span> Admin</h1>
+ <p>Yahan se naya post likhein. Publish dabate hi GitHub me save hoga aur site 1-2 minute me update ho jayegi.</p>
+
+ <div class="box" id="setup">
+  <h2>1. GitHub connection (ek baar)</h2>
+  <div class="row3">
+   <div><label>GitHub username</label><input id="owner" placeholder="saimmirza"></div>
+   <div><label>Repository name</label><input id="repo" placeholder="smartphonehacks247"></div>
+   <div><label>Branch</label><input id="branch" value="main"></div>
+  </div>
+  <label>Personal Access Token</label><input id="token" type="password" placeholder="github_pat_...">
+  <p class="help">Token sirf aap ke is browser me save hota hai, kisi aur ko nahi jata. Banane ka tareeqa README me likha hai (sirf is repository ka "Contents: Read and write" permission dein).</p>
+  <div class="chk"><input type="checkbox" id="remember" checked><span>Is browser me yaad rakho</span></div>
+  <p style="margin-top:14px"><button id="load">Connect &amp; Load posts</button></p>
+  <div class="msg" id="m1"></div>
+ </div>
+
+ <div class="box" id="listbox" style="display:none">
+  <h2>2. Aap ke posts (<span id="n">0</span>)</h2>
+  <div id="list"></div>
+ </div>
+
+ <div class="box" id="editor" style="display:none">
+  <h2 id="etitle">3. Naya post</h2>
+  <label>Title</label><input id="title" placeholder="e.g. 5 Hidden WhatsApp Tricks">
+  <div class="row3">
+   <div><label>Category</label><input id="category" list="cats" placeholder="Android / iOS / Security..."><datalist id="cats"></datalist></div>
+   <div><label>Date</label><input id="date" type="date"></div>
+   <div><label>Read time</label><input id="readTime" placeholder="4 min read"></div>
+  </div>
+  <label>Short description (card par dikhegi)</label><input id="excerpt" maxlength="200">
+  <label>Image URL (optional, khali chorein to khud design ban jata hai)</label><input id="image" placeholder="https://... ya images/photo.webp">
+  <label>Article text</label><textarea id="content" placeholder="Paragraph likhein...&#10;&#10;## Heading&#10;- bullet point&#10;- doosra point&#10;&#10;```&#10;*#06#&#10;```"></textarea>
+  <p class="help"><code>## Heading</code> = subheading &nbsp; <code>- text</code> = bullet &nbsp; khali line = naya paragraph &nbsp; <code>```</code> ke andar likha = Copy Code box</p>
+  <label>Key takeaways (har line me ek point)</label><textarea id="takeaways" style="min-height:90px;font-family:inherit"></textarea>
+  <div class="chk"><input type="checkbox" id="featured"><span>Hero (Featured) post banao</span></div>
+  <p style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap"><button id="save">Publish</button><button class="s" id="reset">Naya / Clear</button></p>
+  <div class="msg" id="m2"></div>
+ </div>
+</div>
+
+<script>
+const $=s=>document.querySelector(s);
+let posts=[],sha="",editing=null;
+const slugify=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,70);
+const b64e=s=>btoa(String.fromCharCode(...new TextEncoder().encode(s)));
+const b64d=s=>new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\n/g,"")),c=>c.charCodeAt(0)));
+function msg(id,t,ok){const m=$(id);m.textContent=t;m.className="msg "+(ok?"ok":"er");m.style.display="block"}
+try{for(const k of["owner","repo","branch","token"]){const v=localStorage.getItem("sh_"+k);if(v)$("#"+k).value=v}}catch(e){}
+const cfg=()=>({o:$("#owner").value.trim(),r:$("#repo").value.trim(),b:$("#branch").value.trim()||"main",t:$("#token").value.trim()});
+const api=c=>`https://api.github.com/repos/${c.o}/${c.r}/contents/posts.js`;
+const hdr=c=>({Authorization:"Bearer "+c.t,Accept:"application/vnd.github+json"});
+
+async function load(){
+  const c=cfg();if(!c.o||!c.r||!c.t)return msg("#m1","Username, repository aur token teeno bharein.");
+  msg("#m1","Load ho raha hai...",true);
+  try{
+    const r=await fetch(api(c)+"?ref="+encodeURIComponent(c.b),{headers:hdr(c),cache:"no-store"});
+    if(r.status===401||r.status===403)throw new Error("Token ghalat hai ya permission nahi (Contents: Read and write chahiye).");
+    if(r.status===404)throw new Error("Repository, branch ya posts.js nahi mila. Naam dobara check karein.");
+    if(!r.ok)throw new Error("GitHub error "+r.status);
+    const j=await r.json();sha=j.sha;
+    const txt=b64d(j.content);
+    posts=JSON.parse(txt.slice(txt.indexOf("window.POSTS")).replace(/^window\.POSTS\s*=\s*/,"").replace(/;\s*$/,""));
+    try{if($("#remember").checked){for(const k of["owner","repo","branch","token"])localStorage.setItem("sh_"+k,$("#"+k).value.trim())}}catch(e){}
+    msg("#m1","Connected! "+posts.length+" posts mile.",true);
+    $("#listbox").style.display=$("#editor").style.display="block";
+    renderList();clearForm();
+  }catch(e){msg("#m1",e.message||String(e))}
+}
+function renderList(){
+  $("#n").textContent=posts.length;
+  const sorted=posts.map((p,i)=>[p,i]).sort((a,b)=>b[0].date.localeCompare(a[0].date));
+  $("#list").innerHTML=sorted.map(([p,i])=>`<div class="p"><div><b>${p.title.replace(/</g,"&lt;")}</b><small>${p.category} &middot; ${p.date}${p.featured?" &middot; FEATURED":""}</small></div><button class="s" data-e="${i}">Edit</button><button class="s d" data-d="${i}">Delete</button></div>`).join("");
+  $("#cats").innerHTML=[...new Set(posts.map(p=>p.category))].map(c=>`<option value="${c}">`).join("");
+}
+function clearForm(){editing=null;$("#etitle").textContent="3. Naya post";for(const k of["title","category","excerpt","image","content","takeaways","readTime"])$("#"+k).value="";$("#date").value=new Date().toISOString().slice(0,10);$("#featured").checked=false;$("#m2").style.display="none"}
+function fill(i){const p=posts[i];editing=i;$("#etitle").textContent="3. Post edit: "+p.title;
+  for(const k of["title","category","excerpt","image","content","readTime","date"])$("#"+k).value=p[k]||"";
+  $("#takeaways").value=(p.takeaways||[]).join("\n");$("#featured").checked=!!p.featured;$("#editor").scrollIntoView({behavior:"smooth"})}
+async function push(msgText){
+  const c=cfg();
+  const body={message:msgText,content:b64e("/* POSTS DATA: admin.html is file ko khud update karta hai. */\nwindow.POSTS = "+JSON.stringify(posts,null,2)+";\n"),sha,branch:c.b};
+  const r=await fetch(api(c),{method:"PUT",headers:{...hdr(c),"Content-Type":"application/json"},body:JSON.stringify(body)});
+  if(r.status===409||r.status===422)throw new Error("Koi aur change ho chuka hai. Page refresh karke dobara Connect karein.");
+  if(!r.ok)throw new Error("Save nahi hua (GitHub error "+r.status+"). Token permission check karein.");
+  sha=(await r.json()).content.sha;
+}
+async function save(){
+  const title=$("#title").value.trim(),content=$("#content").value.trim();
+  if(!title||!content||!$("#category").value.trim())return msg("#m2","Title, category aur article text zaroori hain.");
+  const old=editing!==null?posts[editing]:null;
+  let slug=old?old.slug:slugify(title);
+  if(!old&&posts.some(p=>p.slug===slug))slug+="-"+Date.now().toString(36).slice(-4);
+  const p={slug,title,category:$("#category").value.trim(),date:$("#date").value||new Date().toISOString().slice(0,10),
+    readTime:$("#readTime").value.trim()||Math.max(1,Math.round(content.split(/\s+/).length/200))+" min read",views:old?old.views:Math.floor(200+Math.random()*600),
+    excerpt:$("#excerpt").value.trim()||content.replace(/[#`*-]/g," ").replace(/\s+/g," ").slice(0,150)+"...",
+    image:$("#image").value.trim(),featured:$("#featured").checked,takeaways:$("#takeaways").value.split("\n").map(s=>s.trim()).filter(Boolean),content};
+  if(p.featured)posts.forEach(x=>x.featured=false);
+  const backup=JSON.stringify(posts);
+  if(old)posts[editing]=p;else posts.push(p);
+  msg("#m2","Publish ho raha hai...",true);
+  try{await push((old?"Update post: ":"New post: ")+title);renderList();msg("#m2","Publish ho gaya! Site 1-2 minute me update ho jayegi.",true);clearForm();$("#m2").style.display="block"}
+  catch(e){posts=JSON.parse(backup);msg("#m2",e.message)}
+}
+async function del(i){
+  if(!confirm("Pakka delete karna hai?\n"+posts[i].title))return;
+  const backup=JSON.stringify(posts);const t=posts[i].title;posts.splice(i,1);
+  try{await push("Delete post: "+t);renderList();msg("#m1","Post delete ho gaya.",true)}catch(e){posts=JSON.parse(backup);msg("#m1",e.message)}
+}
+$("#load").onclick=load;$("#save").onclick=save;$("#reset").onclick=clearForm;
+$("#list").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.e!==undefined)fill(+b.dataset.e);if(b.dataset.d!==undefined)del(+b.dataset.d)});
+</script>
+</body>
+</html>
