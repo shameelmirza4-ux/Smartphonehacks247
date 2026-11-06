@@ -9,7 +9,7 @@ window.POSTS = [
     "readTime": "2 min read",
     "views": 24100,
     "excerpt": "Megapixels and big brand names do not decide the winner. Here is how to pick the camera phone that truly shoots better.",
-    "image": "",
+    "image": "pexels-media-17162701.jpeg",
     "featured": true,
     "pick": true,
     "takeaways": [
