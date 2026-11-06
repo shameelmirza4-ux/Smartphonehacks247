@@ -161,7 +161,7 @@ window.POSTS = [
     "readTime": "4 min read",
     "views": 13200,
     "excerpt": "Smaller chips promise speed and efficiency. Here is what 2 nm processors could change for your next phone.",
-    "image": "",
+    "image": "pexels-media-31862950.jpeg",
     "featured": false,
     "pick": false,
     "takeaways": [
