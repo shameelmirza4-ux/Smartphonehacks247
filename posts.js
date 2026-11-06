@@ -66,7 +66,7 @@ window.POSTS = [
     "readTime": "5 min read",
     "views": 28900,
     "excerpt": "Your Android phone can do much more than you think. Here are fifteen features worth turning on today.",
-    "image": "",
+    "image": "pexels-media-16345434.jpeg",
     "featured": false,
     "pick": true,
     "takeaways": [
