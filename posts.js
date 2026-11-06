@@ -47,7 +47,7 @@ window.POSTS = [
     "readTime": "5 min read",
     "views": 31200,
     "excerpt": "Get more hours from every charge with twelve simple settings, and stop wasting time on five popular battery myths.",
-    "image": "",
+    "image": "pexels-media-1202575.jpeg",
     "featured": false,
     "pick": true,
     "takeaways": [
