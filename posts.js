@@ -123,7 +123,7 @@ window.POSTS = [
     "readTime": "4 min read",
     "views": 19800,
     "excerpt": "You do not need a flagship for great night photos. These simple tricks work on almost any phone.",
-    "image": "",
+    "image": "pexels-media-32117277.jpeg",
     "featured": false,
     "pick": false,
     "takeaways": [
