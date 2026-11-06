@@ -28,7 +28,7 @@ window.POSTS = [
     "readTime": "3 min read",
     "views": 17650,
     "excerpt": "Foldable phones are finally losing their biggest drawbacks. Here is what is changing and what to watch for.",
-    "image": "",
+    "image": "pexels-media-19022728.jpeg",
     "featured": false,
     "pick": true,
     "takeaways": [
