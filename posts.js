@@ -104,7 +104,7 @@ window.POSTS = [
     "readTime": "5 min read",
     "views": 22300,
     "excerpt": "Fast charging is convenient, but does it wear the battery faster? Here is what battery science and real-world habits say.",
-    "image": "",
+    "image": "pexels-media-1028674.jpeg",
     "featured": false,
     "pick": false,
     "takeaways": [
