@@ -85,7 +85,7 @@ window.POSTS = [
     "readTime": "6 min read",
     "views": 15400,
     "excerpt": "Software now does as much work as the lens. We explain what computational photography changes in real photos.",
-    "image": "",
+    "image": "pexels-media-17492110.jpeg",
     "featured": false,
     "pick": false,
     "takeaways": [
