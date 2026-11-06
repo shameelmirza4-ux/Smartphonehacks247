@@ -180,7 +180,7 @@ window.POSTS = [
     "readTime": "5 min read",
     "views": 26700,
     "excerpt": "Ten simple settings that protect your accounts, photos and identity, and take only a few minutes.",
-    "image": "",
+    "image": "pexels-media-27742642.jpeg",
     "featured": false,
     "pick": false,
     "takeaways": [
