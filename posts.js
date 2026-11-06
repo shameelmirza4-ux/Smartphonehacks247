@@ -142,7 +142,7 @@ window.POSTS = [
     "readTime": "6 min read",
     "views": 34500,
     "excerpt": "Twenty little-known iPhone tricks that save time every day, from Back Tap to Live Text.",
-    "image": "",
+    "image": "pexels-media-34430156.jpeg",
     "featured": false,
     "pick": false,
     "takeaways": [
