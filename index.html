@@ -418,7 +418,7 @@ const REVIEWS = [
    ====================================================================== */
 const POSTS=(window.POSTS||[]).slice().sort((a,b)=>b.date.localeCompare(a.date));
 const CHIPS=["All","Reviews","Android","Hacks","Battery","Camera","News"];
-const SOCIAL=[["X","48K","#"],["YouTube","212K","#"],["Instagram","96K","#"],["TikTok","310K","#"]];
+const SOCIAL=[["YouTube","YouTube Channel","https://youtube.com/@smartphonehacks247?si=QV_vE5neW20gMjlt"]];
 const LABEL={Hacks:"Tips & Hacks"};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -459,8 +459,20 @@ function home(){
   <section id="latest"><div class="sh"><div><h2>Fresh from the newsroom</h2><p>The newest reviews, news and hacks.</p></div></div>${tools("All")}<div class="grid" id="grid">${listHTML(POSTS.slice(0,10))}</div></section>
   <section><div class="sh"><h2>Popular Now</h2></div><div class="pop">${pop.map((p,i)=>`<div class="pp" data-go="${p.slug}"><b>${i+1}</b><h4>${esc(p.title)}</h4><small>${fmt(p.date)} &middot; ${esc(p.readTime)}</small></div>`).join("")}</div></section>
   <section><div class="news"><h2>The 24/7 Hacks Digest</h2><p>One smart phone trick, every week. Free.</p><form id="nf"><input type="email" required placeholder="Your email address" aria-label="Email address"><button>Subscribe free</button></form><div class="ok" id="ok">You are subscribed! Check your inbox soon.</div></div></section>
-  <section><div class="sh"><h2>Follow us</h2></div><div class="follow">${SOCIAL.map(s=>`<a class="fl" href="${s[2]}"><b>${s[1]}</b><span>${s[0]} followers</span></a>`).join("")}</div></section>`;
-  bindSearch(()=>POSTS.slice(0,10));
+  <section>
+  <div style="max-width: 400px; margin: 40px auto; text-align: center;">
+    <a href="https://youtube.com/@smartphonehacks247?si=QV_vE5neW20gMjlt" target="_blank" style="display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 30px; text-decoration: none; transition: .25s; box-shadow: var(--shadow);">
+      <!-- YouTube Logo Image -->
+      <div style="margin-bottom: 15px;">
+        <img src="YT-1024x576.jpg" alt="YouTube" style="width: 50px; height: 50px; object-fit: cover; border-radius: 12px; border: 1px solid var(--line);">
+      </div>
+      <!-- Channel Text -->
+      <h3 style="font-size: 1.4rem; color: var(--text); font-weight: 800; margin-bottom: 6px;">YouTube Channel</h3>
+      <p style="color: var(--muted); font-size: 0.95rem;">Click here to visit our channel and watch latest videos.</p>
+    </a>
+  </div>
+</section>
+ bindSearch(()=>POSTS.slice(0,10));
 }
 function category(c){
   const items=POSTS.filter(p=>p.category===c);
