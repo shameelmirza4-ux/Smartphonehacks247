@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smartphonehacks24<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8"><meta name="google-site-verification" content="JcQIgb1Zojb96wN2I2EPfjrc256y2bHyGE783TxpWX4" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Smartphonehacks247 | Smartphone Hacks, Reviews & Tips</title>
@@ -198,5 +203,4 @@ function home(){
   $("#app").innerHTML=`
   <div class="hero"><div class="txt"><span class="eyebrow">Top Story</span><div class="tags"><span class="tag">${esc(top.category)}</span></div><h1>${esc(top.title)}</h1><p>${esc(top.excerpt)}</p><div class="meta"><span>${fmt(top.date)}</span><span>${esc(top.readTime)}</span><span>By ${esc(top.author||"Editorial Team")}</span></div><div class="btns"><a class="btn p" href="#/post/${top.slug}">Read the full review</a><a class="btn s" href="#latest" data-scroll="latest">Browse latest posts</a></div></div><div class="img">${cover(top)}</div></div>
   <section><div class="sh"><h2>Editor's Picks</h2></div><div class="picks">${picks.map((p,i)=>`<div class="pick" data-go="${p.slug}"><span class="n">${i+1}</span><div class="th img">${cover(p)}</div><div><small>${esc(p.category)}</small><h4>${esc(p.title)}</h4></div></div>`).join("")}</div></section>
-  <section id="latest"><div class="sh"><div><h2>Fresh from the newsroom</h2><p>The newest reviews, news and hacks.</p></div></div>${tools("All")}<div class="grid" id="grid">${listHTML(POSTS.slice(0,10))}</div></section>
-  <section><div class="sh"><h2>Popular Now</h2></div><div class="
+  <section id="latest"><div class="sh"><div><h2>Fresh from the newsroom</h2><p>The newest reviews, news and hacks.</p></div></div
