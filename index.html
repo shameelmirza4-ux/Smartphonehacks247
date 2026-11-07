@@ -38,67 +38,69 @@
     a { color: inherit; text-decoration: none; }
     button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
     
-<header>
-  <div class="wrap nav">
-    <a href="#/" class="logo">
-      <img src="smartphonehacks247_under_1mb.jpg" alt="Smartphonehacks247" style="height: 36px; width: auto; vertical-align: middle; border-radius: 4px;">
-      Smartphonehacks247
-    </a>
-    <nav class="menu" id="menu">
-      <a href="#/" data-r="home" class="on">Home</a>
-      <a href="#/category/News" data-r="News">News</a>
-      <a href="#/category/Reviews" data-r="Reviews">Reviews</a>
-      <a href="#/category/Hacks" data-r="Hacks">Tips &amp; Hacks</a>
-      <a href="#/contact" data-r="contact">Contact Us</a>
-    </nav>
-    <button class="ic" id="theme" aria-label="Toggle light and dark theme">
-      <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-    </button>
-    <button class="ic burger" id="burger" aria-label="Menu">
-      <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-  </div>
-</header>
-    
-    /* Main Layout */
-    main { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
-
-    /* Hero Section */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       background: var(--surface);
-      border-radius: 20px;
-      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo img {
+      height: 36px;
+      width: auto;
+      border-radius: 4px;
+      display: block;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu {
+      display: flex;
+      gap: 5px;
+    }
+    .menu a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .menu a:hover, .menu a.on { color: var(--accent); background: var(--soft); }
+    
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
       border: 1px solid var(--line);
-      margin-bottom: 40px;
-      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
     }
-    .hero-content { padding: 40px; display: flex; flex-direction: column; justify-content: center; gap: 15px; }
-    .badge {
-      background: var(--soft);
-      color: var(--accent);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      width: fit-content;
-    }
-    .hero h1 { font-size: 2rem; line-height: 1.2; }
-    .hero p { color: var(--muted); font-size: 1rem; }
-    .meta { display: flex; gap: 15px; color: var(--muted); font-size: 0.85rem; }
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 12px;
-      font-weight: 700;
-      width: fit-content;
-      text-align: center;
-    }
-    .hero-media { min-height: 300px; background: #eee; }
-    .hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .icon-btn svg { width: 20px; height: 20px; fill: currentColor; }
+    .burger { display: none; }
+
+    /* Main Layout */
+    main { max-width: 1200px; margin: 20px auto; padding: 0 15px; min-height: 70vh; }
 
     /* Grid Section */
     .section-header { margin-bottom: 25px; }
@@ -123,8 +125,6 @@
 
     /* Responsive adjustments */
     @media (max-width: 850px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-media { order: -1; min-height: 250px; }
       .menu {
         display: none;
         flex-direction: column;
@@ -147,12 +147,12 @@
 <header>
   <div class="nav-container">
     <a href="#" class="logo">
-      <i>smartphonehacks247_under_1mb.jpg</i> Smartphonehacks247
+      <img src="smartphonehacks247_under_1mb.jpg" alt="Logo">
+      Smartphonehacks247
     </a>
     <nav class="menu" id="navMenu">
       <a href="#" class="on">Home</a>
-      <a href="#articles">Articles</a>
-      <a href="#contact">Contact Us</a>
+      <a href="#app">Articles</a>
     </nav>
     <div class="nav-right">
       <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme">
@@ -165,53 +165,17 @@
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="hero-content">
-      <span class="badge">Top Story</span>
-      <h1>Flagship Showdown: The Best Camera Phone of 2026</h1>
-      <p>We spent three weeks testing battery, low-light performance, and AI features on this year's top flagships. Discover the ultimate winner.</p>
-      <div class="meta"><span>Nov 7, 2026</span><span>5 min read</span></div>
-      <a href="#contact" class="btn-primary">Read Full Review</a>
-    </div>
-    <div class="hero-media">
-      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800" alt="Smartphone">
-    </div>
-  </section>
-
-  <section id="articles">
-    <div class="section-header">
-      <h2>Latest Smartphone Hacks & Tips</h2>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <div class="card-img"><img src="https://images.unsplash.com/photo-1609592424074-b5f7b4e87019?w=600" alt="Battery"></div>
-        <div class="card-body">
-          <div class="card-meta"><span>Battery</span><span>4 min read</span></div>
-          <h3>Does Fast Charging Actually Ruin Your Phone Battery?</h3>
-          <p>Fast charging is convenient, but how does it impact long-term battery health? Here is what science says.</p>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-img"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600" alt="Security"></div>
-        <div class="card-body">
-          <div class="card-meta"><span>Hacks</span><span>3 min read</span></div>
-          <h3>10 Secret Privacy Settings You Should Change Right Now</h3>
-          <p>Protect your personal data and stop apps from tracking your location with these hidden security tweaks.</p>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-img"><img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600" alt="Android"></div>
-        <div class="card-body">
-          <div class="card-meta"><span>Android</span><span>6 min read</span></div>
-          <h3>Hidden Android Developer Options That Will Speed Up Your Phone</h3>
-          <p>Unlock secret system animations speed controls and advanced performance boosters built right into Android.</p>
-        </div>
-      </article>
-    </div>
-  </section>
+<main id="app">
+  <!-- Posts will be dynamically loaded here -->
 </main>
 
+<footer>
+  <div style="text-align: center; padding: 40px; color: var(--muted);">
+    <p>&copy; 2026 Smartphonehacks247. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="posts.js"></script>
 <script>
   // Theme Toggle
   const themeToggle = document.getElementById('themeToggle');
@@ -225,6 +189,31 @@
   burgerToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
   });
+
+  // Render Posts from posts.js
+  const appContainer = document.getElementById('app');
+  if (window.POSTS && Array.isArray(window.POSTS)) {
+    let postsHTML = '<section id="articles"><div class="section-header"><h2>Latest Articles</h2></div><div class="grid">';
+    postsHTML += window.POSTS.map(post => `
+      <article class="card">
+        <div class="card-img">
+          <img src="${post.image || 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800'}" alt="${post.title}">
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span>${post.category || 'General'}</span>
+            <span>${post.readTime || '5 min read'}</span>
+          </div>
+          <h3>${post.title}</h3>
+          <p>${post.excerpt || ''}</p>
+        </div>
+      </article>
+    `).join('');
+    postsHTML += '</div></section>';
+    appContainer.innerHTML = postsHTML;
+  } else {
+    appContainer.innerHTML = '<section id="articles" style="text-align:center; padding: 50px;"><p>Loading posts or posts.js not found.</p></section>';
+  }
 </script>
 </body>
 </html>
