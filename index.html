@@ -28,7 +28,7 @@
       --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; width: 100%; overflow-x: hidden; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; width: 100%; overflow-x: hidden; transition: background 0.2s, color 0.2s; }
     a { color: inherit; text-decoration: none; }
 
     /* Header */
@@ -69,7 +69,7 @@
     .section-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; color: var(--text); }
     .section-title::before { content: ""; width: 4px; height: 18px; background: var(--accent); border-radius: 2px; }
 
-    /* Layout Grid */
+    /* Mobile Responsive Layout Grid */
     .content-grid { display: flex; flex-direction: column; gap: 24px; width: 100%; }
     @media (min-width: 850px) {
       .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; }
@@ -79,12 +79,13 @@
     }
 
     /* Big Article Cards */
-    .big-card { width: 100%; display: flex; flex-direction: column; background: var(--card-bg); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 20px; }
+    .big-card { width: 100%; display: flex; flex-direction: column; background: var(--card-bg); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 20px; transition: transform 0.2s; }
+    .big-card:hover { transform: translateY(-3px); }
     .big-card img { width: 100%; height: 200px; object-fit: cover; }
     .big-card-content { padding: 16px; display: flex; flex-direction: column; gap: 8px; }
     .big-card-content h4 { font-size: 1.1rem; color: var(--text); line-height: 1.35; }
 
-    /* Search & Chips */
+    /* Search & Filter Chips */
     .search-box { width: 100%; padding: 12px 16px; border-radius: 30px; border: 1px solid var(--line); background: var(--surface); color: var(--text); margin-bottom: 16px; font-size: 0.95rem; outline: none; }
     .chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
     .chips::-webkit-scrollbar { display: none; }
@@ -97,7 +98,7 @@
 
     /* Subscribe Banner */
     .subscribe-box { width: 100%; background: var(--accent); color: #fff; border-radius: 16px; padding: 20px; text-align: center; margin: 32px 0; }
-    .subscribe-box input { width: 100%; padding: 12px; border-radius: 8px; border: none; margin: 12px 0; font-size: 0.95rem; }
+    .subscribe-box input { width: 100%; padding: 12px; border-radius: 8px; border: none; margin: 12px 0; font-size: 0.95rem; outline: none; }
     .subscribe-box button { width: 100%; padding: 12px; border-radius: 8px; border: none; background: #0f172a; color: #fff; font-weight: 700; cursor: pointer; }
 
     /* YouTube Banner */
@@ -117,7 +118,7 @@
     .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 300; justify-content: center; align-items: center; padding: 16px; }
     .modal-overlay.active { display: flex; }
     .modal-content { background: var(--card-bg); border-radius: 16px; padding: 24px; max-width: 450px; width: 100%; color: var(--text); border: 1px solid var(--line); }
-    .modal-content input, .modal-content textarea { width: 100%; padding: 10px; margin: 8px 0 16px 0; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text); }
+    .modal-content input, .modal-content textarea { width: 100%; padding: 10px; margin: 8px 0 16px 0; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text); outline: none; }
   </style>
 </head>
 <body>
@@ -150,7 +151,7 @@
   </header>
 
   <main>
-    <!-- Article View -->
+    <!-- Single Article Full View -->
     <div class="post-view" id="postView">
       <button class="btn-primary" onclick="showHome()" style="margin-bottom: 16px;">← Back to Home</button>
       <h1 id="postTitle"></h1>
@@ -160,7 +161,7 @@
 
     <!-- Main View Contents -->
     <div id="mainView">
-      <!-- Top Story -->
+      <!-- Top Story Card -->
       <div class="hero-card" id="topStory">
         <div class="badge-group">
           <span class="badge badge-top">Top Story</span>
@@ -177,7 +178,7 @@
       </div>
 
       <div class="content-grid">
-        <!-- Main Column -->
+        <!-- Main Articles Column -->
         <div>
           <div class="section-title">Editor's Picks</div>
           <div id="editorsPicks"></div>
@@ -198,7 +199,7 @@
           <div id="postsList"></div>
         </div>
 
-        <!-- Sidebar Column -->
+        <!-- Sidebar / Popular Section -->
         <div>
           <div class="section-title">Popular Now</div>
           <div id="popularSection">
@@ -271,7 +272,7 @@
       <input type="email" placeholder="Your email">
       <label style="font-size: 0.85rem; color: var(--muted);">Message</label>
       <textarea rows="4" placeholder="Your message..."></textarea>
-      <button class="btn-primary" onclick="closeContact()">Send Message</button>
+      <button class="btn-primary" onclick="alert('Message sent successfully!'); closeContact();">Send Message</button>
       <button style="background:none; border:none; color:var(--muted); margin-left:12px; cursor:pointer;" onclick="closeContact()">Cancel</button>
     </div>
   </div>
@@ -309,9 +310,10 @@
     </div>
   </footer>
 
+  <!-- Include posts.js data file -->
   <script src="posts.js"></script>
   <script>
-    // Sample Fallback Data if posts.js is not present
+    // Default fallback posts if posts.js is not loaded
     const defaultPosts = [
       {
         title: "Flagship Showdown Review: The Best Camera Phone of 2026 Is Not The One You Think",
@@ -319,7 +321,7 @@
         date: "Nov 3, 2026",
         excerpt: "We spent three weeks testing camera consistency, low-light performance, and AI features across flagship devices.",
         image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800",
-        content: "Here is the full review of the best camera smartphones of 2026..."
+        content: "Here is the full review of the best camera smartphones of 2026 with detailed testing results."
       },
       {
         title: "Breaking: The Next Wave of Foldables Is Thinner, Tougher, and Cheaper",
@@ -327,7 +329,7 @@
         date: "Nov 2, 2026",
         excerpt: "Industry sources point to sub-10 mm folded designs and crease-free displays arriving early next year.",
         image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800",
-        content: "Detailed insights into foldable screen technology and lower price points..."
+        content: "Detailed insights into foldable screen technology and lower price points for next-gen smartphones."
       },
       {
         title: "12 Battery Hacks That Actually Work (And 5 Myths to Ignore)",
@@ -335,7 +337,7 @@
         date: "Nov 1, 2026",
         excerpt: "Squeeze extra hours of life out of any smartphone with settings most people never touch.",
         image: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800",
-        content: "Step by step guide to optimizing battery drain on Android and iOS..."
+        content: "Step by step guide to optimizing battery drain on Android and iOS devices."
       },
       {
         title: "15 Hidden Android Features You're Probably Not Using",
@@ -343,11 +345,11 @@
         date: "Oct 30, 2026",
         excerpt: "Back tap shortcuts, secret system menus, instant text scanning, and more.",
         image: "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=800",
-        content: "Unlock hidden features buried inside your Android system settings..."
+        content: "Unlock hidden features buried inside your Android system settings for better productivity."
       }
     ];
 
-    // Theme Switcher
+    // Theme Switcher Toggle Function
     function toggleTheme() {
       document.body.classList.toggle('dark-mode');
       const btn = document.getElementById('themeToggle');
@@ -358,22 +360,12 @@
       }
     }
 
-    // Menu Toggle
+    // Dropdown Menu Toggle
     function toggleMenu() {
       const menu = document.getElementById('menuDropdown');
       menu.classList.toggle('active');
     }
 
-    // Contact Modal
+    // Contact Modal Toggle Functions
     function openContact() {
-      document.getElementById('contactModal').classList.add('active');
-      document.getElementById('menuDropdown').classList.remove('active');
-    }
-    function closeContact() {
-      document.getElementById('contactModal').classList.remove('active');
-    }
-
-    // Navigation View Switcher
-    function showHome() {
-      document.getElementById('mainView').style.display = 'block';
-      document.getElementById('post
+      docu
