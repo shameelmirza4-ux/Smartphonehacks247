@@ -20,8 +20,8 @@
       --bg: #090d16;
       --surface: #111827;
       --card-bg: #1f2937;
-      --text: #f8fafc;
-      --muted: #94a3b8;
+      --text: #ffffff;
+      --muted: #cbd5e1;
       --line: #1e293b;
       --accent: #3b82f6;
       --accent-soft: #1e3a8a;
@@ -41,9 +41,12 @@
     
     .header-actions { display: flex; align-items: center; gap: 12px; }
     .btn-icon { background: var(--surface); border: 1px solid var(--line); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text); }
+    .burger-icon { display: flex; flex-direction: column; gap: 4px; }
+    .burger-icon span { width: 18px; height: 2px; background: var(--text); border-radius: 2px; }
+
     .menu-dropdown { position: absolute; top: 60px; right: 16px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); display: none; flex-direction: column; width: 180px; overflow: hidden; }
     .menu-dropdown.active { display: flex; }
-    .menu-dropdown a { padding: 12px 16px; font-weight: 500; border-bottom: 1px solid var(--line); }
+    .menu-dropdown a { padding: 12px 16px; font-weight: 500; border-bottom: 1px solid var(--line); color: var(--text); }
     .menu-dropdown a:last-child { border-bottom: none; }
     .menu-dropdown a:hover { background: var(--surface); }
 
@@ -52,33 +55,34 @@
 
     /* Top Story Featured Card */
     .hero-card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 24px; margin-bottom: 32px; }
+    .hero-img { width: 100%; height: 260px; object-fit: cover; border-radius: 12px; margin-bottom: 16px; display: block; }
     .badge-group { display: flex; gap: 8px; margin-bottom: 12px; }
     .badge { padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
     .badge-top { background: #0f172a; color: #fff; }
     .badge-cat { background: var(--accent-soft); color: var(--accent); }
-    .hero-title { font-size: 1.8rem; margin-bottom: 12px; line-height: 1.25; }
+    .hero-title { font-size: 1.8rem; margin-bottom: 12px; line-height: 1.25; color: var(--text); }
     .hero-excerpt { color: var(--muted); margin-bottom: 16px; font-size: 0.95rem; }
     .hero-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; }
     .btn-primary { background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 30px; border: none; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
 
     /* Section Titles */
-    .section-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .section-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; color: var(--text); }
     .section-title::before { content: ""; width: 4px; height: 18px; background: var(--accent); border-radius: 2px; }
 
     /* Layout Grid */
     .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; }
     @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } }
 
-    /* Cards */
-    .list-card { display: flex; gap: 16px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin-bottom: 16px; }
-    .list-card img { width: 100px; height: 80px; object-fit: cover; border-radius: 8px; }
-    .list-card-content { display: flex; flex-direction: column; justify-content: center; }
-    .list-card-content h4 { font-size: 0.95rem; margin-bottom: 4px; }
+    /* Big Article Cards */
+    .big-card { display: flex; flex-direction: column; background: var(--card-bg); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 24px; }
+    .big-card img { width: 100%; height: 200px; object-fit: cover; }
+    .big-card-content { padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+    .big-card-content h4 { font-size: 1.2rem; color: var(--text); line-height: 1.3; }
 
     /* Search & Chips */
     .search-box { width: 100%; padding: 12px 16px; border-radius: 30px; border: 1px solid var(--line); background: var(--surface); color: var(--text); margin-bottom: 16px; font-size: 0.95rem; }
     .chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 24px; }
-    .chip { padding: 6px 16px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); font-size: 0.85rem; font-weight: 600; cursor: pointer; white-spacing: nowrap; }
+    .chip { padding: 6px 16px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); color: var(--text); font-size: 0.85rem; font-weight: 600; cursor: pointer; white-spacing: nowrap; }
     .chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
     /* Popular Now Section */
@@ -91,16 +95,16 @@
     .subscribe-box button { width: 100%; padding: 12px; border-radius: 8px; border: none; background: #0f172a; color: #fff; font-weight: 700; cursor: pointer; }
 
     /* YouTube Banner in Footer */
-    .yt-banner { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; text-align: center; margin-bottom: 40px; }
+    .yt-banner { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; text-align: center; margin-bottom: 40px; color: var(--text); }
     .yt-btn { display: inline-flex; align-items: center; gap: 8px; background: #ff0000; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-top: 12px; }
 
     /* Footer Navigation */
-    footer { border-top: 1px solid var(--line); padding: 40px 16px; background: var(--surface); }
+    footer { border-top: 1px solid var(--line); padding: 40px 16px; background: var(--surface); color: var(--text); }
     .footer-content { max-width: 1100px; margin: 0 auto; }
     .footer-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; margin-top: 20px; }
 
-    /* Modal / Single Post View */
-    .post-view { display: none; background: var(--card-bg); padding: 24px; border-radius: 16px; border: 1px solid var(--line); margin-bottom: 32px; }
+    /* Single Post View */
+    .post-view { display: none; background: var(--card-bg); padding: 24px; border-radius: 16px; border: 1px solid var(--line); margin-bottom: 32px; color: var(--text); }
     .post-view.active { display: block; }
   </style>
 </head>
@@ -115,7 +119,13 @@
       </a>
       <div class="header-actions">
         <button class="btn-icon" id="themeToggle" aria-label="Toggle Theme">🌙</button>
-        <button class="btn-icon" id="menuToggle" aria-label="Menu">⋮</button>
+        <button class="btn-icon" id="menuToggle" aria-label="Menu">
+          <div class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
         <div class="menu-dropdown" id="menuDropdown">
           <a href="#" onclick="showHome()">Home</a>
           <a href="#articles" onclick="filterCategory('News')">News</a>
@@ -128,7 +138,7 @@
   </header>
 
   <main>
-    <!-- Detailed Article Modal/View -->
+    <!-- Detailed Article View -->
     <div class="post-view" id="postView">
       <button class="btn-primary" onclick="showHome()" style="margin-bottom: 16px;">← Back to Home</button>
       <h1 id="postTitle"></h1>
@@ -144,6 +154,7 @@
           <span class="badge badge-top">Top Story</span>
           <span class="badge badge-cat" id="topCat">Reviews</span>
         </div>
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800" class="hero-img" alt="Top Story Image">
         <h2 class="hero-title" id="topTitle">Flagship Showdown Review: The Best Camera Phone of 2026 Is Not The One You Think</h2>
         <p class="hero-excerpt" id="topExcerpt">We spent three weeks testing camera consistency, low-light performance, and AI features across flagship devices.</p>
         <div class="hero-meta">
@@ -184,35 +195,35 @@
             <div class="popular-item">
               <span class="popular-num">01</span>
               <div>
-                <h5 style="font-size: 0.9rem;">Flagship Showdown Review</h5>
+                <h5 style="font-size: 0.9rem; color: var(--text);">Flagship Showdown Review</h5>
                 <small style="color: var(--muted);">Nov 7, 2026</small>
               </div>
             </div>
             <div class="popular-item">
               <span class="popular-num">02</span>
               <div>
-                <h5 style="font-size: 0.9rem;">Next Wave of Foldables Announced</h5>
+                <h5 style="font-size: 0.9rem; color: var(--text);">Next Wave of Foldables Announced</h5>
                 <small style="color: var(--muted);">Nov 6, 2026</small>
               </div>
             </div>
             <div class="popular-item">
               <span class="popular-num">03</span>
               <div>
-                <h5 style="font-size: 0.9rem;">12 Battery Hacks That Actually Work</h5>
+                <h5 style="font-size: 0.9rem; color: var(--text);">12 Battery Hacks That Actually Work</h5>
                 <small style="color: var(--muted);">Nov 5, 2026</small>
               </div>
             </div>
             <div class="popular-item">
               <span class="popular-num">04</span>
               <div>
-                <h5 style="font-size: 0.9rem;">Hidden Android Features</h5>
+                <h5 style="font-size: 0.9rem; color: var(--text);">Hidden Android Features</h5>
                 <small style="color: var(--muted);">Nov 4, 2026</small>
               </div>
             </div>
             <div class="popular-item">
               <span class="popular-num">05</span>
               <div>
-                <h5 style="font-size: 0.9rem;">Does Fast Charging Damage Your Battery?</h5>
+                <h5 style="font-size: 0.9rem; color: var(--text);">Does Fast Charging Damage Your Battery?</h5>
                 <small style="color: var(--muted);">Nov 3, 2026</small>
               </div>
             </div>
@@ -314,13 +325,13 @@
       document.getElementById('postTitle').innerText = post.title;
       document.getElementById('postMeta').innerText = `${post.category || 'General'} • ${post.date || 'Nov 7, 2026'}`;
       document.getElementById('postBody').innerHTML = `
-        <img src="${post.image || 'smartphonehacks247_under_1mb.jpg'}" style="width:100%; max-height:400px; object-fit:cover; border-radius:12px; margin-bottom:16px;">
+        <img src="${post.image || 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800'}" style="width:100%; max-height:400px; object-fit:cover; border-radius:12px; margin-bottom:16px;">
         <p style="font-size:1.1rem; line-height:1.7;">${post.content || post.excerpt || 'Full article content goes here.'}</p>
       `;
       postView.classList.add('active');
     }
 
-    // Render Posts
+    // Render Posts as Big Cards
     function renderPosts(categoryFilter = 'All', searchQuery = '') {
       const postsContainer = document.getElementById('postsList');
       const picksContainer = document.getElementById('editorsPicks');
@@ -339,22 +350,23 @@
         filtered = filtered.filter(p => p.title.toLowerCase().includes(searchQuery.toLowerCase()));
       }
 
-      // Render Editor Picks (First 3)
+      // Render Editor Picks
       picksContainer.innerHTML = window.POSTS.slice(0, 3).map(post => `
-        <div class="list-card" onclick='renderFullPost(${JSON.stringify(post)})' style="cursor:pointer;">
-          <img src="${post.image || 'smartphonehacks247_under_1mb.jpg'}" alt="Thumb">
-          <div class="list-card-content">
+        <div class="big-card" onclick='renderFullPost(${JSON.stringify(post)})' style="cursor:pointer;">
+          <img src="${post.image || 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800'}" alt="Thumb">
+          <div class="big-card-content">
             <span style="font-size:0.75rem; color:var(--accent); font-weight:700;">${post.category || 'TECH'}</span>
             <h4>${post.title}</h4>
+            <p style="font-size:0.85rem; color:var(--muted);">${post.excerpt || ''}</p>
           </div>
         </div>
       `).join('');
 
-      // Render Main Filtered List
+      // Render Main Big Article Cards
       postsContainer.innerHTML = filtered.map(post => `
-        <div class="list-card" onclick='renderFullPost(${JSON.stringify(post)})' style="cursor:pointer;">
-          <img src="${post.image || 'smartphonehacks247_under_1mb.jpg'}" alt="Thumb">
-          <div class="list-card-content">
+        <div class="big-card" onclick='renderFullPost(${JSON.stringify(post)})' style="cursor:pointer;">
+          <img src="${post.image || 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800'}" alt="Thumb">
+          <div class="big-card-content">
             <span style="font-size:0.75rem; color:var(--muted);">${post.category || 'General'} • ${post.date || 'Recent'}</span>
             <h4>${post.title}</h4>
             <p style="font-size:0.85rem; color:var(--muted);">${post.excerpt || ''}</p>
@@ -375,13 +387,11 @@
       renderPosts('All', q);
     }
 
-    // Contact Form Toggle Simple Alert View
     function toggleContactModal() {
       alert("Contact Us: Reach out at contact@smartphonehacks247.com or visit our YouTube channel.");
       menuDropdown.classList.remove('active');
     }
 
-    // Initialize
     window.addEventListener('DOMContentLoaded', () => {
       renderPosts();
     });
