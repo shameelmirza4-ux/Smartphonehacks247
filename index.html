@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smartphonehacks247</title>
+  <title>Smartphonehacks247 | Latest Smartphone Hacks, Reviews & Tips</title>
+  
+  <!-- SEO & Social Sharing Meta Tags -->
+  <meta name="description" content="Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news around the clock.">
+  <meta property="og:title" content="Smartphonehacks247">
+  <meta property="og:description" content="Get the best smartphone hacks, expert tips, and breaking mobile tech news.">
+  <meta property="og:image" content="smartphonehacks247_under_1mb.jpg">
+  <meta property="og:type" content="website">
+
   <style>
     :root {
       --bg: #ffffff;
@@ -114,6 +122,13 @@
     .post-view { display: none; width: 100%; background: var(--card-bg); padding: 20px; border-radius: 16px; border: 1px solid var(--line); margin-bottom: 24px; color: var(--text); }
     .post-view.active { display: block; }
 
+    /* Share Buttons in Article */
+    .share-container { display: flex; gap: 10px; margin-top: 24px; align-items: center; flex-wrap: wrap; }
+    .share-btn { padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; color: #fff; border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .share-whatsapp { background: #25d366; }
+    .share-facebook { background: #1877f2; }
+    .share-twitter { background: #000000; }
+
     /* Contact Form Modal */
     .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 300; justify-content: center; align-items: center; padding: 16px; }
     .modal-overlay.active { display: flex; }
@@ -151,12 +166,20 @@
   </header>
 
   <main>
-    <!-- Single Article Full View -->
+    <!-- Single Article Full View with Share Buttons -->
     <div class="post-view" id="postView">
       <button class="btn-primary" onclick="showHome()" style="margin-bottom: 16px;">← Back to Home</button>
       <h1 id="postTitle"></h1>
       <p id="postMeta" style="color: var(--muted); margin: 8px 0 16px 0;"></p>
       <div id="postBody"></div>
+      
+      <!-- Social Share Buttons -->
+      <div class="share-container">
+        <span style="font-size: 0.9rem; font-weight: 700; color: var(--muted);">Share:</span>
+        <a id="shareWhatsapp" href="#" target="_blank" class="share-btn share-whatsapp">WhatsApp</a>
+        <a id="shareFacebook" href="#" target="_blank" class="share-btn share-facebook">Facebook</a>
+        <a id="shareTwitter" href="#" target="_blank" class="share-btn share-twitter">X (Twitter)</a>
+      </div>
     </div>
 
     <!-- Main View Contents -->
@@ -329,43 +352,4 @@
         date: "Nov 2, 2026",
         excerpt: "Industry sources point to sub-10 mm folded designs and crease-free displays arriving early next year.",
         image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800",
-        content: "Detailed insights into foldable screen technology and lower price points for next-gen smartphones."
-      },
-      {
-        title: "12 Battery Hacks That Actually Work (And 5 Myths to Ignore)",
-        category: "Battery",
-        date: "Nov 1, 2026",
-        excerpt: "Squeeze extra hours of life out of any smartphone with settings most people never touch.",
-        image: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800",
-        content: "Step by step guide to optimizing battery drain on Android and iOS devices."
-      },
-      {
-        title: "15 Hidden Android Features You're Probably Not Using",
-        category: "Android",
-        date: "Oct 30, 2026",
-        excerpt: "Back tap shortcuts, secret system menus, instant text scanning, and more.",
-        image: "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=800",
-        content: "Unlock hidden features buried inside your Android system settings for better productivity."
-      }
-    ];
-
-    // Theme Switcher Toggle Function
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-      const btn = document.getElementById('themeToggle');
-      if (document.body.classList.contains('dark-mode')) {
-        btn.textContent = '☀️';
-      } else {
-        btn.textContent = '🌙';
-      }
-    }
-
-    // Dropdown Menu Toggle
-    function toggleMenu() {
-      const menu = document.getElementById('menuDropdown');
-      menu.classList.toggle('active');
-    }
-
-    // Contact Modal Toggle Functions
-    function openContact() {
-      docu
+        content: "Detailed insights into foldable screen te
