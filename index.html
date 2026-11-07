@@ -1,190 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smartphonehacks247 | Smartphone Hacks, Reviews & Tips</title>
-<meta name="description" content="Expert tips and hidden tricks to get more from your phone.">
-<meta name="theme-color" content="#4f6bff">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%234f6bff'/><rect x='31' y='15' width='38' height='70' rx='9' fill='none' stroke='white' stroke-width='7'/></svg>">
-<style>
-:root{--bg:#f6f7fb;--surface:#fff;--text:#111827;--muted:#5b6475;--line:#e5e8f0;--accent:#4f6bff;--accent2:#3a52e0;--soft:#eef1ff;--shadow:0 10px 30px -12px rgba(30,45,100,.18)}
-[data-theme=dark]{--bg:#0d1120;--surface:#151a2e;--text:#f1f4ff;--muted:#a3adc7;--line:#252c47;--accent:#6b82ff;--accent2:#8497ff;--soft:#1b2243;--shadow:0 10px 30px -12px rgba(0,0,0,.6)}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;transition:background .25s,color .25s}
-a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
-h1,h2,h3,h4{line-height:1.22;letter-spacing:-.01em}
-.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:10px;padding:0 15px;}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem}
-.logo i{width:32px;height:32px;border-radius:10px;background:var(--accent);display:grid;place-items:center}
-.logo svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2.4}
-.menu{display:flex;gap:4px;align-items:center;}
-.menu a{padding:8px 14px;border-radius:10px;font-weight:600;font-size:.93rem;color:var(--muted);transition:.2s}
-.menu a:hover,.menu a.on{color:var(--accent);background:var(--soft)}
-.ic{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;background:var(--surface)}
-.ic:hover{border-color:var(--accent)}.ic svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
-.burger{display:none}
-main{min-height:70vh;padding-bottom:50px}
-/* hero */
-.hero{margin-top:28px;display:grid;grid-template-columns:1.05fr 1fr;border-radius:26px;overflow:hidden;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
-.hero .txt{padding:44px;display:flex;flex-direction:column;justify-content:center;gap:14px}
-.eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-.hero h1{font-size:clamp(1.7rem,3.4vw,2.6rem)}
-.hero p{color:var(--muted);font-size:1.04rem}
-.tags{display:flex;gap:8px;flex-wrap:wrap}
-.tag{padding:4px 12px;border-radius:999px;background:var(--soft);color:var(--accent);font-size:.76rem;font-weight:700}
-.meta{display:flex;gap:6px 14px;flex-wrap:wrap;color:var(--muted);font-size:.83rem}
-.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
-.btn{padding:13px 22px;border-radius:12px;font-weight:700;font-size:.95rem;transition:.2s;display:inline-block}
-.btn.p{background:var(--accent);color:#fff;box-shadow:0 8px 20px -8px var(--accent)}.btn.p:hover{background:var(--accent2);transform:translateY(-1px)}
-.btn.s{border:1px solid var(--line);background:var(--surface)}.btn.s:hover{border-color:var(--accent);color:var(--accent)}
-.hero .img{min-height:340px;background:#111}
-.hero .img img{width:100%;height:100%;object-fit:cover;display:block}
-/* sections */
-section{margin-top:54px}
-.sh{display:flex;justify-content:space-between;align-items:end;margin-bottom:20px;gap:12px;flex-wrap:wrap}
-.sh h2{font-size:1.55rem}.sh p{color:var(--muted);font-size:.92rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:.28s;text-decoration:none;color:inherit}
-.card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--accent)}
-.card .img{aspect-ratio:16/10;overflow:hidden;background:#222}
-.card .img img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.card:hover .img img{transform:scale(1.05)}
-.cb{padding:18px 20px 20px;display:flex;flex-direction:column;gap:9px;flex:1}
-.cb .top{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--muted);gap:8px}
-.cb h3{font-size:1.1rem}.card:hover h3{color:var(--accent)}
-.cb p{color:var(--muted);font-size:.92rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.by{margin-top:auto;padding-top:6px;font-size:.82rem;color:var(--muted)}
-/* contact */
-.contact{max-width:620px;margin:30px auto;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px}
-.contact form{display:grid;gap:14px;margin-top:18px}
-.contact input,.contact textarea{width:100%;padding:13px 15px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;outline:0}
-.contact input:focus,.contact textarea:focus{border-color:var(--accent)}
-footer{margin-top:70px;background:var(--surface);border-top:1px solid var(--line);padding:46px 0 24px}
-.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:34px}
-.fg h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px}
-.fg a{display:block;padding:4px 0;font-size:.93rem}.fg a:hover{color:var(--accent)}
-.copy{text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
-@media(max-width:760px){.burger{display:grid;margin-left:auto}.hero{grid-template-columns:1fr}.hero .img{order:-1;min-height:240px}.hero .txt{padding:28px 22px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smartphonehacks247 | Smartphone Hacks, Reviews & Tips</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --surface: #fff;
+      --text: #111827;
+      --muted: #5b6475;
+      --line: #e5e8f0;
+      --accent: #4f6bff;
+      --accent2: #3a52e0;
+      --soft: #eef1ff;
+      --shadow: 0 10px 30px -12px rgba(30,45,100,.18);
+    }
+    [data-theme=dark] {
+      --bg: #0d1120;
+      --surface: #151a2e;
+      --text: #f1f4ff;
+      --muted: #a3adc7;
+      --line: #252c47;
+      --accent: #6b82ff;
+      --accent2: #8497ff;
+      --soft: #1b2243;
+      --shadow: 0 10px 30px -12px rgba(0,0,0,.6);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: background .25s, color .25s;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+    
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo i {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: normal;
+      font-size: 1rem;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu {
+      display: flex;
+      gap: 5px;
+    }
+    .menu a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .menu a:hover, .menu a.on { color: var(--accent); background: var(--soft); }
+    
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+    }
+    .icon-btn svg { width: 20px; height: 20px; fill: currentColor; }
+    .burger { display: none; }
+
+    /* Main Layout */
+    main { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
+
+    /* Hero Section */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      background: var(--surface);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      margin-bottom: 40px;
+      box-shadow: var(--shadow);
+    }
+    .hero-content { padding: 40px; display: flex; flex-direction: column; justify-content: center; gap: 15px; }
+    .badge {
+      background: var(--soft);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .hero h1 { font-size: 2rem; line-height: 1.2; }
+    .hero p { color: var(--muted); font-size: 1rem; }
+    .meta { display: flex; gap: 15px; color: var(--muted); font-size: 0.85rem; }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      width: fit-content;
+      text-align: center;
+    }
+    .hero-media { min-height: 300px; background: #eee; }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Grid Section */
+    .section-header { margin-bottom: 25px; }
+    .section-header h2 { font-size: 1.8rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card-img { height: 200px; background: #eee; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card-body { padding: 20px; display: flex; flex-direction: column; gap: 10px; flex-grow: 1; }
+    .card-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); }
+    .card-body h3 { font-size: 1.2rem; }
+    .card-body p { color: var(--muted); font-size: 0.9rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+    /* Responsive adjustments */
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-media { order: -1; min-height: 250px; }
+      .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        padding: 20px;
+        border-bottom: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+      .menu.active { display: flex; }
+      .burger { display: flex; }
+    }
+  </style>
 </head>
 <body>
 
-<header><div class="wrap nav">
- <a href="#" class="logo"><i><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></i>Smartphonehacks247</a>
- <nav class="menu" id="menu">
-  <a href="#" class="on">Home</a>
-  <a href="#articles">Articles</a>
-  <a href="#contact">Contact Us</a>
- </nav>
- <button class="ic" id="theme" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
-</div></header>
-
-<main class="wrap">
- <!-- Hero Section / Top Story -->
- <section class="hero">
-  <div class="txt">
-   <span class="eyebrow">Top Story</span>
-   <div class="tags"><span class="tag">Reviews</span></div>
-   <h1>Flagship Showdown: The Best Camera Phone of 2026</h1>
-   <p>We spent three weeks testing battery, low-light performance, and AI features on this year's top flagships. Discover the ultimate winner.</p>
-   <div class="meta"><span>Nov 7, 2026</span><span>5 min read</span><span>By Editorial Team</span></div>
-   <div class="btns"><a class="btn p" href="#contact">Read Full Review</a></div>
-  </div>
-  <div class="img">
-   <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800" alt="Smartphone">
-  </div>
- </section>
-
- <!-- Latest Articles Section -->
- <section id="articles">
-  <div class="sh">
-   <h2>Latest Smartphone Hacks & Tips</h2>
-   <p>Explore our latest guides and hidden phone features</p>
-  </div>
-  
-  <div class="grid">
-   <!-- Card 1 -->
-   <a href="#" class="card">
-    <div class="img"><img src="https://images.unsplash.com/photo-1609592424074-b5f7b4e87019?w=600" alt="Battery"></div>
-    <div class="cb">
-     <div class="top"><span class="tag">Battery</span><span>4 min read</span></div>
-     <h3>Does Fast Charging Actually Ruin Your Phone Battery?</h3>
-     <p>Fast charging is convenient, but how does it impact long-term battery health? Here is what science says.</p>
-     <div class="by">By Editorial Team</div>
+<header>
+  <div class="nav-container">
+    <a href="#" class="logo">
+      <i>📱</i> Smartphonehacks247
+    </a>
+    <nav class="menu" id="navMenu">
+      <a href="#" class="on">Home</a>
+      <a href="#articles">Articles</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme">
+        <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn burger" id="burgerToggle" aria-label="Toggle Menu">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
-   </a>
-
-   <!-- Card 2 -->
-   <a href="#" class="card">
-    <div class="img"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600" alt="Security"></div>
-    <div class="cb">
-     <div class="top"><span class="tag">Hacks</span><span>3 min read</span></div>
-     <h3>10 Secret Privacy Settings You Should Change Right Now</h3>
-     <p>Protect your personal data and stop apps from tracking your location with these hidden security tweaks.</p>
-     <div class="by">By Editorial Team</div>
-    </div>
-   </a>
-
-   <!-- Card 3 -->
-   <a href="#" class="card">
-    <div class="img"><img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600" alt="Android"></div>
-    <div class="cb">
-     <div class="top"><span class="tag">Android</span><span>6 min read</span></div>
-     <h3>Hidden Android Developer Options That Will Speed Up Your Phone</h3>
-     <p>Unlock secret system animations speed controls and advanced performance boosters built right into Android.</p>
-     <div class="by">By Editorial Team</div>
-    </div>
-   </a>
   </div>
- </section>
+</header>
 
- <!-- Contact Us Section -->
- <section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <p style="color:var(--muted);margin-top:4px;font-size:.92rem">Got a question or suggestion? Drop us a message.</p>
-  <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
-   <input type="text" placeholder="Your Name" required>
-   <input type="email" placeholder="Your Email" required>
-   <textarea rows="4" placeholder="Your Message..." required></textarea>
-   <button type="submit" class="btn p">Send Message</button>
-  </form>
- </section>
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">Top Story</span>
+      <h1>Flagship Showdown: The Best Camera Phone of 2026</h1>
+      <p>We spent three weeks testing battery, low-light performance, and AI features on this year's top flagships. Discover the ultimate winner.</p>
+      <div class="meta"><span>Nov 7, 2026</span><span>5 min read</span></div>
+      <a href="#contact" class="btn-primary">Read Full Review</a>
+    </div>
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800" alt="Smartphone">
+    </div>
+  </section>
+
+  <section id="articles">
+    <div class="section-header">
+      <h2>Latest Smartphone Hacks & Tips</h2>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1609592424074-b5f7b4e87019?w=600" alt="Battery"></div>
+        <div class="card-body">
+          <div class="card-meta"><span>Battery</span><span>4 min read</span></div>
+          <h3>Does Fast Charging Actually Ruin Your Phone Battery?</h3>
+          <p>Fast charging is convenient, but how does it impact long-term battery health? Here is what science says.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600" alt="Security"></div>
+        <div class="card-body">
+          <div class="card-meta"><span>Hacks</span><span>3 min read</span></div>
+          <h3>10 Secret Privacy Settings You Should Change Right Now</h3>
+          <p>Protect your personal data and stop apps from tracking your location with these hidden security tweaks.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600" alt="Android"></div>
+        <div class="card-body">
+          <div class="card-meta"><span>Android</span><span>6 min read</span></div>
+          <h3>Hidden Android Developer Options That Will Speed Up Your Phone</h3>
+          <p>Unlock secret system animations speed controls and advanced performance boosters built right into Android.</p>
+        </div>
+      </article>
+    </div>
+  </section>
 </main>
 
-<footer><div class="wrap">
- <div class="fg">
-  <div><a href="#" class="logo"><i><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></i>Smartphonehacks247</a>
-   <p style="color:var(--muted);margin-top:12px;max-width:300px;font-size:.93rem">Expert tips and hidden tricks to get more from your phone.</p>
-  </div>
-  <div><h4>Explore</h4><a href="#">Home</a><a href="#articles">Articles</a><a href="#contact">Contact Us</a></div>
-  <div><h4>Topics</h4><a href="#articles">Android</a><a href="#articles">Battery</a><a href="#articles">Camera</a><a href="#articles">Hacks</a></div>
- </div>
- <div class="copy">&copy; <span id="yr">2026</span> Smartphonehacks247. All rights reserved.</div>
-</div></footer>
-
 <script>
-// Dark / Light Theme Toggle Script
-const themeBtn = document.getElementById('theme');
-const root = document.documentElement;
+  // Theme Toggle
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    document.documentElement.toggleAttribute('data-theme');
+  });
 
-// Check saved preference
-if(localStorage.getItem('theme') === 'dark') {
-  root.setAttribute('data-theme', 'dark');
-}
-
-themeBtn.addEventListener('click', () => {
-  if(root.getAttribute('data-theme') === 'dark') {
-    root.removeAttribute('data-theme');
-    localStorage.setItem('theme', 'light');
-  } else {
-    root.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-  }
-});
+  // Mobile Menu Toggle
+  const burgerToggle = document.getElementById('burgerToggle');
+  const navMenu = document.getElementById('navMenu');
+  burgerToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
 </script>
 </body>
 </html>
