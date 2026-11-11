@@ -10,9 +10,11 @@
             --card-bg: #131b2e;
             --text-main: #ffffff;
             --text-sub: #94a3b8;
-            --accent-blue: #3b82f6;
+            --accent-blue: #2563eb;
+            --accent-blue-hover: #1d4ed8;
             --border-color: #1e293b;
-            --header-bg: rgba(11, 15, 25, 0.95);
+            --header-bg: rgba(11, 15, 25, 0.9);
+            --pill-bg: #1e293b;
         }
 
         [data-theme="light"] {
@@ -21,19 +23,21 @@
             --text-main: #0f172a;
             --text-sub: #475569;
             --accent-blue: #2563eb;
+            --accent-blue-hover: #1d4ed8;
             --border-color: #e2e8f0;
-            --header-bg: rgba(255, 255, 255, 0.95);
+            --header-bg: rgba(255, 255, 255, 0.9);
+            --pill-bg: #e2e8f0;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            transition: background-color 0.2s ease, color 0.2s ease;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.5;
@@ -45,15 +49,15 @@
             padding: 0 16px;
         }
 
-        /* Compact Header */
+        /* --- HEADER --- */
         header {
             position: sticky;
             top: 0;
             background: var(--header-bg);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
-            padding: 10px 0;
+            padding: 12px 0;
         }
 
         .nav-container {
@@ -65,81 +69,83 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .logo-img {
-            width: 32px;
-            height: 32px;
+            width: 38px;
+            height: 38px;
             object-fit: contain;
-            border-radius: 4px;
+            border-radius: 6px;
         }
 
         .logo-text {
-            display: flex;
-        }
-
-        .brand-first {
             color: var(--text-main);
+            letter-spacing: -0.5px;
         }
 
-        .brand-second {
+        .logo-text span {
             color: var(--accent-blue);
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 24px;
         }
 
         .nav-menu a {
             color: var(--text-sub);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
-        .nav-menu a:hover {
+        .nav-menu a:hover, .nav-menu a.active {
             color: var(--accent-blue);
         }
 
-        /* Toggle Button */
-        .theme-controls {
+        .theme-toggle {
             display: flex;
-            background: var(--border-color);
+            align-items: center;
+            background: var(--pill-bg);
             padding: 3px;
-            border-radius: 20px;
+            border-radius: 30px;
+            cursor: pointer;
         }
 
         .theme-btn {
             background: transparent;
             border: none;
             color: var(--text-sub);
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
+            padding: 5px 12px;
+            border-radius: 20px;
             font-weight: 600;
+            font-size: 0.8rem;
             cursor: pointer;
         }
 
         .theme-btn.active {
-            background: var(--bg-color);
+            background: var(--card-bg);
             color: var(--text-main);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* Hero Section */
-        .hero-section {
-            padding: 24px 0;
+        /* --- HERO & EDITOR PICKS --- */
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin: 24px 0 40px;
         }
 
         .hero-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -147,8 +153,8 @@
 
         .hero-img-wrap {
             width: 100%;
-            height: 300px;
-            background-color: var(--border-color);
+            height: 320px;
+            overflow: hidden;
         }
 
         .hero-img-wrap img {
@@ -161,20 +167,21 @@
             padding: 24px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
         .badges-group {
             display: flex;
             gap: 8px;
+            align-items: center;
         }
 
         .badge {
-            background: var(--border-color);
+            background: var(--pill-bg);
             color: var(--text-main);
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 0.7rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
         }
@@ -184,9 +191,15 @@
             color: #ffffff;
         }
 
+        .badge.blue { background: #2563eb; color: #fff; }
+        .badge.green { background: #059669; color: #fff; }
+        .badge.amber { background: #d97706; color: #fff; }
+        .badge.purple { background: #7c3aed; color: #fff; }
+
         .hero-title {
             font-size: 1.8rem;
-            line-height: 1.3;
+            line-height: 1.25;
+            font-weight: 800;
         }
 
         .post-meta {
@@ -197,72 +210,229 @@
             gap: 8px;
         }
 
-        /* Grid Layout */
-        .content-grid {
+        .hero-btn-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .btn-secondary {
+            background: var(--pill-bg);
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Editor's Picks Sidebar */
+        .editor-picks {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .sidebar-heading {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-heading::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 16px;
+            background: var(--accent-blue);
+            border-radius: 2px;
+        }
+
+        .editor-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .editor-item {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .editor-item img {
+            width: 70px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .editor-item-info p {
+            font-size: 0.75rem;
+            color: var(--text-sub);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .editor-item-info h4 {
+            font-size: 0.9rem;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .editor-item-info h4 a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        /* --- SEARCH & FILTERS --- */
+        .filter-section {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .search-box {
+            width: 100%;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 14px 20px 14px 44px;
+            border-radius: 12px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .search-box::before {
+            content: '🔍';
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.5;
+        }
+
+        .filter-pills {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+        }
+
+        .pill {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-sub);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .pill.active {
+            background: var(--accent-blue);
+            color: #ffffff;
+            border-color: var(--accent-blue);
+        }
+
+        /* --- MAIN FEED & SIDEBAR --- */
+        .main-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
-        .section-title {
-            font-size: 1.5berries;
+        .feed-header {
             margin-bottom: 20px;
+        }
+
+        .feed-header p {
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .feed-header h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
         }
 
         .post-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             display: flex;
             flex-direction: column;
         }
 
-        .card-img-wrap {
+        .post-card-img {
             width: 100%;
-            height: 180px;
-            background-color: var(--border-color);
-        }
-
-        .card-img-wrap img {
-            width: 100%;
-            height: 100%;
+            height: 240px;
             object-fit: cover;
+            position: relative;
         }
 
-        .card-content {
-            padding: 16px;
+        .post-card-body {
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .card-content h3 {
-            font-size: 1.2rem;
+        .post-card-body h3 {
+            font-size: 1.3rem;
             line-height: 1.3;
         }
 
-        /* Sidebar */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .post-card-body h3 a {
+            color: var(--text-main);
+            text-decoration: none;
         }
 
-        .sidebar-card {
+        .post-card-body p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .author-tag {
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Sidebar Widgets */
+        .popular-widget, .newsletter-widget, .social-widget {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 20px;
-        }
-
-        .sidebar-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 16px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 24px;
         }
 
         .popular-list {
@@ -274,24 +444,94 @@
 
         .popular-item {
             display: flex;
+            gap: 14px;
             align-items: flex-start;
-            gap: 12px;
         }
 
-        .popular-number {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--accent-blue);
+        .popular-num {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--text-sub);
+            opacity: 0.4;
             line-height: 1;
-            opacity: 0.5;
         }
 
-        .popular-content h4 {
+        .popular-info h4 {
             font-size: 0.95rem;
             line-height: 1.3;
         }
 
-        /* Footer */
+        .popular-info h4 a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        /* Newsletter */
+        .newsletter-widget {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+        }
+
+        .newsletter-widget h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .newsletter-widget p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 14px;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-form button {
+            width: 100%;
+            background: var(--accent-blue);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* Social Grid */
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .social-card {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-card strong {
+            font-size: 1.1rem;
+        }
+
+        .social-card span {
+            font-size: 0.75rem;
+            color: var(--text-sub);
+        }
+
+        /* --- FOOTER --- */
         footer {
             background: var(--card-bg);
             border-top: 1px solid var(--border-color);
@@ -300,34 +540,28 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr;
             gap: 30px;
             margin-bottom: 30px;
         }
 
-        .footer-brand {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
         .footer-brand p {
             color: var(--text-sub);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            margin: 12px 0 16px;
         }
 
-        .yt-btn {
+        .yt-channel-btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             background: #ff0000;
             color: #ffffff !important;
-            padding: 8px 16px;
-            border-radius: 6px;
+            padding: 10px 18px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
             font-size: 0.85rem;
-            width: fit-content;
         }
 
         .footer-col h5 {
@@ -360,33 +594,33 @@
             font-size: 0.8rem;
         }
 
-        @media (max-width: 768px) {
-            .content-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
+        @media (max-width: 900px) {
+            .hero-layout, .main-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
             .nav-menu { display: none; }
         }
     </style>
 </head>
 <body>
 
+    <!-- HEADER -->
     <header>
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="smartphonehacks247_under_1mb.jpg" alt="Logo" class="logo-img">
-                <div class="logo-text">
-                    <span class="brand-first">Smartphone</span>
-                    <span class="brand-second">hacks247</span>
-                </div>
+                <img src="smartphonehacks247_under_1mb.jpg" alt="Smartphonehacks247 Logo" class="logo-img">
+                <div class="logo-text">Smartphone<span>hacks247</span></div>
             </a>
 
             <ul class="nav-menu">
-                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">News</a></li>
                 <li><a href="#">Reviews</a></li>
                 <li><a href="#">Tips & Hacks</a></li>
+                <li><a href="#">Contact Us</a></li>
             </ul>
 
-            <div class="theme-controls" id="themeSwitch">
+            <div class="theme-toggle" id="themeToggle">
                 <button class="theme-btn active" data-theme="dark">Dark</button>
                 <button class="theme-btn" data-theme="light">Light</button>
             </div>
@@ -394,169 +628,86 @@
     </header>
 
     <div class="container">
-        <section class="hero-section">
+        
+        <!-- HERO & EDITOR PICKS SECTION -->
+        <section class="hero-layout">
             <div class="hero-card">
                 <div class="hero-img-wrap">
-                    <img src="pixels-media-17162701.jpeg" alt="Top Story">
+                    <img src="pexels-media-17162701.jpeg" alt="Flagship Phone Review">
                 </div>
                 <div class="hero-content">
                     <div class="badges-group">
                         <span class="badge top-story">Top Story</span>
-                        <span class="badge">Reviews</span>
+                        <span class="badge blue">Reviews</span>
+                        <span class="badge green">Android</span>
                     </div>
-                    <h1 class="hero-title">Flagship Showdown Review: The Best Camera Phone of 2026 Is Not The One You Think</h1>
+                    <h1 class="hero-title">Flagship Showdown Review: The Best Camera Phone of 2026 Is Not the One You Think</h1>
+                    <p style="color: var(--text-sub);">We spent three weeks testing, shooting, and draining batteries on this year's top flagships. One phone quietly beat them all on consistency.</p>
                     <div class="post-meta">
                         <span>Nov 3, 2026</span> • <span>2 min read</span>
                     </div>
-                    <p style="color: var(--text-sub);">We spent three weeks testing, shooting, and draining batteries on this year's top flagships. One phone quietly beat them all on consistency.</p>
+                    <div class="hero-btn-group">
+                        <a href="#" class="btn-primary">Read the full review &rarr;</a>
+                        <a href="#latest" class="btn-secondary">Browse latest posts</a>
+                    </div>
                 </div>
+            </div>
+
+            <!-- EDITOR'S PICKS SIDEBAR -->
+            <aside class="editor-picks">
+                <h3 class="sidebar-heading">Editor's Picks</h3>
+                <ul class="editor-list">
+                    <li class="editor-item">
+                        <img src="pexels-media-16345434.jpeg" alt="Foldables">
+                        <div class="editor-item-info">
+                            <p>News</p>
+                            <h4><a href="#">Breaking: The Next Wave of Foldables Is Thinner, Tougher, and Cheaper</a></h4>
+                        </div>
+                    </li>
+                    <li class="editor-item">
+                        <img src="pexels-media-1202575.jpeg" alt="Battery Hacks">
+                        <div class="editor-item-info">
+                            <p>Battery</p>
+                            <h4><a href="#">12 Battery Hacks That Actually Work (And 5 Myths to Ignore)</a></h4>
+                        </div>
+                    </li>
+                    <li class="editor-item">
+                        <img src="pexels-media-1028674.jpeg" alt="Hidden Android">
+                        <div class="editor-item-info">
+                            <p>Android</p>
+                            <h4><a href="#">15 Hidden Android Features You're Probably Not Using</a></h4>
+                        </div>
+                    </li>
+                    <li class="editor-item">
+                        <img src="pexels-media-17492110.jpeg" alt="Pro Camera">
+                        <div class="editor-item-info">
+                            <p>Reviews</p>
+                            <h4><a href="#">Pro Camera Phone Review: Computational Photography Hits a New Peak</a></h4>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+        </section>
+
+        <!-- SEARCH & FILTER BAR -->
+        <section class="filter-section">
+            <div class="search-box">
+                <input type="text" placeholder="Search reviews, hacks, phones...">
+            </div>
+            <div class="filter-pills">
+                <button class="pill active">All</button>
+                <button class="pill">Reviews</button>
+                <button class="pill">Android</button>
+                <button class="pill">Hacks</button>
+                <button class="pill">News</button>
+                <button class="pill">Battery</button>
+                <button class="pill">Camera</button>
             </div>
         </section>
 
-        <div class="content-grid">
-            <main class="posts-feed">
-                <h2 class="section-title">Latest Articles</h2>
-                
-                <article class="post-card">
-                    <div class="card-img-wrap">
-                        <img src="pixels-media-16345434.jpeg" alt="News">
-                    </div>
-                    <div class="card-content">
-                        <span class="badge" style="background: #10b981; width: fit-content;">News</span>
-                        <h3>Breaking: The Next Wave of Foldables Is Thinner, Tougher, and Cheaper</h3>
-                        <div class="post-meta">Nov 2, 2026 • 1 min read</div>
-                    </div>
-                </article>
-
-                <article class="post-card">
-                    <div class="card-img-wrap">
-                        <img src="pixels-media-1202575.jpeg" alt="Battery">
-                    </div>
-                    <div class="card-content">
-                        <span class="badge" style="background: #f59e0b; width: fit-content;">Battery</span>
-                        <h3>12 Battery Hacks That Actually Work (And 5 Myths to Ignore)</h3>
-                        <div class="post-meta">Nov 1, 2026 • 2 min read</div>
-                    </div>
-                </article>
-
-                <article class="post-card">
-                    <div class="card-img-wrap">
-                        <img src="pixels-media-1028674.jpeg" alt="Android">
-                    </div>
-                    <div class="card-content">
-                        <span class="badge" style="background: #3b82f6; width: fit-content;">Android</span>
-                        <h3>15 Hidden Android Features You're Probably Not Using</h3>
-                        <div class="post-meta">Oct 30, 2026 • 1 min read</div>
-                    </div>
-                </article>
-            </main>
-
-            <aside class="sidebar">
-                <div class="sidebar-card">
-                    <h3>Popular Now</h3>
-                    <ul class="popular-list">
-                        <li class="popular-item">
-                            <span class="popular-number">01</span>
-                            <div class="popular-content">
-                                <h4>Flagship Showdown Review</h4>
-                            </div>
-                        </li>
-                        <li class="popular-item">
-                            <span class="popular-number">02</span>
-                            <div class="popular-content">
-                                <h4>Foldable Tech Advances</h4>
-                            </div>
-                        </li>
-                        <li class="popular-item">
-                            <span class="popular-number">03</span>
-                            <div class="popular-content">
-                                <h4>Real Battery Conservation Tips</h4>
-                            </div>
-                        </li>
-                        <li class="popular-item">
-                            <span class="popular-number">04</span>
-                            <div class="popular-content">
-                                <h4>Hidden Android Tricks</h4>
-                            </div>
-                        </li>
-                        <li class="popular-item">
-                            <span class="popular-number">05</span>
-                            <div class="popular-content">
-                                <h4>Fast Charging Myths Tested</h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <img src="smartphonehacks247_under_1mb.jpg" alt="Logo" class="logo-img">
-                        <div class="logo-text">
-                            <span class="brand-first">Smartphone</span>
-                            <span class="brand-second">hacks247</span>
-                        </div>
-                    </a>
-                    <p>Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news.</p>
-                    <a href="#" class="yt-btn">
-                        <span>▶</span> YouTube Channel
-                    </a>
-                </div>
-
-                <div class="footer-col">
-                    <h5>Explore</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">Reviews</a></li>
-                        <li><a href="#">Tips & Hacks</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h5>Topics</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Android</a></li>
-                        <li><a href="#">Battery</a></li>
-                        <li><a href="#">Camera</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h5>Legal</h5>
-                    <ul class="footer-links">
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Use</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="copyright">
-                © 2026 Smartphonehacks247. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const themeSwitch = document.getElementById('themeSwitch');
-        const buttons = themeSwitch.querySelectorAll('.theme-btn');
-        const htmlElement = document.documentElement;
-
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                buttons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                const selectedTheme = button.getAttribute('data-theme');
-                htmlElement.setAttribute('data-theme', selectedTheme);
-            });
-        });
-    </script>
-</body>
-    </html>
-    
+        <!-- MAIN FEED + POPULAR SIDEBAR -->
+        <div class="main-grid" id="latest">
+            <main class="feed-container">
+                <div class="feed-header">
+                    <p>Latest Posts</p>
+                    <h2>Fresh from the news
