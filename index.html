@@ -6,15 +6,10 @@
 <title>Smartphonehacks247 — Smartphone Reviews, Tips & Tech News</title>
 <meta name="description" content="Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news — around the clock.">
 <meta name="theme-color" content="#4f6bff">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Smartphonehacks247">
-<meta property="og:description" content="Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news — around the clock.">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>
-  // Apply saved theme before paint (no flash)
   (function () {
     try {
       var t = localStorage.getItem('theme');
@@ -82,7 +77,7 @@ ul,ol{list-style:none}
 .btn-ghost{background:rgba(255,255,255,.16);color:#fff;backdrop-filter:blur(6px)}
 .btn-ghost:hover{background:rgba(255,255,255,.28)}
 
-/* Cards / sidebar boxes */
+/* Panels & Sidebar */
 .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
 .panel h2{font-size:1.1rem;font-weight:800;letter-spacing:-.01em;margin-bottom:16px}
 .picks li{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--border)}
@@ -90,7 +85,7 @@ ul,ol{list-style:none}
 .picks li:first-child{padding-top:0}
 .picks img{width:76px;height:76px;border-radius:12px;object-fit:cover;flex:none}
 .cat{font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--brand)}
-.picks h3{font-size:.92rem;line-height:1.35;font-weight:700;margin-top:2px;transition:color .2s}
+.picks h3{font-size:.92rem;line-height:1.35;font-weight:700;margin-top:2px}
 .picks a:hover h3,.pop a:hover h3{color:var(--brand)}
 
 /* Search + filters */
@@ -124,7 +119,6 @@ ul,ol{list-style:none}
 .card p{font-size:.9rem;color:var(--muted);flex:1}
 .author{font-size:.8rem;font-weight:600;padding-top:10px;border-top:1px solid var(--border)}
 .empty{grid-column:1/-1;text-align:center;padding:50px 20px;color:var(--muted);background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius)}
-[hidden]{display:none!important}
 
 /* Right sidebar */
 .side{display:flex;flex-direction:column;gap:22px;position:sticky;top:88px}
@@ -140,11 +134,47 @@ ul,ol{list-style:none}
 .newsletter .btn{width:100%;background:#12141f;color:#fff}
 .newsletter .btn:hover{background:#000}
 .news-msg{margin-top:10px;font-size:.85rem;font-weight:600}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.stat{display:flex;flex-direction:column;padding:14px;border-radius:12px;background:var(--surface-2);transition:.2s}
-.stat:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--brand) 14%,var(--surface-2))}
-.stat b{font-size:1.25rem;font-weight:800;letter-spacing:-.02em}
-.stat span{font-size:.78rem;color:var(--muted);font-weight:600}
+
+/* YouTube Channel Box in Sidebar */
+.yt-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.yt-box img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.yt-box h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.yt-btn-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #ff0000;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  width: 100%;
+  transition: opacity 0.2s;
+}
+.yt-btn-main:hover {
+  opacity: 0.9;
+}
 
 /* Footer */
 .site-footer{background:var(--surface);border-top:1px solid var(--border);padding:52px 0 26px}
@@ -188,7 +218,7 @@ ul,ol{list-style:none}
       <a href="#" data-cat="News">News</a>
       <a href="#" data-cat="Reviews">Reviews</a>
       <a href="#" data-cat="Hacks">Tips &amp; Hacks</a>
-      <a href="#">Contact Us</a>
+      <a href="privacy.html">Privacy Policy</a>
     </nav>
     <div class="header-actions">
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark / light mode">
@@ -279,13 +309,15 @@ ul,ol{list-style:none}
         </form>
       </div>
 
+      <!-- YouTube Channel Box -->
       <div class="panel">
-        <h2>Follow Smartphonehacks247</h2>
-        <div class="stats">
-          <a class="stat" href="https://x.com/smartphonehacks247" target="_blank" rel="noopener"><b>48K</b><span>X</span></a>
-          <a class="stat" href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener"><b>212K</b><span>YouTube</span></a>
-          <a class="stat" href="https://instagram.com/smartphonehacks247" target="_blank" rel="noopener"><b>96K</b><span>Instagram</span></a>
-          <a class="stat" href="https://tiktok.com/@smartphonehacks247" target="_blank" rel="noopener"><b>310K</b><span>TikTok</span></a>
+        <h2>YouTube Channel</h2>
+        <div class="yt-box">
+          <img src="https://smartphonehacks247.netlify.app/img/logo.png" alt="ClipPodCentral Logo">
+          <h3>ClipPodCentral</h3>
+          <a class="yt-btn-main" href="https://youtube.com/@ClipPodCentral" target="_blank" rel="noopener">
+            ▶ YouTube Channel
+          </a>
         </div>
       </div>
     </aside>
@@ -300,10 +332,7 @@ ul,ol{list-style:none}
         <a class="brand" href="/"><img src="https://smartphonehacks247.netlify.app/img/logo.png" alt="">Smartphonehacks247</a>
         <p>Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news — around the clock.</p>
         <div class="socials">
-          <a href="https://x.com/smartphonehacks247" target="_blank" rel="noopener" aria-label="X">X</a>
-          <a href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
-          <a href="https://instagram.com/smartphonehacks247" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-          <a href="https://tiktok.com/@smartphonehacks247" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+          <a href="https://youtube.com/@ClipPodCentral" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
         </div>
       </div>
       <div>
@@ -321,8 +350,20 @@ ul,ol{list-style:none}
           <li><a href="#" data-cat="Android">Android</a></li>
           <li><a href="#" data-cat="Battery">Battery</a></li>
           <li><a href="#" data-cat="Camera">Camera</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
-    
+    <div class="foot-bottom">
+      <span>© 2026 Smartphonehacks247. All rights reserved.</span>
+      <span>Reviews · Tips · Hacks · News — 24/7</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var IMG = 'https://smartphonehacks247.netlify.app/img/';
+  var posts = [
+    {t:'Flagship Showdown Review: The Best Camera Phone of 2026 Is Not the One You Think',c:'Reviews',d:'Nov 3, 2026',r:'2 min read',a:'Maya Chen',i:'flagship-review.jpg',x:'We spent three weeks shooting, gaming, and draining batteries on this year’s top flagships. One phone quietly beat them all on consistency.'},
+    {t:'Breaking: The Next Wave
