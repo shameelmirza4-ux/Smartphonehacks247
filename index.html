@@ -12,7 +12,7 @@
             --text-sub: #94a3b8;
             --accent-blue: #3b82f6;
             --border-color: #1e293b;
-            --header-bg: rgba(11, 15, 25, 0.9);
+            --header-bg: rgba(11, 15, 25, 0.95);
         }
 
         [data-theme="light"] {
@@ -22,18 +22,18 @@
             --text-sub: #475569;
             --accent-blue: #2563eb;
             --border-color: #e2e8f0;
-            --header-bg: rgba(255, 255, 255, 0.9);
+            --header-bg: rgba(255, 255, 255, 0.95);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            transition: background-color 0.2s ease, color 0.2s ease;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.5;
@@ -45,15 +45,15 @@
             padding: 0 16px;
         }
 
-        /* Header */
+        /* Compact Header */
         header {
             position: sticky;
             top: 0;
             background: var(--header-bg);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
-            padding: 12px 0;
+            padding: 10px 0;
         }
 
         .nav-container {
@@ -65,22 +65,21 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
         }
 
         .logo-img {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            object-fit: cover;
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 4px;
         }
 
         .logo-text {
             display: flex;
-            letter-spacing: -0.5px;
         }
 
         .brand-first {
@@ -94,78 +93,90 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 24px;
+            gap: 20px;
         }
 
         .nav-menu a {
             color: var(--text-sub);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
-        .nav-menu a:hover, .nav-menu a.active {
+        .nav-menu a:hover {
             color: var(--accent-blue);
         }
 
+        /* Toggle Button */
         .theme-controls {
             display: flex;
-            align-items: center;
             background: var(--border-color);
-            padding: 4px;
-            border-radius: 30px;
-            cursor: pointer;
-            border: 1px solid var(--border-color);
+            padding: 3px;
+            border-radius: 20px;
         }
 
         .theme-btn {
             background: transparent;
             border: none;
             color: var(--text-sub);
-            padding: 6px 14px;
-            border-radius: 20px;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
             font-weight: 600;
-            font-size: 0.85rem;
             cursor: pointer;
-            transition: all 0.2s ease;
         }
 
         .theme-btn.active {
-            background: var(--card-bg);
-            color: var(--accent-blue);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: var(--bg-color);
+            color: var(--text-main);
         }
 
         /* Hero Section */
         .hero-section {
-            padding: 30px 0;
+            padding: 24px 0;
         }
 
         .hero-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 32px;
+            border-radius: 12px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+        }
+
+        .hero-img-wrap {
+            width: 100%;
+            height: 300px;
+            background-color: var(--border-color);
+        }
+
+        .hero-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .badges-group {
             display: flex;
             gap: 8px;
-            flex-wrap: wrap;
         }
 
         .badge {
             background: var(--border-color);
             color: var(--text-main);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 800;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .badge.top-story {
@@ -174,68 +185,83 @@
         }
 
         .hero-title {
-            font-size: 2.22rem;
-            line-height: 1.2;
-            font-weight: 700;
+            font-size: 1.8rem;
+            line-height: 1.3;
         }
 
         .post-meta {
             color: var(--text-sub);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
         }
 
-        .hero-desc {
-            color: var(--text-sub);
-            font-size: 1.1rem;
-        }
-
-        /* Main Grid */
+        /* Grid Layout */
         .content-grid {
             display: grid;
-            grid-template-columns: 1.8fr 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
         }
 
         .section-title {
-            font-size: 1.75rem;
-            margin-bottom: 24px;
-            font-weight: 700;
+            font-size: 1.5berries;
+            margin-bottom: 20px;
         }
 
         .post-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-bottom: 20px;
         }
 
-        .post-card h3 {
-            font-size: 1.4rem;
+        .card-img-wrap {
+            width: 100%;
+            height: 180px;
+            background-color: var(--border-color);
+        }
+
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .card-content h3 {
+            font-size: 1.2rem;
             line-height: 1.3;
         }
 
         /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
         .sidebar-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 28px;
-            position: sticky;
-            top: 100px;
+            border-radius: 12px;
+            padding: 20px;
         }
 
         .sidebar-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -243,26 +269,25 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 16px;
         }
 
         .popular-item {
             display: flex;
             align-items: flex-start;
-            gap: 16px;
+            gap: 12px;
         }
 
         .popular-number {
-            font-size: 1.8rem;
-            font-weight: 900;
+            font-size: 1.5rem;
+            font-weight: 800;
             color: var(--accent-blue);
             line-height: 1;
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
         .popular-content h4 {
-            font-size: 1.05rem;
-            margin-bottom: 4px;
+            font-size: 0.95rem;
             line-height: 1.3;
         }
 
@@ -270,132 +295,75 @@
         footer {
             background: var(--card-bg);
             border-top: 1px solid var(--border-color);
-            padding: 60px 0 30px;
-            margin-top: auto;
+            padding: 40px 0 20px;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
+            gap: 30px;
+            margin-bottom: 30px;
         }
 
         .footer-brand {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
         }
 
         .footer-brand p {
             color: var(--text-sub);
-            font-size: 0.95rem;
-            max-width: 300px;
+            font-size: 0.85rem;
         }
 
-        .subscribe-box {
-            background: var(--bg-color);
-            padding: 24px;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 40px;
-        }
-
-        .subscribe-box h4 {
-            font-size: 1.2rem;
-        }
-
-        .sub-input-group {
-            display: flex;
-            gap: 8px;
-        }
-
-        .sub-input-group input {
-            flex: 1;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 12px 16px;
-            border-radius: 8px;
-            color: var(--text-main);
-            outline: none;
-        }
-
-        .sub-btn {
-            background: var(--accent-blue);
-            color: #ffffff;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        .yt-channel-link {
+        .yt-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
             background: #ff0000;
             color: #ffffff !important;
-            padding: 12px 20px;
-            border-radius: 8px;
+            padding: 8px 16px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 700;
+            font-size: 0.85rem;
             width: fit-content;
         }
 
         .footer-col h5 {
-            font-size: 1.1rem;
-            margin-bottom: 16px;
-            color: var(--text-main);
+            font-size: 1rem;
+            margin-bottom: 12px;
         }
 
         .footer-links {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
         }
 
         .footer-links a {
             color: var(--text-sub);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
         }
 
         .footer-links a:hover {
             color: var(--accent-blue);
         }
 
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 30px;
+        .copyright {
+            text-align: center;
             border-top: 1px solid var(--border-color);
+            padding-top: 20px;
             color: var(--text-sub);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+            font-size: 0.8rem;
         }
 
         @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
+            .content-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .nav-menu { display: none; }
         }
     </style>
 </head>
@@ -404,7 +372,7 @@
     <header>
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="YT-1024x576.jpg" alt="Logo" class="logo-img">
+                <img src="smartphonehacks247_under_1mb.jpg" alt="Logo" class="logo-img">
                 <div class="logo-text">
                     <span class="brand-first">Smartphone</span>
                     <span class="brand-second">hacks247</span>
@@ -412,7 +380,7 @@
             </a>
 
             <ul class="nav-menu">
-                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#">News</a></li>
                 <li><a href="#">Reviews</a></li>
                 <li><a href="#">Tips & Hacks</a></li>
@@ -428,18 +396,20 @@
     <div class="container">
         <section class="hero-section">
             <div class="hero-card">
-                <div class="badges-group">
-                    <span class="badge top-story">Top Story</span>
-                    <span class="badge">Reviews</span>
-                    <span class="badge">Android</span>
+                <div class="hero-img-wrap">
+                    <img src="pixels-media-17162701.jpeg" alt="Top Story">
                 </div>
-                <h1 class="hero-title">Flagship Showdown Review: The Best Camera Phone of 2026 Is Not The One You Think</h1>
-                <div class="post-meta">
-                    <span>Nov 3, 2026</span>
-                    <span>•</span>
-                    <span>2 min read</span>
+                <div class="hero-content">
+                    <div class="badges-group">
+                        <span class="badge top-story">Top Story</span>
+                        <span class="badge">Reviews</span>
+                    </div>
+                    <h1 class="hero-title">Flagship Showdown Review: The Best Camera Phone of 2026 Is Not The One You Think</h1>
+                    <div class="post-meta">
+                        <span>Nov 3, 2026</span> • <span>2 min read</span>
+                    </div>
+                    <p style="color: var(--text-sub);">We spent three weeks testing, shooting, and draining batteries on this year's top flagships. One phone quietly beat them all on consistency.</p>
                 </div>
-                <p class="hero-desc">We spent three weeks testing, shooting, and draining batteries on this year's top flagships. One phone quietly beat them all on consistency.</p>
             </div>
         </section>
 
@@ -448,30 +418,36 @@
                 <h2 class="section-title">Latest Articles</h2>
                 
                 <article class="post-card">
-                    <div class="badges-group">
-                        <span class="badge" style="background: #10b981; color: #fff;">News</span>
+                    <div class="card-img-wrap">
+                        <img src="pixels-media-16345434.jpeg" alt="News">
                     </div>
-                    <h3>Breaking: The Next Wave of Foldables Is Thinner, Tougher, and Cheaper</h3>
-                    <div class="post-meta">Nov 2, 2026 • 1 min read</div>
-                    <p style="color: var(--text-sub);">Industry sources point to sub-10 mm folded designs and crease-free displays arriving in early 2027 — at noticeably...</p>
+                    <div class="card-content">
+                        <span class="badge" style="background: #10b981; width: fit-content;">News</span>
+                        <h3>Breaking: The Next Wave of Foldables Is Thinner, Tougher, and Cheaper</h3>
+                        <div class="post-meta">Nov 2, 2026 • 1 min read</div>
+                    </div>
                 </article>
 
                 <article class="post-card">
-                    <div class="badges-group">
-                        <span class="badge" style="background: #f59e0b; color: #fff;">Battery</span>
+                    <div class="card-img-wrap">
+                        <img src="pixels-media-1202575.jpeg" alt="Battery">
                     </div>
-                    <h3>12 Battery Hacks That Actually Work (And 5 Myths to Ignore)</h3>
-                    <div class="post-meta">Nov 1, 2026 • 2 min read</div>
-                    <p style="color: var(--text-sub);">Squeeze hours of extra life out of any smartphone with settings most people never touch — tested on both iOS and...</p>
+                    <div class="card-content">
+                        <span class="badge" style="background: #f59e0b; width: fit-content;">Battery</span>
+                        <h3>12 Battery Hacks That Actually Work (And 5 Myths to Ignore)</h3>
+                        <div class="post-meta">Nov 1, 2026 • 2 min read</div>
+                    </div>
                 </article>
 
                 <article class="post-card">
-                    <div class="badges-group">
-                        <span class="badge" style="background: #3b82f6; color: #fff;">Android</span>
+                    <div class="card-img-wrap">
+                        <img src="pixels-media-1028674.jpeg" alt="Android">
                     </div>
-                    <h3>15 Hidden Android Features You're Probably Not Using</h3>
-                    <div class="post-meta">Oct 30, 2026 • 1 min read</div>
-                    <p style="color: var(--text-sub);">From secret developer toggles to gestures, these buried Android tricks will make your phone feel brand new.</p>
+                    <div class="card-content">
+                        <span class="badge" style="background: #3b82f6; width: fit-content;">Android</span>
+                        <h3>15 Hidden Android Features You're Probably Not Using</h3>
+                        <div class="post-meta">Oct 30, 2026 • 1 min read</div>
+                    </div>
                 </article>
             </main>
 
@@ -483,35 +459,30 @@
                             <span class="popular-number">01</span>
                             <div class="popular-content">
                                 <h4>Flagship Showdown Review</h4>
-                                <span class="post-meta" style="font-size: 0.8rem;">Nov 3, 2026</span>
                             </div>
                         </li>
                         <li class="popular-item">
                             <span class="popular-number">02</span>
                             <div class="popular-content">
                                 <h4>Foldable Tech Advances</h4>
-                                <span class="post-meta" style="font-size: 0.8rem;">Nov 2, 2026</span>
                             </div>
                         </li>
                         <li class="popular-item">
                             <span class="popular-number">03</span>
                             <div class="popular-content">
                                 <h4>Real Battery Conservation Tips</h4>
-                                <span class="post-meta" style="font-size: 0.8rem;">Nov 1, 2026</span>
                             </div>
                         </li>
                         <li class="popular-item">
                             <span class="popular-number">04</span>
                             <div class="popular-content">
                                 <h4>Hidden Android Tricks</h4>
-                                <span class="post-meta" style="font-size: 0.8rem;">Oct 30, 2026</span>
                             </div>
                         </li>
                         <li class="popular-item">
                             <span class="popular-number">05</span>
                             <div class="popular-content">
                                 <h4>Fast Charging Myths Tested</h4>
-                                <span class="post-meta" style="font-size: 0.8rem;">Oct 25, 2026</span>
                             </div>
                         </li>
                     </ul>
@@ -522,26 +493,17 @@
 
     <footer>
         <div class="container">
-            <div class="subscribe-box">
-                <h4>The 24/7 Hacks Digest</h4>
-                <p style="color: var(--text-sub); font-size: 0.95rem;">One email a week: the best tips, reviews, and breaking phone news. No spam.</p>
-                <div class="sub-input-group">
-                    <input type="email" placeholder="you@example.com">
-                    <button class="sub-btn">Subscribe free</button>
-                </div>
-            </div>
-
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <img src="YT-1024x576.jpg" alt="Logo" class="logo-img">
+                        <img src="smartphonehacks247_under_1mb.jpg" alt="Logo" class="logo-img">
                         <div class="logo-text">
                             <span class="brand-first">Smartphone</span>
                             <span class="brand-second">hacks247</span>
                         </div>
                     </a>
-                    <p>Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news — around the clock.</p>
-                    <a href="https://youtube.com/@smartphonehacks247" class="yt-channel-link">
+                    <p>Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news.</p>
+                    <a href="#" class="yt-btn">
                         <span>▶</span> YouTube Channel
                     </a>
                 </div>
@@ -566,17 +528,16 @@
                 </div>
 
                 <div class="footer-col">
-                    <h5>Legal & Contact</h5>
+                    <h5>Legal</h5>
                     <ul class="footer-links">
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms of Use</a></li>
-                        <li><a href="mailto:hello@smartphonehacks247.com">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <span>© 2026 Smartphonehacks247. All rights reserved.</span>
+            <div class="copyright">
+                © 2026 Smartphonehacks247. All rights reserved.
             </div>
         </div>
     </footer>
@@ -597,5 +558,5 @@
         });
     </script>
 </body>
-                            </html>
-                            
+    </html>
+    
