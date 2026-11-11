@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="light">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,9 +41,18 @@
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
         .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.25rem; }
         .logo img { height: 36px; width: auto; }
+        .nav-links { display: none; gap: 1.5rem; align-items: center; }
+        @media(min-width: 768px) { .nav-links { display: flex; } }
+        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
         .nav-actions { display: flex; align-items: center; gap: 1rem; }
         .theme-toggle { background: none; border: 1px solid var(--border); color: var(--text); padding: 0.5rem; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; }
         main { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; }
+        .search-bar { margin-bottom: 2rem; display: flex; gap: 0.75rem; }
+        .search-input { flex-grow: 1; padding: 0.75rem 1rem; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 1rem; }
+        .categories-filter { display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem; margin-bottom: 2rem; }
+        .cat-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.2s; }
+        .cat-btn.active, .cat-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
         .hero-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); margin-bottom: 2rem; display: grid; grid-template-columns: 1fr; }
         @media(min-width: 768px) { .hero-card { grid-template-columns: 1.2fr 1fr; } }
         .hero-img { width: 100%; height: 280px; object-fit: cover; }
@@ -62,26 +71,38 @@
         .card-meta { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
         .card-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.4; }
         .card-desc { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
+        .newsletter-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; text-align: center; margin: 3rem 0; box-shadow: var(--shadow); }
+        .newsletter-box h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .newsletter-box p { color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .newsletter-form { display: flex; gap: 0.75rem; max-width: 450px; margin: 0 auto; flex-direction: column; }
+        @media(min-width: 500px) { .newsletter-form { flex-direction: row; } }
         .site-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 3rem 0; margin-top: 4rem; }
-        .footer-grid { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
         .footer-grid h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
         .footer-grid ul { list-style: none; }
         .footer-grid li { margin-bottom: 0.5rem; }
         .footer-grid a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
         .footer-grid a:hover { color: var(--primary); }
-        .article-full { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin-top: 2rem; display: none; }
-        .article-full h1 { font-size: 2rem; margin-bottom: 1rem; }
-        .article-full p { margin-bottom: 1rem; color: var(--text-secondary); }
+        .article-full { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; margin-top: 2rem; display: none; }
+        .article-full h1 { font-size: 2.25rem; margin-bottom: 1rem; line-height: 1.2; }
+        .article-full p { margin-bottom: 1.25rem; color: var(--text-secondary); font-size: 1.05rem; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="#" class="logo" id="brandHome">
                 <img src="https://shameelmirza.github.io/img/logo.png" alt="Logo">
                 <span>SmartphoneHacks247</span>
             </a>
+            <nav class="nav-links">
+                <a href="#" class="nav-link-filter" data-cat="All">Home</a>
+                <a href="#" class="nav-link-filter" data-cat="Reviews">Reviews</a>
+                <a href="#" class="nav-link-filter" data-cat="Android">Android</a>
+                <a href="#" class="nav-link-filter" data-cat="Battery">Battery</a>
+                <a href="#" class="nav-link-filter" data-cat="Camera">Camera</a>
+            </nav>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">🌙</button>
             </div>
@@ -89,19 +110,42 @@
     </header>
 
     <main>
-        <div id="articleView" style="display:none;">
+        <div id="articleView" class="article-full">
             <button class="btn" id="back-home" style="margin-bottom: 1.5rem;">← Back to Home</button>
             <div id="fullArticleContent"></div>
         </div>
 
         <div id="homeView">
+            <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search reviews, tips, hacks, guides...">
+            </div>
+
+            <div class="categories-filter" id="categoriesFilter">
+                <button class="cat-btn active" data-cat="All">All</button>
+                <button class="cat-btn" data-cat="Reviews">Reviews</button>
+                <button class="cat-btn" data-cat="Android">Android</button>
+                <button class="cat-btn" data-cat="Battery">Battery</button>
+                <button class="cat-btn" data-cat="Camera">Camera</button>
+                <button class="cat-btn" data-cat="News">News</button>
+                <button class="cat-btn" data-cat="Tips & Hacks">Tips & Hacks</button>
+            </div>
+
             <section class="hero-section" id="heroSection">
-                <!-- Hero content loaded via JS -->
+                <!-- Hero loaded via JS -->
             </section>
 
-            <h2 class="section-title">Editor's Picks</h2>
+            <h2 class="section-title" id="sectionHeading">Editor's Picks</h2>
             <div class="grid" id="editorsPicks">
-                <!-- Grid content loaded via JS -->
+                <!-- Grid items loaded via JS -->
+            </div>
+
+            <div class="newsletter-box">
+                <h3>The 24/7 Hacks Digest</h3>
+                <p>Get the absolute best tech reviews, smart tips and hidden tricks delivered directly to your inbox every week.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="search-input" id="newsletterEmail">
+                    <button class="btn" id="subscribeBtn">Subscribe Free</button>
+                </div>
             </div>
         </div>
     </main>
@@ -115,10 +159,18 @@
             <div>
                 <h4>Explore Topics</h4>
                 <ul>
-                    <li><a href="#" data-cat="Android">Android Tips</a></li>
-                    <li><a href="#" data-cat="Reviews">Phone Reviews</a></li>
-                    <li><a href="#" data-cat="Battery">Battery Hacks</a></li>
-                    <li><a href="#" data-cat="Camera">Camera Secrets</a></li>
+                    <li><a href="#" class="nav-link-filter" data-cat="Android">Android Tips</a></li>
+                    <li><a href="#" class="nav-link-filter" data-cat="Reviews">Phone Reviews</a></li>
+                    <li><a href="#" class="nav-link-filter" data-cat="Battery">Battery Hacks</a></li>
+                    <li><a href="#" class="nav-link-filter" data-cat="Camera">Camera Secrets</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#" id="footerHome">Home Feed</a></li>
+                    <li><a href="#newsletterEmail">Newsletter</a></li>
+                    <li><a href="mailto:contact@smartphonehacks247.github.io">Contact Support</a></li>
                 </ul>
             </div>
             <div>
@@ -139,7 +191,7 @@
                 cat: 'Reviews',
                 date: 'Nov 3, 2026',
                 read: '2 min read',
-                content: 'Detailed review content goes here. Each flagship camera was tested under extreme low-light conditions, portrait lighting, and fast motion tracking.'
+                content: 'Detailed review content goes here. Each flagship camera was tested under extreme low-light conditions, portrait lighting, and fast motion tracking. We spent three weeks shooting, gaming, and draining batteries on this year’s top flagships. One phone quietly beat them all on consistency.'
             },
             {
                 h: 'Breaking: The Next Wave of Foldables Is Thinner, Tougher, and Finally Practical',
@@ -148,25 +200,25 @@
                 cat: 'News',
                 date: 'Nov 2, 2026',
                 read: '3 min read',
-                content: 'Foldable devices have taken a major leap forward with advanced titanium hinges and scratch-resistant ultra-thin glass layers.'
+                content: 'Foldable devices have taken a major leap forward with advanced titanium hinges and scratch-resistant ultra-thin glass layers. Our winner kept natural hinge angles and eliminated crease glare.'
             },
             {
                 h: '12 Battery Hacks That Actually Work (And 5 Myths You Can Stop Believing)',
                 p: 'Smart Battery Management, Adaptive Refresh Rates, and Background Execution Limits tested.',
                 img: IMG + 'battery.jpg',
-                cat: 'Battery & Performance',
+                cat: 'Battery',
                 date: 'Nov 1, 2026',
                 read: '4 min read',
-                content: 'Battery optimization guidelines for modern Android and iOS devices to maximize daily screen-on time.'
+                content: 'Battery optimization guidelines for modern Android and iOS devices to maximize daily screen-on time. Smart Battery Management, Adaptive Refresh Rates, and Background Execution Limits tested thoroughly.'
             },
             {
                 h: '15 Hidden Android Features You’re Probably Not Using',
                 p: 'Master quick split-screen toggles, hidden developer settings, and custom privacy shortcuts.',
                 img: IMG + 'android.jpg',
-                cat: 'Tips & Hacks',
+                cat: 'Android',
                 date: 'Oct 30, 2026',
                 read: '3 min read',
-                content: 'Deep dive into hidden configuration menus and gesture shortcuts available on your Realme and Android smartphones.'
+                content: 'Deep dive into hidden configuration menus and gesture shortcuts available on your Realme and Android smartphones. Master quick split-screen toggles, hidden developer settings, and custom privacy shortcuts.'
             },
             {
                 h: 'Pro Camera Phone Review: Computational Photography vs. Sensor Size',
@@ -175,20 +227,23 @@
                 cat: 'Camera',
                 date: 'Oct 28, 2026',
                 read: '5 min read',
-                content: 'Exploring how smartphone manufacturers balance physical glass optics with heavy neural network image pipelines.'
+                content: 'Exploring how smartphone manufacturers balance physical glass optics with heavy neural network image pipelines. Larger sensors capture intrinsic light, but AI processing cleans up noise in impossible ways.'
             },
             {
                 h: 'Does Fast Charging Ruin Your Battery? The 6-Month Test Results',
                 p: 'We tested 120W charging bricks against standard 25W adapters over half a year of constant use.',
                 img: IMG + 'charging.jpg',
-                cat: 'Battery & Performance',
+                cat: 'Battery',
                 date: 'Oct 25, 2026',
                 read: '3 min read',
-                content: 'Long-term data collection on battery health degradation under high-wattage fast charging protocols.'
+                content: 'Long-term data collection on battery health degradation under high-wattage fast charging protocols. We tested 120W charging bricks against standard 25W adapters over half a year of constant use.'
             }
         ];
 
-        // Theme Toggle Logic
+        var currentCategory = 'All';
+        var searchQuery = '';
+
+        // Theme Toggle
         var themeToggle = document.getElementById('themeToggle');
         var htmlElem = document.documentElement;
         themeToggle.addEventListener('click', function() {
@@ -202,36 +257,54 @@
             }
         });
 
-        // Render Hero & Grid
-        var heroElem = document.getElementById('heroSection');
-        var gridElem = document.getElementById('editorsPicks');
+        // Render Posts Function
+        function renderContent() {
+            var heroElem = document.getElementById('heroSection');
+            var gridElem = document.getElementById('editorsPicks');
+            
+            var filtered = posts.filter(function(p) {
+                var matchesCat = (currentCategory === 'All' || p.cat === currentCategory);
+                var matchesSearch = p.h.toLowerCase().includes(searchQuery.toLowerCase()) || p.p.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCat && matchesSearch;
+            });
 
-        if(heroElem && posts.length > 0) {
-            var topPost = posts[0];
-            heroElem.innerHTML = `
-                <div class="hero-card">
-                    <img src="${topPost.img}" alt="${topPost.h}" class="hero-img">
-                    <div class="hero-content">
-                        <span class="badge">Top Story</span>
-                        <h1 class="hero-title">${topPost.h}</h1>
-                        <p class="hero-desc">${topPost.p}</p>
-                        <button class="btn read-more-btn" data-index="0">Read full review</button>
+            if(filtered.length === 0) {
+                heroElem.innerHTML = '';
+                gridElem.innerHTML = '<p style="grid-column: 1/-1; text-align:center; color:var(--text-secondary); padding: 3rem 0;">No articles found matching your criteria.</p>';
+                return;
+            }
+
+            // Hero section (only if on 'All' or matches first item and no search query)
+            if(currentCategory === 'All' && searchQuery === '') {
+                var topPost = filtered[0];
+                heroElem.innerHTML = `
+                    <div class="hero-card">
+                        <img src="${topPost.img}" alt="${topPost.h}" class="hero-img">
+                        <div class="hero-content">
+                            <span class="badge">Top Story</span>
+                            <h1 class="hero-title">${topPost.h}</h1>
+                            <p class="hero-desc">${topPost.p}</p>
+                            <button class="btn read-more-btn" data-title="${encodeURIComponent(topPost.h)}">Read full review</button>
+                        </div>
                     </div>
-                </div>
-            `;
-        }
+                `;
+            } else {
+                heroElem.innerHTML = '';
+            }
 
-        if(gridElem) {
+            // Grid section
             var gridHtml = '';
-            for(var i = 1; i < posts.length; i++) {
+            var startIndex = (currentCategory === 'All' && searchQuery === '') ? 1 : 0;
+            for(var i = startIndex; i < filtered.length; i++) {
+                var post = filtered[i];
                 gridHtml += `
                     <div class="card">
-                        <img src="${posts[i].img}" alt="${posts[i].h}" class="card-img">
+                        <img src="${post.img}" alt="${post.h}" class="card-img">
                         <div class="card-body">
-                            <div class="card-meta">${posts[i].date} • ${posts[i].read}</div>
-                            <h3 class="card-title">${posts[i].h}</h3>
-                            <p class="card-desc">${posts[i].p}</p>
-                            <button class="btn read-more-btn" data-index="${i}">Read full review</button>
+                            <div class="card-meta">${post.date} • ${post.read}</div>
+                            <h3 class="card-title">${post.h}</h3>
+                            <p class="card-desc">${post.p}</p>
+                            <button class="btn read-more-btn" data-title="${encodeURIComponent(post.h)}">Read full review</button>
                         </div>
                     </div>
                 `;
@@ -239,30 +312,107 @@
             gridElem.innerHTML = gridHtml;
         }
 
+        renderContent();
+
+        // Search listener
+        var searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function(e) {
+            searchQuery = e.target.value;
+            renderContent();
+        });
+
+        // Category filter buttons
+        var catButtons = document.querySelectorAll('.cat-btn');
+        catButtons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                catButtons.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                currentCategory = btn.getAttribute('data-cat');
+                renderContent();
+            });
+                // Navbar & Footer category links
+        var navLinks = document.querySelectorAll('.nav-link-filter');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                currentCategory = link.getAttribute('data-cat');
+                searchQuery = '';
+                searchInput.value = '';
+                document.getElementById('homeView').style.display = 'block';
+                document.getElementById('articleView').style.display = 'none';
+                renderContent();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        });
+
+        // Home navigation
+        document.getElementById('brandHome').addEventListener('click', function(e) {
+            e.preventDefault();
+            currentCategory = 'All';
+            searchQuery = '';
+            searchInput.value = '';
+            document.getElementById('homeView').style.display = 'block';
+            document.getElementById('articleView').style.display = 'none';
+            renderContent();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        var footerHome = document.getElementById('footerHome');
+        if(footerHome) {
+            footerHome.addEventListener('click', function(e) {
+                e.preventDefault();
+                currentCategory = 'All';
+                searchQuery = '';
+                searchInput.value = '';
+                document.getElementById('homeView').style.display = 'block';
+                document.getElementById('articleView').style.display = 'none';
+                renderContent();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        }
+
         // Open full article view
         document.addEventListener('click', function(e) {
             if(e.target && e.target.classList.contains('read-more-btn')) {
-                var idx = e.target.getAttribute('data-index');
-                var post = posts[idx];
-                document.getElementById('homeView').style.display = 'none';
-                document.getElementById('articleView').style.display = 'block';
-                document.getElementById('fullArticleContent').innerHTML = `
-                    <h1>${post.h}</h1>
-                    <p><strong>Published:</strong> ${post.date} • ${post.read}</p>
-                    <img src="${post.img}" alt="${post.h}" style="width:100%; max-height:400px; object-fit:cover; border-radius:12px; margin: 1.5rem 0;">
-                    <p>${post.content}</p>
-                    <p>${post.p}</p>
-                `;
-                window.scrollTo({top: 0, behavior: 'smooth'});
+                var title = decodeURIComponent(e.target.getAttribute('data-title'));
+                var post = posts.find(function(p) { return p.h === title; });
+                if(post) {
+                    document.getElementById('homeView').style.display = 'none';
+                    var articleView = document.getElementById('articleView');
+                    articleView.style.display = 'block';
+                    document.getElementById('fullArticleContent').innerHTML = `
+                        <h1>${post.h}</h1>
+                        <p><strong>Published:</strong> ${post.date} • ${post.read} • <em>Category: ${post.cat}</em></p>
+                        <img src="${post.img}" alt="${post.h}" style="width:100%; max-height:420px; object-fit:cover; border-radius:12px; margin: 1.5rem 0;">
+                        <p>${post.content}</p>
+                        <p>${post.p}</p>
+                    `;
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }
             }
         });
 
+        // Back to home button
         var backHomeBtn = document.getElementById('back-home');
         if(backHomeBtn) {
             backHomeBtn.addEventListener('click', function() {
                 document.getElementById('articleView').style.display = 'none';
                 document.getElementById('homeView').style.display = 'block';
                 window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        }
+
+        // Newsletter subscribe button
+        var subscribeBtn = document.getElementById('subscribeBtn');
+        if(subscribeBtn) {
+            subscribeBtn.addEventListener('click', function() {
+                var emailInput = document.getElementById('newsletterEmail');
+                if(emailInput && emailInput.value.trim() !== '') {
+                    alert('Thank you for subscribing to SmartphoneHacks247!');
+                    emailInput.value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
             });
         }
     })();
