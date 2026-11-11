@@ -88,12 +88,6 @@ button{font-family:inherit}
 .hero h1{font-size:clamp(1.55rem,3.2vw,2.5rem);line-height:1.15;letter-spacing:-.025em;font-weight:800;margin-bottom:12px}
 .hero p{color:rgba(255,255,255,.86);font-size:1.02rem;margin-bottom:16px}
 .meta{font-size:.82rem;color:rgba(255,255,255,.75);display:flex;gap:12px;margin-bottom:20px}
-.btns{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:700;font-size:.92rem;border:0;cursor:pointer;transition:.2s;text-align:center}
-.btn-primary{background:var(--brand);color:#fff}
-.btn-primary:hover{filter:brightness(1.1);transform:translateY(-1px)}
-.btn-ghost{background:rgba(255,255,255,.16);color:#fff;backdrop-filter:blur(6px)}
-.btn-ghost:hover{background:rgba(255,255,255,.28)}
 
 /* Panels */
 .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
@@ -137,7 +131,6 @@ button{font-family:inherit}
 .card h3 a:hover{color:var(--brand)}
 .card p{font-size:.9rem;color:var(--muted);flex:1}
 .author{font-size:.8rem;font-weight:600;padding-top:10px;border-top:1px solid var(--border)}
-.empty{grid-column:1/-1;text-align:center;padding:50px 20px;color:var(--muted);background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius)}
 
 /* Sidebar */
 .side{display:flex;flex-direction:column;gap:22px;position:sticky;top:88px;min-width:0}
@@ -245,7 +238,7 @@ button{font-family:inherit}
 
 <main id="main-content" class="container">
 
-  <!-- HERO + EDITOR'S PICKS -->
+  <!-- TOP STORY / HERO & EDITOR'S PICKS -->
   <section class="top">
     <article class="hero" id="hero">
       <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80" alt="Flagship Smartphone Showdown">
@@ -329,7 +322,7 @@ button{font-family:inherit}
         <article class="card cat-Hacks">
           <a href="#" class="thumb"><img src="https://images.unsplash.com/photo-1607936854279-559dfee83758?auto=format&fit=crop&w=600&q=80" alt="Android Hacks"><span class="badge">Hacks</span></a>
           <div class="card-body">
-            <div class="date"><span>Nov 9, 2026</span></div>
+            <div class="date"><span>Nov 9,2026</span></div>
             <h3><a href="#">Top Android Hacks & Hidden Shortcuts</a></h3>
             <p>Unlock secret menus and speed up your daily device navigation.</p>
             <div class="author">By Admin</div>
@@ -408,7 +401,9 @@ button{font-family:inherit}
       </div>
     </section>
 
+    <!-- SIDEBAR -->
     <aside class="side">
+      <!-- Popular Now -->
       <div class="panel">
         <h2>Popular Now</h2>
         <ol class="pop" id="pop">
@@ -544,7 +539,7 @@ button{font-family:inherit}
     nav.classList.toggle('open');
   });
 
-  // Simple Article Search Filter
+  // Article Search Filter
   const searchInput = document.getElementById('searchInput');
   searchInput.addEventListener('input', (e) => {
     const term = e.target.value.toLowerCase();
@@ -572,5 +567,3 @@ button{font-family:inherit}
 </script>
 </body>
 </html>
-
-              
