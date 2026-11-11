@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Smartphonehacks247 — Smartphone Reviews, Tips & Tech News</title>
 <meta name="description" content="Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news — around the clock.">
-<meta name="theme-color" content="#4f6bff">
+<meta name="theme-color" content="#2563eb">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
 </script>
 <style>
 :root{
-  --brand:#4f6bff; --brand-2:#7a5cff; --brand-ink:#fff;
+  --brand:#2563eb; --brand-2:#3b82f6; --brand-ink:#fff;
   --bg:#f6f7fb; --surface:#ffffff; --surface-2:#eef0f7;
   --text:#12141f; --muted:#5d6378; --border:#e3e6f0;
   --shadow:0 1px 2px rgba(16,24,40,.06),0 6px 20px rgba(16,24,40,.06);
@@ -41,11 +41,22 @@ ul,ol{list-style:none}
 .skip{position:absolute;left:-999px;top:8px;background:var(--brand);color:#fff;padding:8px 14px;border-radius:8px;z-index:200}
 .skip:focus{left:8px}
 
-/* Header */
+/* Header & Brand Glowing Effect */
 .site-header{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--border)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;letter-spacing:-.02em}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;letter-spacing:-.02em;color: var(--text);}
 .brand img{width:36px;height:36px;border-radius:10px;object-fit:cover}
+
+/* "smartphone" text changes color based on theme */
+.brand-name-text {
+  color: var(--text);
+}
+/* "hacks247" text is blue with a glowing shine effect */
+.brand-shine-text {
+  color: #2563eb;
+  text-shadow: 0 0 10px rgba(37, 99, 235, 0.6), 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
 .nav{display:flex;align-items:center;gap:4px}
 .nav a{padding:8px 14px;border-radius:999px;font-size:.92rem;font-weight:600;color:var(--muted);transition:.2s}
 .nav a:hover,.nav a.active{color:var(--text);background:var(--surface-2)}
@@ -212,7 +223,10 @@ ul,ol{list-style:none}
 <!-- HEADER -->
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/"><img src="https://smartphonehacks247.netlify.app/img/logo.png" alt="">Smartphonehacks247</a>
+    <a class="brand" href="/">
+      <img src="https://smartphonehacks247.netlify.app/img/logo.png" alt="">
+      <span><strong class="brand-name-text">Smartphone</strong><span class="brand-shine-text">hacks247</span></span>
+    </a>
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="/" class="active">Home</a>
       <a href="#" data-cat="News">News</a>
@@ -329,7 +343,10 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="foot-grid">
       <div>
-        <a class="brand" href="/"><img src="https://smartphonehacks247.netlify.app/img/logo.png" alt="">Smartphonehacks247</a>
+        <a class="brand" href="/">
+          <img src="https://smartphonehacks247.netlify.app/img/logo.png" alt="">
+          <span><strong class="brand-name-text">Smartphone</strong><span class="brand-shine-text">hacks247</span></span>
+        </a>
         <p>Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news — around the clock.</p>
         <div class="socials">
           <a href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
@@ -355,15 +372,4 @@ ul,ol{list-style:none}
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Smartphonehacks247. All rights reserved.</span>
-      <span>Reviews · Tips · Hacks · News — 24/7</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-(function () {
-  var IMG = 'https://smartphonehacks247.netlify.app/img/';
-  var posts = [
-    {t:'Flagship Showdown Review: The Best Camera Phone of 2026 Is Not the One You Think',c:'Reviews',d:'Nov 3, 2026',r:'2 min read',a:'Maya Chen',i:'flagship-review.jpg',x:'We spent three weeks shooting, gaming, and draining batteries on this year’s top flagships. One phone quietly beat them all on consistency.'},
-    {t:'Breakin
+      <span>© 2026 Smartphoneha
