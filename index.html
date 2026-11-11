@@ -71,6 +71,8 @@
         .card-meta { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
         .card-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.4; }
         .card-desc { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
+        .yt-promo-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin: 3rem 0; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 1rem; align-items: center; text-align: center; }
+        @media(min-width: 768px) { .yt-promo-box { flex-direction: row; text-align: left; justify-content: space-between; } }
         .newsletter-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; text-align: center; margin: 3rem 0; box-shadow: var(--shadow); }
         .newsletter-box h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; }
         .newsletter-box p { color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
@@ -134,6 +136,14 @@
                 <!-- Hero loaded via JS -->
             </section>
 
+            <div class="yt-promo-box">
+                <div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem;">YouTube Channel (ClipPodCentral)</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Honest phone reviews, smart tips and hidden tricks — plus breaking mobile tech news, around the clock.</p>
+                </div>
+                <a href="https://youtube.com" target="_blank" class="btn" style="background: #ff0000;">Subscribe on YouTube</a>
+            </div>
+
             <h2 class="section-title" id="sectionHeading">Editor's Picks</h2>
             <div class="grid" id="editorsPicks">
                 <!-- Grid items loaded via JS -->
@@ -170,12 +180,12 @@
                 <ul>
                     <li><a href="#" id="footerHome">Home Feed</a></li>
                     <li><a href="#newsletterEmail">Newsletter</a></li>
-                    <li><a href="mailto:contact@smartphonehacks247.github.io">Contact Support</a></li>
+                    <li><a href="mailto:contact@shameelmirza.github.io">Contact Support</a></li>
                 </ul>
             </div>
             <div>
                 <h4>Contact Us</h4>
-                <p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><a href="mailto:contact@smartphonehacks247.github.io">contact@smartphonehacks247.github.io</a></p>
+                <p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><a href="mailto:contact@shameelmirza.github.io">contact@shameelmirza.github.io</a></p>
             </div>
         </div>
     </footer>
@@ -274,7 +284,7 @@
                 return;
             }
 
-            // Hero section (only if on 'All' or matches first item and no search query)
+            // Hero section
             if(currentCategory === 'All' && searchQuery === '') {
                 var topPost = filtered[0];
                 heroElem.innerHTML = `
@@ -330,7 +340,9 @@
                 currentCategory = btn.getAttribute('data-cat');
                 renderContent();
             });
-                // Navbar & Footer category links
+        });
+
+        // Navbar & Footer category links
         var navLinks = document.querySelectorAll('.nav-link-filter');
         navLinks.forEach(function(link) {
             link.addEventListener('click', function(e) {
