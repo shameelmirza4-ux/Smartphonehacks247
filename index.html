@@ -44,7 +44,7 @@ ul,ol{list-style:none}
 /* Header & Brand Glowing Effect */
 .site-header{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--border)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px;overflow:hidden;}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;letter-spacing:-.02em;color: var(--text);white-space:nowrap;flex-shrink:0;}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem;letter-spacing:-.02em;color: var(--text);white-space:nowrap;flex-shrink:0;}
 .brand img{width:36px;height:36px;border-radius:10px;object-fit:cover}
 
 .brand-name-text {
@@ -61,7 +61,7 @@ ul,ol{list-style:none}
   gap: 12px;
 }
 
-/* Pill Theme Switcher as shown in screenshot */
+/* Pill Theme Switcher */
 .theme-pill-toggle {
   display: flex;
   align-items: center;
@@ -228,8 +228,10 @@ ul,ol{list-style:none}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
 .foot-grid p{color:var(--muted);font-size:.92rem;margin:14px 0;max-width:340px}
 .socials{display:flex;gap:10px;flex-wrap:wrap}
-.socials a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2);font-size:.85rem;font-weight:700;color:var(--muted);transition:.2s}
-.socials a:hover{background:var(--brand);color:#fff}
+.socials a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2);transition:.2s}
+.socials a svg{width:18px;height:18px;fill:var(--muted)}
+.socials a:hover{background:var(--brand)}
+.socials a:hover svg{fill:#fff}
 .site-footer h4{font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
 .site-footer li{margin-bottom:9px}
 .site-footer li a{color:var(--muted);font-size:.92rem;transition:.2s}
@@ -268,6 +270,9 @@ ul,ol{list-style:none}
       <a href="#" data-cat="News">News</a>
       <a href="#" data-cat="Reviews">Reviews</a>
       <a href="#" data-cat="Hacks">Tips &amp; Hacks</a>
+      <a href="#" data-cat="Android">Android</a>
+      <a href="#" data-cat="Battery">Battery</a>
+      <a href="#" data-cat="Camera">Camera</a>
       <a href="contact.html">Contact Us</a>
     </nav>
     <div class="header-right">
@@ -296,7 +301,7 @@ ul,ol{list-style:none}
         <p>We spent three weeks shooting, gaming, and draining batteries on this year’s top flagships. One phone quietly beat them all on consistency.</p>
         <div class="meta"><span>Nov 3, 2026</span><span>2 min read</span></div>
         <div class="btns">
-          <a class="btn btn-primary" href="#">Read full article</a>
+          <a class="btn btn-primary" href="#latest">Read full article</a>
           <a class="btn btn-ghost" href="#latest">Browse latest posts</a>
         </div>
       </div>
@@ -389,11 +394,4 @@ ul,ol{list-style:none}
         </a>
         <p>Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news — around the clock.</p>
         <div class="socials">
-          <a href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
-        </div>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a
+          <a href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener" aria-label="
