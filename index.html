@@ -71,7 +71,6 @@
       background: var(--surface);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
-      background-color: var(--surface);
     }
     .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 16px; }
     .header-inner {
@@ -117,9 +116,7 @@
     .dots-btn svg { width: 18px; height: 18px; fill: currentColor; }
 
     /* Hero */
-    .hero {
-      padding: 24px 0 12px;
-    }
+    .hero { padding: 24px 0 12px; }
     .top-grid {
       display: grid; grid-template-columns: 2fr 1fr; gap: 20px; align-items: stretch;
     }
@@ -134,9 +131,7 @@
       position: relative; border-radius: 16px; overflow: hidden; background: var(--surface);
       border: 1px solid var(--border); box-shadow: var(--shadow); display: flex; flex-direction: column;
     }
-    .hero-main img {
-      width: 100%; height: 300px; object-fit: cover;
-    }
+    .hero-main img { width: 100%; height: 300px; object-fit: cover; }
     .hero-body { padding: 24px; display: flex; flex-direction: column; justify-content: flex-end; flex-grow: 1; }
     .badges { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
     .badge {
@@ -210,7 +205,7 @@
     .count { color: var(--muted); font-size: 0.88rem; font-weight: 500; }
 
     .feed { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .feed .card .thumb { position: relative; display: block; }
+    .feed .card .thumb { position: relative; display: block; cursor: pointer; }
     .feed .card img { width: 100%; height: 165px; object-fit: cover; }
     .feed .card .badge { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.65); backdrop-filter: blur(4px); color: #fff; }
     .card-body { padding: 16px; display: flex; flex-direction: column; flex-grow: 1; }
@@ -239,104 +234,63 @@
 
     /* YouTube Sidebar Widget Style */
     .yt-widget {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: var(--shadow);
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: var(--shadow);
     }
-    .yt-widget-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
+    .yt-widget-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
     .yt-logo-box {
-      width: 44px;
-      height: 44px;
-      background: #ff0000;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(255,0,0,0.3);
-      flex-shrink: 0;
+      width: 44px; height: 44px; background: #ff0000; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(255,0,0,0.3); flex-shrink: 0;
     }
     .yt-logo-box svg { width: 22px; height: 22px; fill: #fff; }
     .yt-widget-header h3 { font-size: 1.05rem; font-weight: 700; }
     .yt-widget p { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; line-height: 1.4; }
     .yt-subscribe-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      background: #ff0000;
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.92rem;
-      padding: 12px;
-      border-radius: 10px;
-      border: 0;
-      cursor: pointer;
-      box-shadow: 0 4px 14px rgba(255,0,0,0.35);
-      transition: background 0.2s, transform 0.1s;
+      display: flex; align-items: center; justify-content: center; width: 100%;
+      background: #ff0000; color: #fff; font-weight: 700; font-size: 0.92rem;
+      padding: 12px; border-radius: 10px; border: 0; cursor: pointer;
+      box-shadow: 0 4px 14px rgba(255,0,0,0.35); transition: background 0.2s, transform 0.1s;
     }
     .yt-subscribe-btn:hover { background: #e00000; transform: translateY(-1px); }
 
-    /* Article Reader Modal (Scrollable & Fully Visible) */
-    dialog.article-modal {
-      background: var(--surface);
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      max-width: 640px;
-      width: 92%;
-      max-height: 85vh;
-      margin: auto;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
+    /* Full-Page Article View (Matching Images 2 & 3) */
+    #articleView {
+      max-width: 800px; margin: 30px auto 60px; padding: 0 20px;
     }
-    dialog.article-modal::backdrop {
-      background: rgba(0,0,0,0.65);
-      backdrop-filter: blur(5px);
+    .back-home-btn {
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;
+      background: var(--surface); border: 1px solid var(--border); color: var(--text);
+      padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; cursor: pointer;
+      box-shadow: var(--shadow); transition: background 0.2s;
     }
-    #modalContent {
-      overflow-y: auto;
-      flex-grow: 1;
-      padding-right: 4px;
-      margin-bottom: 16px;
+    .back-home-btn:hover { background: var(--surface-2); color: var(--primary); }
+    .article-full-title {
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 800; line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.5px;
     }
-    .article-modal h2 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-      line-height: 1.3;
+    .article-full-meta {
+      display: flex; gap: 16px; font-size: 0.88rem; color: var(--muted); margin-bottom: 24px; align-items: center; flex-wrap: wrap;
     }
-    .article-meta {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 16px;
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+    .author-chip {
+      background: var(--primary-light); color: var(--primary); padding: 4px 10px; border-radius: 20px; font-weight: 700; font-size: 0.8rem;
     }
-    .article-modal img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 16px;
+    .article-full-img {
+      width: 100%; height: 380px; object-fit: cover; border-radius: 16px; margin-bottom: 28px; box-shadow: var(--shadow);
     }
-    .article-content {
-      font-size: 0.95rem;
-      color: var(--text);
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .article-full-body {
+      display: flex; flex-direction: column; gap: 20px; font-size: 1.05rem; color: var(--text); line-height: 1.75;
+    }
+    .article-full-body h3 {
+      font-size: 1.35rem; font-weight: 800; margin-top: 10px; color: var(--text);
+    }
+    .article-full-body ul {
+      padding-left: 20px; display: flex; flex-direction: column; gap: 10px;
+    }
+    .article-full-body li {
+      list-style-type: disc; color: var(--muted);
+    }
+    .article-full-body li strong { color: var(--text); }
+    .verdict-box {
+      background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary);
+      padding: 20px; border-radius: 12px; margin-top: 20px; box-shadow: var(--shadow);
     }
 
     /* Footer */
@@ -355,7 +309,7 @@
     .foot-bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 20px; font-size: 0.82rem; color: var(--muted); flex-wrap: wrap; gap: 10px; }
 
     /* Legal dialogs */
-    dialog:not(.article-modal) { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 16px; padding: 24px; max-width: 520px; width: 90%; margin: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+    dialog { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 16px; padding: 24px; max-width: 520px; width: 90%; margin: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
     dialog::backdrop { background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
     dialog h2 { font-size: 1.25rem; margin-bottom: 6px; }
     dialog p { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; line-height: 1.5; }
@@ -383,6 +337,7 @@
       .hero-main img { height: 210px; }
       .hero-body { padding: 18px; }
       .hero-body h1 { font-size: 1.25rem; }
+      .article-full-img { height: 240px; }
     }
   </style>
 </head>
@@ -411,117 +366,130 @@
     <div class="header-actions">
       <div class="theme-switch" id="themeSwitch" aria-label="Theme Switcher">
         <button type="button" data-theme-set="light" aria-label="Light Mode">
-          <svg viewBox="0 0 24 24"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-16a1 1 0 0 0 1-1V1a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm0 18a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1ZM4.22 5.64a1 1 0 0 0 1.42-1.42l-.7-.7a1 1 0 0 0-1.42 1.42l.7.7Zm15.56 14.36a1 1 0 0 0 1.42-1.42l-.7-.7a1 1 0 0 0-1.42 1.42l.7.7ZM2 13h1a1 1 0 0 0 0-2H2a1 1 0 0 0 0 2Zm18 0h1a1 1 0 0 0 0-2h-1a1 1 0 0 0 0 2ZM5.64 19.78l.7-.7a1 1 0 0 0-1.42-1.42l-.7.7a1 1 0 0 0 1.42 1.42Zm14.36-15.56l-.7.7a1 1 0 1 0 1.42 1.42l.7-.7a1 1 0 0 0-1.42-1.42Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-16a1 1 0 0 0 1-1V1a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm0 18a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1ZM4.22 5.64a1 1 0 0 0 1.42-1.42l-.7-.7a1 1 0 0 0-1.42 1.42l.7.7Zm15.56 14.36a1 1 0 0 0 1.42-1.42l-.7-.7a1 1 0 0 0-1.42 1.42l.7.7ZM2 13h1a1 1 0 0 0 0-2H2a1 1 0 0 0 0 2ZM18 0h1a1 1 0 0 0 0-2h-1a1 1 0 0 0 0 2ZM5.64 19.78l.7-.7a1 1 0 0 0-1.42-1.42l-.7.7a1 1 0 0 0 1.42 1.42Zm14.36-15.56l-.7.7a1 1 0 1 0 1.42 1.42l.7-.7a1 1 0 0 0-1.42-1.42Z"/></svg>
         </button>
-        <button type="button" data-theme-set="dark" aria-label="Dark Mode">
+        <button type="button" data-theme-set="dark" aria-lab
+          el="Dark Mode">
           <svg viewBox="0 0 24 24"><path d="M20.742 13.045a8.003 8.003 0 0 1-9.787-9.787.75.75 0 0 0-.9-.9A9.5 9.5 0 1 0 21.642 13.95a.75.75 0 0 0-.9-.905Z"/></svg>
         </button>
       </div>
 
       <button class="dots-btn" id="dotsBtn" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="nav">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
-></button>
+      </button>
     </div>
   </div>
 </header>
 
-<main id="main-content">
-  <!-- HERO + EDITOR'S PICKS -->
-  <section class="container hero">
-    <div class="top-grid">
-      <article class="card hero-main" id="hero">
-        <!-- Dynamically filled by JS -->
-      </article>
-      
-      <aside class="panel">
-        <h2>Editor's Picks</h2>
-        <ol class="picks" id="picks">
+<!-- MAIN APP CONTAINER -->
+<div id="appContainer">
+  <main id="main-content">
+    <!-- HERO + EDITOR'S PICKS -->
+    <section class="container hero">
+      <div class="top-grid">
+        <article class="card hero-main" id="hero">
           <!-- Dynamically filled by JS -->
-        </ol>
-      </aside>
-    </div>
-  </section>
-
-  <!-- SEARCH + FILTERS -->
-  <section class="container">
-    <div class="toolbar" id="latest">
-      <div class="search-box">
-        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-        <input type="search" id="searchInput" placeholder="Search reviews, tips, hacks..." aria-label="Search articles">
-      </div>
-      <div class="pills" id="pills">
-        <button class="pill active" data-filter="All">All</button>
-        <button class="pill" data-filter="Reviews">Reviews</button>
-        <button class="pill" data-filter="Android">Android</button>
-        <button class="pill" data-filter="Battery">Battery</button>
-        <button class="pill" data-filter="Camera">Camera</button>
-        <button class="pill" data-filter="News">News</button>
-        <button class="pill" data-filter="Hacks">Tips &amp; Hacks</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- LAYOUT GRID: FEED & SIDEBAR -->
-  <div class="container layout">
-    <section>
-      <div class="section-head">
-        <h2>Fresh from the newsroom</h2>
-        <span class="count" id="count">0 articles</span>
-      </div>
-      <div class="feed" id="feed">
-        <!-- Dynamically populated articles -->
+        </article>
+        
+        <aside class="panel">
+          <h2>Editor's Picks</h2>
+          <ol class="picks" id="picks">
+            <!-- Dynamically filled by JS -->
+          </ol>
+        </aside>
       </div>
     </section>
 
-    <aside class="side">
-      <!-- YouTube Channel Subscribe Widget -->
-      <div class="yt-widget">
-        <div class="yt-widget-header">
-          <div class="yt-logo-box">
-            <svg viewBox="0 0 24 24"><path fill="#fff" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><path fill="#ff0000" d="m9.6 15.6 6.2-3.6-6.2-3.6z"/></svg>
-          </div>
-          <div>
-            <h3>YouTube Channel</h3>
-            <span style="font-size:0.8rem; color:var(--muted);">smartphonehacks247</span>
-          </div>
+    <!-- SEARCH + FILTERS -->
+    <section class="container">
+      <div class="toolbar" id="latest">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="search" id="searchInput" placeholder="Search reviews, tips, hacks..." aria-label="Search articles">
         </div>
-        <p>Honest phone reviews, smart tips and hidden tricks — plus breaking mobile tech news, around the clock.</p>
-        <a href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener">
-          <button class="yt-subscribe-btn" type="button">Subscribe on YouTube</button>
-        </a>
-      </div>
-
-      <div class="panel">
-        <h2>Popular Now</h2>
-        <ol class="pop" id="pop">
-          <!-- Dynamically populated -->
-        </ol>
-      </div>
-
-      <div class="panel">
-        <h2>Explore Topics</h2>
-        <div class="topics">
-          <a href="#latest" data-cat="Android">Android</a>
-          <a href="#latest" data-cat="Reviews">Reviews</a>
-          <a href="#latest" data-cat="Battery">Battery</a>
-          <a href="#latest" data-cat="Camera">Camera</a>
-          <a href="#latest" data-cat="Hacks">Hacks</a>
-          <a href="#latest" data-cat="News">News</a>
+        <div class="pills" id="pills">
+          <button class="pill active" data-filter="All">All</button>
+          <button class="pill" data-filter="Reviews">Reviews</button>
+          <button class="pill" data-filter="Android">Android</button>
+          <button class="pill" data-filter="Battery">Battery</button>
+          <button class="pill" data-filter="Camera">Camera</button>
+          <button class="pill" data-filter="News">News</button>
+          <button class="pill" data-filter="Hacks">Tips &amp; Hacks</button>
         </div>
       </div>
+    </section>
 
-      <div class="panel newsletter">
-        <h2>The 24/7 Hacks Digest</h2>
-        <p style="color:var(--muted); font-size:0.85rem; margin-bottom:10px;">Get weekly secret mobile hacks and top reviews straight to your inbox.</p>
-        <form id="newsForm">
-          <input type="email" id="newsEmail" placeholder="Enter your email address" required aria-label="Email for newsletter">
-          <button class="btn btn-primary" type="submit" style="width:100%;">Subscribe free</button>
-          <div id="newsMsg" style="font-size:0.8rem; margin-top:6px; font-weight:500;"></div>
-        </form>
-      </div>
-    </aside>
-  </div>
-</main>
+    <!-- LAYOUT GRID: FEED & SIDEBAR -->
+    <div class="container layout">
+      <section>
+        <div class="section-head">
+          <h2>Fresh from the newsroom</h2>
+          <span class="count" id="count">0 articles</span>
+        </div>
+        <div class="feed" id="feed">
+          <!-- Dynamically populated articles -->
+        </div>
+      </section>
+
+      <aside class="side">
+        <!-- YouTube Channel Subscribe Widget -->
+        <div class="yt-widget">
+          <div class="yt-widget-header">
+            <div class="yt-logo-box">
+              <svg viewBox="0 0 24 24"><path fill="#fff" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><path fill="#ff0000" d="m9.6 15.6 6.2-3.6-6.2-3.6z"/></svg>
+            </div>
+            <div>
+              <h3>YouTube Channel</h3>
+              <span style="font-size:0.8rem; color:var(--muted);">smartphonehacks247</span>
+            </div>
+          </div>
+          <p>Honest phone reviews, smart tips and hidden tricks — plus breaking mobile tech news, around the clock.</p>
+          <a href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener">
+            <button class="yt-subscribe-btn" type="button">Subscribe on YouTube</button>
+          </a>
+        </div>
+
+        <div class="panel">
+          <h2>Popular Now</h2>
+          <ol class="pop" id="pop">
+            <!-- Dynamically populated -->
+          </ol>
+        </div>
+
+        <div class="panel">
+          <h2>Explore Topics</h2>
+          <div class="topics">
+            <a href="#latest" data-cat="Android">Android</a>
+            <a href="#latest" data-cat="Reviews">Reviews</a>
+            <a href="#latest" data-cat="Battery">Battery</a>
+            <a href="#latest" data-cat="Camera">Camera</a>
+            <a href="#latest" data-cat="Hacks">Hacks</a>
+            <a href="#latest" data-cat="News">News</a>
+          </div>
+        </div>
+
+        <div class="panel newsletter">
+          <h2>The 24/7 Hacks Digest</h2>
+          <p style="color:var(--muted); font-size:0.85rem; margin-bottom:10px;">Get weekly secret mobile hacks and top reviews straight to your inbox.</p>
+          <form id="newsForm">
+            <input type="email" id="newsEmail" placeholder="Enter your email address" required aria-label="Email for newsletter">
+            <button class="btn btn-primary" type="submit" style="width:100%;">Subscribe free</button>
+            <div id="newsMsg" style="font-size:0.8rem; margin-top:6px; font-weight:500;"></div>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </main>
+</div>
+
+<!-- FULL PAGE ARTICLE VIEW (Hidden by default) -->
+<div id="articleView" style="display: none;">
+  <button class="back-home-btn" id="backHomeBtn" type="button">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Back to Home
+  </button>
+  <div id="fullArticleContent"></div>
+</div>
 
 <!-- FOOTER -->
 <footer class="site-footer" id="contact">
@@ -576,12 +544,6 @@
   </div>
 </footer>
 
-<!-- Article Reader Modal -->
-<dialog id="articleModal" class="article-modal">
-  <div id="modalContent"></div>
-  <button class="btn btn-primary close-dlg dlg-btn" type="button" style="width:100%;">Close Article</button>
-</dialog>
-
 <!-- Modals for Legal -->
 <dialog id="privacyDlg">
   <div class="dlg">
@@ -615,16 +577,16 @@
 (function(){
   var IMG = 'https://smartphonehacks247.netlify.app/img/';
   var posts = [
-    {t:'Flagship Showdown Review: The Best Camera Phone of 2026 Is Not the One You Think',c:'Reviews',d:'Nov 3, 2026',r:'2 min read',a:'Maya Chen',i:'flagship-review.jpg',x:'We spent three weeks shooting, gaming, and draining batteries on this year’s top flagships. One phone quietly beat them all on consistency.'},
-    {t:'Breaking: The Next Wave of Foldables Is Thinner, Tougher, and Cheaper',c:'News',d:'Nov 2, 2026',r:'1 min read',a:'Sofia Alvarez',i:'foldables-news.jpg',x:'Industry sources point to sub-10 mm folded designs and crease-free displays arriving in early 2027 — at noticeably lower prices.'},
-    {t:'12 Battery Hacks That Actually Work (And 5 Myths to Ignore)',c:'Battery',d:'Nov 1, 2026',r:'2 min read',a:'Daniel Okafor',i:'battery-tips.jpg',x:'Squeeze hours of extra life out of any smartphone with settings most people never touch — tested on both iOS and Android.'},
-    {t:'15 Hidden Android Features You’re Probably Not Using',c:'Android',d:'Oct 30, 2026',r:'1 min read',a:'Priya Raman',i:'android-hidden.jpg',x:'From secret developer toggles to gesture shortcuts, these buried Android tricks will make your phone feel brand new.'},
-    {t:'Pro Camera Phone Review: Computational Photography Hits a New Peak',c:'Reviews',d:'Oct 28, 2026',r:'1 min read',a:'Maya Chen',i:'camera-review.jpg',x:'Fresh lenses, a bigger main sensor, and smarter processing make this the most capable point-and-shoot phone we have tested.'},
-    {t:'Does Fast Charging Ruin Your Battery? We Tested It for 6 Months',c:'Battery',d:'Oct 25, 2026',r:'1 min read',a:'Daniel Okafor',i:'charging-myths.jpg',x:'We ran two identical phones through 500 charge cycles — one on a slow charger and one on a 100 W brick. The results surprised us.'},
-    {t:'Night Photography Hacks: Shoot Stunning Low-Light Photos on Any Phone',c:'Camera',d:'Oct 22, 2026',r:'1 min read',a:'Leo Martins',i:'night-photo.jpg',x:'Steady hands, smart exposure tricks, and a few pro settings turn noisy night shots into frame-worthy images.'},
-    {t:'20 Hidden iPhone Tricks That Will Make You Feel Like a Power User',c:'Hacks',d:'Oct 19, 2026',r:'1 min read',a:'Priya Raman',i:'iphone-tricks.jpg',x:'Back Tap shortcuts, secret keyboard trackpad, instant text scanning, and more buried iPhone features worth knowing.'},
-    {t:'The Mobile Chip Race Heats Up: What 2 nm Processors Mean for Your Next Phone',c:'News',d:'Oct 16, 2026',r:'1 min read',a:'Sofia Alvarez',i:'chip-news.jpg',x:'Chipmakers are moving to 2 nm manufacturing. Here is what that means for speed, battery life, and on-device AI.'},
-    {t:'Lock It Down: 10 Privacy & Security Hacks Every Phone Owner Needs',c:'Hacks',d:'Oct 12, 2026',r:'1 min read',a:'Leo Martins',i:'privacy-hacks.jpg',x:'Protect your accounts, photos, and location with these quick security settings — most take less than a minute.'}
+    {t:'Flagship Showdown Review: The Best Camera Phone of 2026 Is Not the One You Think',c:'Reviews',d:'Nov 3, 2026',r:'2 min read',a:'Maya Chen',i:'flagship-review.jpg',x:'We spent three weeks shooting, gaming, and draining batteries on this year’s top flagships. One phone quietly beat them all on consistency.', score:'9.2 / 10'},
+    {t:'Breaking: The Next Wave of Foldables Is Thinner, Tougher, and Cheaper',c:'News',d:'Nov 2, 2026',r:'1 min read',a:'Sofia Alvarez',i:'foldables-news.jpg',x:'Industry sources point to sub-10 mm folded designs and crease-free displays arriving in early 2027 — at noticeably lower prices.', score:'8.8 / 10'},
+    {t:'12 Battery Hacks That Actually Work (And 5 Myths to Ignore)',c:'Battery',d:'Nov 1, 2026',r:'2 min read',a:'Daniel Okafor',i:'battery-tips.jpg',x:'Squeeze hours of extra life out of any smartphone with settings most people never touch — tested on both iOS and Android.', score:'9.5 / 10'},
+    {t:'15 Hidden Android Features You’re Probably Not Using',c:'Android',d:'Oct 30, 2026',r:'1 min read',a:'Priya Raman',i:'android-hidden.jpg',x:'From secret developer toggles to gesture shortcuts, these buried Android tricks will make your phone feel brand new.', score:'9.0 / 10'},
+    {t:'Pro Camera Phone Review: Computational Photography Hits a New Peak',c:'Reviews',d:'Oct 28, 2026',r:'1 min read',a:'Maya Chen',i:'camera-review.jpg',x:'Fresh lenses, a bigger main sensor, and smarter processing make this the most capable point-and-shoot phone we have tested.', score:'9.4 / 10'},
+    {t:'Does Fast Charging Ruin Your Battery? We Tested It for 6 Months',c:'Battery',d:'Oct 25, 2026',r:'1 min read',a:'Daniel Okafor',i:'charging-myths.jpg',x:'We ran two identical phones through 500 charge cycles — one on a slow charger and one on a 100 W brick. The results surprised us.', score:'9.1 / 10'},
+    {t:'Night Photography Hacks: Shoot Stunning Low-Light Photos on Any Phone',c:'Camera',d:'Oct 22, 2026',r:'1 min read',a:'Leo Martins',i:'night-photo.jpg',x:'Steady hands, smart exposure tricks, and a few pro settings turn noisy night shots into frame-worthy images.', score:'8.9 / 10'},
+    {t:'20 Hidden iPhone Tricks That Will Make You Feel Like a Power User',c:'Hacks',d:'Oct 19, 2026',r:'1 min read',a:'Priya Raman',i:'iphone-tricks.jpg',x:'Back Tap shortcuts, secret keyboard trackpad, instant text scanning, and more buried iPhone features worth knowing.', score:'9.3 / 10'},
+    {t:'The Mobile Chip Race Heats Up: What 2 nm Processors Mean for Your Next Phone',c:'News',d:'Oct 16, 2026',r:'1 min read',a:'Sofia Alvarez',i:'chip-news.jpg',x:'Chipmakers are moving to 2 nm manufacturing. Here is what that means for speed, battery life, and on-device AI.', score:'8.7 / 10'},
+    {t:'Lock It Down: 10 Privacy & Security Hacks Every Phone Owner Needs',c:'Hacks',d:'Oct 12, 2026',r:'1 min read',a:'Leo Martins',i:'privacy-hacks.jpg',x:'Protect your accounts, photos, and location with these quick security settings — most take less than a minute.', score:'9.6 / 10'}
   ];
 
   var themeSwitch = document.getElementById('themeSwitch');
@@ -646,19 +608,49 @@
   });
 
   function openArticle(p){
-    var modal = document.getElementById('articleModal');
-    var content = document.getElementById('modalContent');
+    document.getElementById('appContainer').style.display = 'none';
+    var articleView = document.getElementById('articleView');
+    var content = document.getElementById('fullArticleContent');
+
     content.innerHTML = 
-      '<h2>' + escHtml(p.t) + '</h2>' +
-      '<div class="article-meta"><span>By ' + escHtml(p.a) + '</span><span>' + p.d + '</span><span>' + p.r + '</span></div>' +
-      '<img src="' + IMG + p.i + '" alt="">' +
-      '<div class="article-content">' +
-        '<p><strong>' + escHtml(p.x) + '</strong></p>' +
-        '<p>Detailed review and insights into this topic reveal major performance enhancements, optimized workflows, and crucial takeaways for mobile enthusiasts and power users alike.</p>' +
-        '<p>Stay tuned to Smartphonehacks247 for continuous updates, benchmarks, and step-by-step guides around the clock.</p>' +
+      '<div style="display:flex; gap:10px; margin-bottom:12px;"><span class="badge cat-' + p.c + '">' + escHtml(p.c) + '</span></div>' +
+      '<h1 class="article-full-title">' + escHtml(p.t) + '</h1>' +
+      '<p style="color:var(--muted); font-size:1.05rem; margin-bottom:20px;">' + escHtml(p.x) + '</p>' +
+      '<div class="article-full-meta">' +
+        '<span class="author-chip">' + escHtml(p.a) + '</span>' +
+        '<span>Published: ' + p.d + '</span>' +
+        '<span>' + p.r + '</span>' +
+      '</div>' +
+      '<img class="article-full-img" src="' + IMG + p.i + '" alt="">' +
+      '<div class="article-full-body">' +
+        '<p>Every autumn the flagship race resets, and every autumn the spec sheets get louder. Bigger sensors, brighter panels, more AI. After three weeks of daily-driving this release side by side, we came away with a clear verdict: consistency beats peak performance.</p>' +
+        '<h3>How we tested</h3>' +
+        '<p>Each phone ran the same routine: a 7 a.m. commute with navigation and music, two hours of social feeds, a 45-minute gaming session, and roughly 120 photos a day across daylight, indoor, and night scenes. We reset each device between rounds and kept adaptive brightness on.</p>' +
+        '<h3>Performance &amp; Features</h3>' +
+        '<ul>' +
+          '<li><strong>Color Tuning:</strong> Our winner kept faces natural under mixed tungsten and LED lighting, where rivals pushed orange.</li>' +
+          '<li><strong>Shutter Speed:</strong> It captured moving kids and pets with almost zero blur thanks to a zero-shutter-lag buffer.</li>' +
+          '<li><strong>AI Enhancements:</strong> On-device processing handles background cleanups instantly without a cloud round-trip.</li>' +
+        '</ul>' +
+        '<h3>Battery and charging</h3>' +
+        '<p>With a robust cell and an efficient 3 nm chip, our pick averaged 7.5 hours of screen-on time. Wired charging hit 50% in 22 minutes. Not class-leading on paper, but it never left us hunting for an outlet.</p>' +
+        '<h3>Software and updates</h3>' +
+        '<p>Seven years of OS updates is now the baseline expectation for a premium device. Our winner meets it, and its on-device AI tools work smoothly without interruptions.</p>' +
+        '<div class="verdict-box">' +
+          '<h3>Verdict</h3>' +
+          '<p>If you want the device that simply never lets you down, this is it. <strong>Score: ' + p.score + '</strong></p>' +
+        '</div>' +
       '</div>';
-    modal.showModal();
+
+    articleView.style.display = 'block';
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
+
+  document.getElementById('backHomeBtn').addEventListener('click', function(){
+    document.getElementById('articleView').style.display = 'none';
+    document.getElementById('appContainer').style.display = 'block';
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
 
   var topPost = posts[0];
   var heroEl = document.getElementById('hero');
@@ -726,13 +718,14 @@
       return;
     }
 
-    feed.innerHTML = filtered.map(function(p, index){
+    feed.innerHTML = filtered.map(function(p){
       var originalIndex = posts.indexOf(p);
       return '<article class="card">' +
-        '<a class="thumb feed-thumb" data-idx="' + originalIndex + '" style="cursor:pointer;"><img src="' + IMG + p.i + '" alt="" loading="lazy"><span class="badge cat-' + p.c + '">' + escHtml(p.c) + '</span></a>' +
+        '<a class="thumb feed-thumb" data-idx="' + originalIndex + '"><img src="' + IMG + p.i + '" alt="" loading="lazy"><span class="badge cat-' + p.c + '">' + escHtml(p.c) + '</span></a>' +
         '<div class="card-body">' +
           '<div class="date"><span>' + p.d + '</span><span>' + p.r + '</span></div>' +
-          '<h3><a class="feed-title" data-idx="' + originalIndex + '" style="cursor:pointer;">' + escHtml(p.t) + '</a></h3>' +
+          '<h3><a class="feed-title" data-idx="' + origi
+      nalIndex + '">' + escHtml(p.t) + '</a></h3>' +
           '<p>' + escHtml(p.x) + '</p>' +
           '<div class="author">By ' + escHtml(p.a) + '</div>' +
         '</div>' +
@@ -804,5 +797,4 @@
 })();
 </script>
 </body>
-                                                                             </html>
-                                                                             
+</html>
