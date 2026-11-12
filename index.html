@@ -25,15 +25,7 @@
     } catch (e) {}
   })();
 </script>
-
-  (function () {
-    try {
-      var t = localStorage.getItem('theme');
-      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', t);
-    } catch (e) {}
-  })();
-</script>
+  <script src="posts.js"></script>
 <style>
 :root{
   --brand:#4f6bff; --brand-2:#7a5cff;
