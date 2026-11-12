@@ -1,424 +1,1008 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Smartphonehacks247 — Smartphone Reviews, Tips & Tech News</title>
-<meta name="description" content="Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news — around the clock.">
-<meta name="theme-color" content="#4f6bff">
-<link rel="canonical" href="https://smartphonehacks247.netlify.app/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Smartphonehacks247">
-<meta property="og:description" content="Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news — around the clock.">
-<meta property="og:url" content="https://smartphonehacks247.netlify.app/">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="./smartphonehacks247_under_1mb.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script>
-  (function () {
-    try {
-      var t = localStorage.getItem('theme');
-      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', t);
-    } catch (e) {}
-  })();
-</script>
-  <script src="posts.js"></script>
-<style>
-:root{
-  --brand:#4f6bff; --brand-2:#7a5cff;
-  --bg:#f6f7fb; --surface:#ffffff; --surface-2:#eef0f7;
-  --text:#12141f; --muted:#5d6378; --border:#e3e6f0;
-  --shadow:0 1px 2px rgba(16,24,40,.06),0 6px 20px rgba(16,24,40,.06);
-  --radius:16px; --maxw:1240px;
-  --c-reviews:#2563eb; --c-android:#16a34a; --c-news:#dc2626;
-  --c-battery:#d97706; --c-camera:#9333ea; --c-hacks:#0d9488;
-}
-[data-theme="dark"]{
-  --bg:#0c0e16; --surface:#151824; --surface-2:#1d2132;
-  --text:#eef0fa; --muted:#9aa1b9; --border:#262b40;
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;transition:background .25s,color .25s;overflow-x:hidden;overflow-wrap:anywhere}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-ul,ol{list-style:none}
-button{font-family:inherit}
-.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--brand);color:#fff;padding:8px 14px;border-radius:8px;z-index:300}
-.skip:focus{left:8px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smartphonehacks247 — Mobile Reviews, Tips & Tech News</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <style>
+    :root {
+      --bg: #f4f6fb;
+      --surface: #ffffff;
+      --surface-2: #eef2f9;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --primary: #3b5bfd;
+      --primary-hover: #2945e3;
+      --shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+      --radius: 20px;
+    }
 
-.cat-Reviews{--cc:var(--c-reviews)} .cat-Android{--cc:var(--c-android)} .cat-News{--cc:var(--c-news)}
-.cat-Battery{--cc:var(--c-battery)} .cat-Camera{--cc:var(--c-camera)} .cat-Hacks{--cc:var(--c-hacks)}
-.badge{display:inline-block;padding:5px 12px;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--cc,#475569)}
-.badge.top{background:linear-gradient(135deg,#f59e0b,#ef4444)}
-.cat-label{font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--cc,var(--brand))}
+    [data-theme="dark"] {
+      --bg: #0b0f19;
+      --surface: #131a2a;
+      --surface-2: #1c253b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --border: #232f48;
+      --primary: #5b78ff;
+      --primary-hover: #4764eb;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
 
-/* Header */
-.site-header{position:sticky;top:0;z-index:200;background:color-mix(in srgb,var(--surface) 90%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--border)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;height:68px;gap:14px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem;letter-spacing:-.02em;flex:none;white-space:nowrap}
-.brand img{max-height:40px;width:auto;border-radius:10px;object-fit:cover}
-.brand .b1{color:var(--text);transition:color .25s}
-.brand .b2{color:#2f8bff;text-shadow:0 0 8px rgba(47,139,255,.85),0 0 18px rgba(47,139,255,.55),0 0 32px rgba(47,139,255,.35)}
-[data-theme="dark"] .brand .b2{color:#5fb0ff;text-shadow:0 0 8px rgba(95,176,255,.95),0 0 20px rgba(77,163,255,.7),0 0 38px rgba(77,163,255,.5)}
-.nav{display:flex;align-items:center;gap:2px;min-width:0}
-.nav a{padding:8px 11px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--muted);transition:.2s;white-space:nowrap}
-.nav a:hover,.nav a.active{color:var(--text);background:var(--surface-2)}
-.header-actions{display:flex;align-items:center;gap:10px;flex:none}
-.theme-switch{position:relative;display:flex;align-items:center;padding:4px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);cursor:pointer}
-.theme-switch button{position:relative;z-index:1;width:34px;height:30px;border:0;background:transparent;border-radius:999px;display:grid;place-items:center;color:var(--muted);cursor:pointer;transition:color .25s}
-.theme-switch button svg{width:17px;height:17px}
-.theme-switch .thumb{position:absolute;top:4px;left:4px;width:34px;height:30px;border-radius:999px;background:var(--brand);box-shadow:0 2px 8px rgba(79,107,255,.5);transition:transform .25s cubic-bezier(.4,0,.2,1)}
-[data-theme="dark"] .theme-switch .thumb{transform:translateX(34px)}
-[data-theme="light"] .theme-switch .sun,[data-theme="dark"] .theme-switch .moon{color:#fff}
-.dots-btn{display:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;place-items:center}
-.dots-btn svg{width:20px;height:20px}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
-/* Hero */
-.top{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;margin-top:28px}
-.hero{position:relative;border-radius:22px;overflow:hidden;min-height:480px;display:flex;align-items:flex-end;box-shadow:var(--shadow);background:#0b1020}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,10,20,0) 25%,rgba(8,10,20,.9) 100%)}
-.hero-body{position:relative;z-index:2;padding:34px;color:#fff;max-width:760px}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.hero h1{font-size:clamp(1.55rem,3.2vw,2.5rem);line-height:1.15;letter-spacing:-.025em;font-weight:800;margin-bottom:12px}
-.hero p{color:rgba(255,255,255,.86);font-size:1.02rem;margin-bottom:16px}
-.meta{font-size:.82rem;color:rgba(255,255,255,.75);display:flex;gap:12px;margin-bottom:20px}
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
 
-/* Panels */
-.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
-.panel h2{font-size:1.1rem;font-weight:800;letter-spacing:-.01em;margin-bottom:16px}
-.picks li{border-bottom:1px solid var(--border)}
-.picks li:last-child{border-bottom:0}
-.picks a.row{display:flex;gap:12px;align-items:center;padding:12px 0}
-.picks li:first-child a.row{padding-top:0}
-.picks li:last-child a.row{padding-bottom:0}
-.picks img{width:76px;height:76px;border-radius:12px;object-fit:cover;flex:none}
-.picks h3{font-size:.92rem;line-height:1.35;font-weight:700;margin-top:2px;transition:color .2s}
-.picks a:hover h3,.pop a:hover h3{color:var(--brand)}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* Search + filters */
-.toolbar{margin:34px 0 10px;display:flex;flex-direction:column;gap:14px}
-.search{position:relative;display:block}
-.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted)}
-.search input{width:100%;padding:15px 18px 15px 46px;border-radius:14px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit;font-size:.98rem;outline:none;transition:.2s}
-.search input:focus{border-color:var(--brand);box-shadow:0 0 0 4px color-mix(in srgb,var(--brand) 20%,transparent)}
-.pills{display:flex;flex-wrap:wrap;gap:8px}
-.pill{padding:8px 16px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--muted);font-size:.86rem;font-weight:600;cursor:pointer;transition:.2s}
-.pill:hover{color:var(--text);border-color:var(--brand)}
-.pill.active{background:var(--brand);border-color:var(--brand);color:#fff}
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
 
-/* Layout / feed */
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;margin:22px 0 60px;align-items:start}
-.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:18px}
-.eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
-.section-head h2{font-size:1.6rem;font-weight:800;letter-spacing:-.02em;line-height:1.2}
-.count{font-size:.85rem;color:var(--muted);font-weight:500;white-space:nowrap}
-.feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s}
-.card:hover{transform:translateY(-4px)}
-.thumb{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:var(--surface-2)}
-.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.card:hover .thumb img{transform:scale(1.05)}
-.thumb .badge{position:absolute;left:12px;top:12px}
-.card-body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
-.date{font-size:.78rem;color:var(--muted);display:flex;gap:8px}
-.card h3{font-size:1.06rem;line-height:1.35;font-weight:700;letter-spacing:-.01em}
-.card h3 a:hover{color:var(--brand)}
-.card p{font-size:.9rem;color:var(--muted);flex:1}
-.author{font-size:.8rem;font-weight:600;padding-top:10px;border-top:1px solid var(--border)}
+    /* Header */
+    .site-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-/* Sidebar */
-.side{display:flex;flex-direction:column;gap:22px;position:sticky;top:88px;min-width:0}
-.pop li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
-.pop li:first-child{padding-top:0}
-.pop li:last-child{border-bottom:0;padding-bottom:0}
-.rank{font-size:1.5rem;font-weight:800;color:var(--brand);opacity:.5;line-height:1;min-width:34px}
-.pop h3{font-size:.92rem;line-height:1.35;font-weight:700}
-.pop small{display:block;margin-top:4px;color:var(--muted);font-size:.76rem}
-.topics{display:flex;flex-wrap:wrap;gap:8px}
-.topics a{padding:8px 14px;border-radius:999px;background:var(--surface-2);font-size:.84rem;font-weight:600;color:var(--muted);transition:.2s}
-.topics a:hover{background:var(--brand);color:#fff}
-.newsletter{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border:0}
-.newsletter p{font-size:.92rem;opacity:.92;margin-bottom:16px}
-.newsletter input{width:100%;padding:13px 14px;border-radius:12px;border:0;font:inherit;margin-bottom:10px;outline:none;color:#12141f}
-.newsletter .btn{width:100%;background:#12141f;color:#fff}
-.newsletter .btn:hover{background:#000}
-.news-msg{margin-top:10px;font-size:.85rem;font-weight:600}
-.yt{display:flex;flex-direction:column;gap:16px}
-.yt-head{display:flex;align-items:center;gap:14px}
-.yt-icon{width:52px;height:52px;border-radius:14px;background:#ff0000;display:grid;place-items:center;flex:none;box-shadow:0 6px 18px rgba(255,0,0,.3)}
-.yt-icon svg{width:30px;height:30px}
-.yt-head h2{margin:0}
-.yt .btn{background:#ff0000;color:#fff;width:100%}
-.yt .btn:hover{background:#d90000}
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 12px;
+    }
 
-/* Footer */
-.site-footer{background:var(--surface);border-top:1px solid var(--border);padding:52px 0 26px}
-.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px}
-.foot-grid p{color:var(--muted);font-size:.92rem;margin:14px 0;max-width:340px}
-.yt-link{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#ff0000;transition:.2s;box-shadow:0 4px 14px rgba(255,0,0,.3)}
-.yt-link:hover{transform:translateY(-2px);background:#d90000}
-.yt-link svg{width:24px;height:24px}
-.site-footer h4{font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
-.site-footer li{margin-bottom:9px}
-.site-footer li a{color:var(--muted);font-size:.92rem;transition:.2s}
-.site-footer li a:hover{color:var(--brand)}
-.foot-bottom{margin-top:36px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.83rem;color:var(--muted)}
-.foot-bottom a{color:var(--muted);margin-left:14px}
-.foot-bottom a:hover{color:var(--brand)}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.3px;
+    }
 
-/* Responsive */
-@media (max-width:1180px){ .nav a{padding:8px 9px;font-size:.82rem} }
-@media (max-width:1020px){
-  .dots-btn{display:grid}
-  .nav{position:absolute;top:68px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:2px;padding:10px 20px 16px;display:none}
-  .nav.open{display:flex}
-  .nav a{font-size:.95rem;padding:12px 14px}
-  .top,.layout{grid-template-columns:minmax(0,1fr)}
-  .side{position:static}
-  .foot-grid{grid-template-columns:1fr 1fr}
-  .foot-grid>div:first-child{grid-column:1/-1}
-}
-@media (max-width:640px){
-  .container{padding:0 16px}
-  .feed{grid-template-columns:minmax(0,1fr)}
-  .hero{min-height:430px}
-  .hero-body{padding:22px}
-  .section-head h2{font-size:1.35rem}
-  .brand{font-size:1.02rem}
-  .brand img{height:32px}
-  .header-actions{gap:8px}
-}
-@media (max-width:380px){ .brand{font-size:.92rem} .theme-switch button,.theme-switch .thumb{width:30px} [data-theme="dark"] .theme-switch .thumb{transform:translateX(30px)} }
-</style>
+    .brand img {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .brand .accent {
+      color: var(--primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Theme Toggle */
+    .theme-switch {
+      display: inline-flex;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 2px;
+    }
+
+    .theme-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .theme-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .menu-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      padding: 12px 16px 18px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      gap: 10px;
+    }
+
+    .mobile-nav.open {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      font-weight: 600;
+      padding: 6px 0;
+      color: var(--text);
+    }
+
+    /* Main Grid */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 20px 0 48px;
+    }
+
+    @media (min-width: 900px) {
+      .main-grid {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+      }
+    }
+
+    /* Hero Card */
+    .hero-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      color: #ffffff;
+      background: #1e293b;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .hero-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 15, 28, 0.92) 15%, rgba(10, 15, 28, 0.35) 65%, rgba(10, 15, 28, 0.1) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge-story {
+      display: inline-block;
+      background: #f97316;
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .hero-content h1 {
+      font-size: 1.65rem;
+      line-height: 1.25;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 14px;
+    }
+
+    .hero-meta {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.75);
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Panels */
+    .panel {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+
+    .panel h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    /* Editor's Picks */
+    .pick-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pick-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .pick-item:first-of-type {
+      padding-top: 0;
+    }
+
+    .pick-item img {
+      width: 68px;
+      height: 68px;
+      border-radius: 14px;
+      object-fit: cover;
+      background: var(--surface-2);
+      flex-shrink: 0;
+    }
+
+    .pick-cat {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+      display: block;
+    }
+
+    .cat-purple { color: #7c3aed; }
+    .cat-amber { color: #d97706; }
+    .cat-teal { color: #0d9488; }
+
+    .pick-item h3 {
+      font-size: 0.96rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    /* Search & Pills */
+    .search-box {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 14px 16px 14px 44px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.95rem;
+      box-shadow: var(--shadow);
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .pill {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pill.active, .pill:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* Section Head */
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 10px;
+    }
+
+    .eyebrow {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .section-head h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .count {
+      font-size: 0.85rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* Dynamic Feed Cards */
+    .feed {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 640px) {
+      .feed {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card .thumb {
+      display: block;
+      height: 190px;
+      background: var(--surface-2);
+      overflow: hidden;
+    }
+
+    .card .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-meta-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      margin-bottom: 8px;
+    }
+
+    .card-cat {
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
+
+    .date {
+      color: var(--muted);
+    }
+
+    .card-body h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .card-body p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .author {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text);
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+
+    /* Popular List */
+    .pop {
+      list-style: none;
+    }
+
+    .pop li {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pop li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .pop li:first-child {
+      padding-top: 0;
+    }
+
+    .rank {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #93a5fd;
+      line-height: 1.1;
+    }
+
+    .pop h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 3px;
+    }
+
+    .pop small {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* Explore Chips */
+    .topic-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .topic-chip {
+      background: var(--surface-2);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .topic-chip:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Digest Box */
+    .digest-box {
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .digest-box h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .digest-box p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 16px;
+    }
+
+    .digest-box input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: none;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .digest-box button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+    }
+
+    /* YouTube Widget */
+    .yt-widget-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .yt-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #ff0000;
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+    }
+
+    .yt-sub-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #ff0000;
+      color: #ffffff;
+      font-weight: 700;
+      padding: 11px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 40px 0 28px;
+      margin-top: 20px;
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    @media (min-width: 768px) {
+      .foot-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+      }
+    }
+
+    .foot-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 12px 0 16px;
+      max-width: 320px;
+    }
+
+    .foot-col h4 {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .foot-col ul {
+      list-style: none;
+    }
+
+    .foot-col li {
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .foot-col li a:hover {
+      color: var(--primary);
+    }
+
+    .foot-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .foot-links {
+      display: flex;
+      gap: 16px;
+    }
+  </style>
 </head>
 <body>
-<a class="skip" href="#main-content">Skip to content</a>
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/" aria-label="Smartphonehacks247 home">
-      <img src="./smartphonehacks247_under_1mb.jpg" alt="Smartphonehacks247 logo">
-      <span><span class="b1">Smartphone</span><span class="b2">hacks247</span></span>
-    </a>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <img src="logo.png" alt="Logo" onerror="this.style.display='none'" />
+        <span>Smartphone<span class="accent">hacks247</span></span>
+      </a>
 
-    <nav class="nav" id="nav" aria-label="Primary">
-      <a href="/" class="active" data-cat="All">Home</a>
-      <a href="#latest" data-cat="News">News</a>
-      <a href="#latest" data-cat="Reviews">Reviews</a>
-      <a href="#latest" data-cat="Hacks">Tips &amp; Hacks</a>
-      <a href="#latest" data-cat="Android">Android</a>
-      <a href="#latest" data-cat="Battery">Battery</a>
-      <a href="#latest" data-cat="Camera">Camera</a>
-      <a href="mailto:contact@smartphonehacks247.netlify.app" class="contact-link">Contact Us</a>
+      <div class="header-actions">
+        <div class="theme-switch" id="themeSwitch" aria-label="Theme Switch">
+          <button class="theme-btn active" data-theme="light" title="Light Mode">☀️</button>
+          <button class="theme-btn" data-theme="dark" title="Dark Mode">🌙</button>
+        </div>
+        <button class="menu-btn" id="dotsBtn" aria-expanded="false" aria-label="Menu">⋮</button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#">Home</a>
+      <a href="#latest">Latest News</a>
+      <a href="#latest">Reviews</a>
+      <a href="#latest">Tips & Hacks</a>
+      <a href="#contact">Contact Us</a>
     </nav>
+  </header>
 
-    <div class="header-actions">
-      <div class="theme-switch" id="themeSwitch" role="group" aria-label="Theme switcher">
-        <span class="thumb" aria-hidden="true"></span>
-        <button class="sun" type="button" data-theme-set="light" aria-label="Light mode">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-        </button>
-        <button class="moon" type="button" data-theme-set="dark" aria-label="Dark mode">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-        </button>
+  <!-- MAIN CONTENT -->
+  <main class="container main-grid">
+
+    <!-- LEFT COLUMN -->
+    <div>
+      <!-- Hero Story -->
+      <article class="hero-card">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=80" alt="Flagship Smartphone" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="badge-story">TOP STORY</span>
+          <h1>Flagship Smartphone Showdown 2026: The Ultimate Camera & Battery Test</h1>
+          <p>Discover which phone takes the crown this year with breakthrough camera tech and multi-day battery endurance.</p>
+          <div class="hero-meta">
+            <span>By Admin</span>
+            <span>Nov 11, 2026</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Editor's Picks -->
+      <section class="panel">
+        <h2>Editor’s Picks</h2>
+        <div class="pick-item">
+          <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=300&q=80" alt="Camera" />
+          <div>
+            <span class="pick-cat cat-purple">CAMERA</span>
+            <h3><a href="#latest">Low Light Sensor Breakthroughs Tested</a></h3>
+          </div>
+        </div>
+        <div class="pick-item">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=300&q=80" alt="Battery" />
+          <div>
+            <span class="pick-cat cat-amber">BATTERY</span>
+            <h3><a href="#latest">Processor Benchmark & Thermal Limits</a></h3>
+          </div>
+        </div>
+        <div class="pick-item">
+          <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=300&q=80" alt="Android Hacks" />
+          <div>
+            <span class="pick-cat cat-teal">TIPS & HACKS</span>
+            <h3><a href="#latest">Top Hidden Android Shortcuts</a></h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search Bar -->
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search articles..." />
       </div>
-      <button class="dots-btn" id="dotsBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
-        <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
-      </button>
+
+      <!-- Category Pills -->
+      <div class="pills">
+        <button class="pill active" data-filter="All">All</button>
+        <button class="pill" data-filter="Reviews">Reviews</button>
+        <button class="pill" data-filter="Android">Android</button>
+        <button class="pill" data-filter="Hacks">Hacks</button>
+        <button class="pill" data-filter="Battery">Battery</button>
+        <button class="pill" data-filter="Camera">Camera</button>
+        <button class="pill" data-filter="News">News</button>
+      </div>
+
+      <!-- Latest Posts Section -->
+      <section class="section-head" id="latest">
+        <div>
+          <span class="eyebrow">LATEST POSTS</span>
+          <h2>Fresh from the newsroom</h2>
+        </div>
+        <span class="count" id="count">Loading posts...</span>
+      </section>
+
+      <!-- Dynamic Feed Container (Populated by posts.js) -->
+      <div class="feed" id="feed"></div>
     </div>
-  </div>
-</header>
 
-<main id="main-content" class="container">
-
-  <!-- TOP STORY / HERO & EDITOR'S PICKS -->
-  <section class="top">
-    <article class="hero" id="hero">
-      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80" alt="Flagship Smartphone Showdown">
-      <div class="hero-body">
-        <div class="badges"><span class="badge top">Top Story</span><span class="cat-label cat-Reviews">Reviews</span></div>
-        <h1>Flagship Smartphone Showdown 2026: The Ultimate Camera & Battery Test</h1>
-        <p>Discover which phone takes the crown this year with breakthrough camera tech and multi-day battery endurance.</p>
-        <div class="meta"><span>By Admin</span><span>Nov 11, 2026</span></div>
-      </div>
-    </article>
-    <aside class="panel">
-      <h2>Editor’s Picks</h2>
-      <ol class="picks" id="picks">
-        <li>
-          <a href="#" class="row">
-            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=200&q=80" alt="Camera Review">
-            <div><span class="cat-label cat-Camera">Camera</span><h3>Low Light Sensor Breakthroughs Tested</h3></div>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="row">
-            <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=200&q=80" alt="Speed Test">
-            <div><span class="cat-label cat-Battery">Battery</span><h3>Processor Benchmark & Thermal Limits</h3></div>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="row">
-            <img src="https://images.unsplash.com/photo-1607936854279-559dfee83758?auto=format&fit=crop&w=200&q=80" alt="Android Hacks">
-            <div><span class="cat-label cat-Hacks">Tips & Hacks</span><h3>Top Hidden Android Shortcuts</h3></div>
-          </a>
-        </li>
-      </ol>
-    </aside>
-  </section>
-
-  <!-- SEARCH + FILTERS -->
-  <div class="toolbar" id="latest">
-    <label class="search">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input type="search" id="searchInput" placeholder="Search articles" aria-label="Search articles">
-    </label>
-    <div class="pills" id="pills">
-      <button class="pill active" data-filter="All">All</button>
-      <button class="pill" data-filter="Reviews">Reviews</button>
-      <button class="pill" data-filter="Android">Android</button>
-      <button class="pill" data-filter="Hacks">Hacks</button>
-      <button class="pill" data-filter="Battery">Battery</button>
-      <button class="pill" data-filter="Camera">Camera</button>
-      <button class="pill" data-filter="News">News</button>
-    </div>
-  </div>
-
-  <div class="layout">
-    <section>
-      <div class="section-head">
-        <div><div class="eyebrow">Latest Posts</div><h2>Fresh from the newsroom</h2></div>
-        <span class="count" id="count">Showing 10 posts</span>
-      </div>
-      <div class="feed" id="feed">
-
-    <!-- SIDEBAR -->
+    <!-- RIGHT SIDEBAR -->
     <aside class="side">
-
       <!-- Popular Now -->
       <div class="panel">
         <h2>Popular Now</h2>
-        <ol class="pop" id="pop">
+        <ol class="pop">
           <li>
             <div class="rank">1</div>
-            <a href="#">
-              <h3>Low Light Sensor Breakthroughs Tested</h3>
+            <div>
+              <h3><a href="#latest">Low Light Sensor Breakthroughs Tested</a></h3>
               <small>Camera &bull; 12.5k views</small>
-            </a>
+            </div>
           </li>
           <li>
             <div class="rank">2</div>
-            <a href="#">
-              <h3>Flagship Smartphone Showdown 2026</h3>
+            <div>
+              <h3><a href="#latest">Flagship Smartphone Showdown 2026</a></h3>
               <small>Reviews &bull; 10.1k views</small>
-            </a>
+            </div>
           </li>
           <li>
             <div class="rank">3</div>
-            <a href="#">
-              <h3>Top Hidden Android Shortcuts</h3>
-              <small>Tips & Hacks &bull; 8.8k views</small>
-            </a>
+            <div>
+              <h3><a href="#latest">Top Hidden Android Shortcuts</a></h3>
+              <small>Tips &amp; Hacks &bull; 8.8k views</small>
+            </div>
           </li>
         </ol>
       </div>
 
+      <!-- Explore Topics -->
       <div class="panel">
         <h2>Explore Topics</h2>
-        <div class="topics">
-          <a href="/" data-cat="All">Home</a>
-          <a href="#latest" data-cat="News">News</a>
-          <a href="#latest" data-cat="Reviews">Reviews</a>
-          <a href="#latest" data-cat="Hacks">Tips &amp; Hacks</a>
-          <a href="#latest" data-cat="Android">Android</a>
-          <a href="#latest" data-cat="Battery">Battery</a>
-          <a href="#latest" data-cat="Camera">Camera</a>
-          <a href="mailto:contact@smartphonehacks247.netlify.app" class="contact-link">Contact Us</a>
+        <div class="topic-chips">
+          <a href="#" class="topic-chip">Home</a>
+          <a href="#latest" class="topic-chip">News</a>
+          <a href="#latest" class="topic-chip">Reviews</a>
+          <a href="#latest" class="topic-chip">Tips &amp; Hacks</a>
+          <a href="#latest" class="topic-chip">Android</a>
+          <a href="#latest" class="topic-chip">Battery</a>
+          <a href="#latest" class="topic-chip">Camera</a>
+          <a href="#contact" class="topic-chip">Contact Us</a>
         </div>
       </div>
 
-      <div class="panel newsletter">
+      <!-- Digest Newsletter -->
+      <div class="digest-box">
         <h2>The 24/7 Hacks Digest</h2>
         <p>One email a week: the best tips, reviews, and breaking phone news. No spam.</p>
-        <form id="newsForm" novalidate>
-          <input type="email" id="newsEmail" placeholder="Email address" aria-label="Email address" required>
-          <button class="btn" type="submit">Subscribe free</button>
-          <div class="news-msg" id="newsMsg" role="status"></div>
+        <form onsubmit="event.preventDefault(); alert('Subscribed! Thank you.');">
+          <input type="email" placeholder="Email address" required />
+          <button type="submit">Subscribe free</button>
         </form>
       </div>
 
-      <div class="panel yt">
-        <div class="yt-head">
-          <div class="yt-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path fill="#fff" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><path fill="#ff0000" d="m9.6 15.6 6.2-3.6-6.2-3.6z"/></svg>
-          </div>
-          <h2>YouTube Channel</h2>
+      <!-- YouTube Channel -->
+      <div class="panel">
+        <div class="yt-widget-head">
+          <div class="yt-icon-box">▶</div>
+          <h2 style="margin:0;">YouTube Channel</h2>
         </div>
-        <a class="btn" href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener">Subscribe on YouTube</a>
+        <a href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener" class="yt-sub-btn">Subscribe on YouTube</a>
       </div>
     </aside>
-  </div>
-</main>
 
-<!-- FOOTER -->
-<footer class="site-footer" id="contact">
-  <div class="container">
-    <div class="foot-grid">
-      <div>
-        <a class="brand" href="/" aria-label="Smartphonehacks247 home">
-          <img src="./smartphonehacks247_under_1mb.jpg" alt="Smartphonehacks247 logo">
-          <span><span class="b1">Smartphone</span><span class="b2">hacks247</span></span>
-        </a>
-        <p>Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news — around the clock.</p>
-        <div class="socials">
-          <a class="yt-link" href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener" aria-label="YouTube channel">
-            <svg viewBox="0 0 24 24"><path fill="#fff" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><path fill="#ff0000" d="m9.6 15.6 6.2-3.6-6.2-3.6z"/></svg>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <a href="#" class="brand">
+            <img src="logo.png" alt="Logo" onerror="this.style.display='none'" />
+            <span>Smartphone<span class="accent">hacks247</span></span>
           </a>
+          <p class="foot-desc">Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news — around the clock.</p>
+          <a href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener" class="yt-icon-box" aria-label="YouTube">▶</a>
+        </div>
+
+        <div class="foot-col">
+          <h4>EXPLORE</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#latest">News</a></li>
+            <li><a href="#latest">Reviews</a></li>
+            <li><a href="#latest">Tips &amp; Hacks</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>TOPICS</h4>
+          <ul>
+            <li><a href="#latest">Android</a></li>
+            <li><a href="#latest">Battery</a></li>
+            <li><a href="#latest">Camera</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>CONTACT</h4>
+          <ul>
+            <li><a href="mailto:contact@smartphonehacks247.netlify.app">Contact Us</a></li>
+            <li><a href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener">YouTube</a></li>
+          </ul>
         </div>
       </div>
-      <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="#latest" data-cat="News">News</a></li>
-          <li><a href="#latest" data-cat="Reviews">Reviews</a></li>
-          <li><a href="#latest" data-cat="Hacks">Tips &amp; Hacks</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Topics</h4>
-        <ul>
-          <li><a href="#latest" data-cat="Android">Android</a></li>
-          <li><a href="#latest" data-cat="Battery">Battery</a></li>
-          <li><a href="#latest" data-cat="Camera">Camera</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:contact@smartphonehacks247.netlify.app">Contact Us</a></li>
-          <li><a href="https://youtube.com/@smartphonehacks247" target="_blank" rel="noopener">YouTube</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <div>&copy; <span id="year">2026</span> Smartphonehacks247. All rights reserved.</div>
-      <div>
-        <a href="#privacy">Privacy Policy</a>
-        <a href="#terms">Terms of Use</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<article class="card"><a href="#" class="thumb"><img src="${post.image}" alt=""></a><div class="card-body"><div class="date"><span>${post.date}</span></div><h3><a href="#">${post.title}</a></h3><p>${post.excerpt}</p><div class="author">By ${post.author}</div></div></article>
 
+      <div class="foot-bottom">
+        <div>&copy; <span id="year">2026</span> Smartphonehacks247. All rights reserved.</div>
+        <div class="foot-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LOAD POSTS DATA -->
+  <script src="posts.js"></script>
+
+  <!-- DYNAMIC RENDERING & INTERACTIVITY -->
+  <script>
+    const feed = document.getElementById('feed');
+    const countEl = document.getElementById('count');
+
+    function renderPosts(postsList) {
+      if (!feed) return;
+      if (!postsList || postsList.length === 0) {
+        feed.innerHTML = '<p style="color:var(--muted);">No articles found.</p>';
+        if (countEl) countEl.textContent = 'Showing 0 posts';
+        return;
+      }
+
+      feed.innerHTML = postsList.map(post => `
+        <article class="card" data-category="${post.category || 'All'}">
+          <a href="${post.link || '#'}" class="thumb">
+            <img src="${post.image || 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80'}" alt="${post.title}" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <div class="card-meta-top">
+              <span class="card-cat">${post.category || 'TECH'}</span>
+              <span class="date">${post.date || '2026'}</span>
+            </div>
+            <h3><a href="${post.link || '#'}">${post.title}</a></h3>
+            <p>${post.excerpt || ''}</p>
+            <div class="author">By ${post.author || 'Admin'}</div>
+          </div>
+        </article>
+      `).join('');
+
+      if (countEl) {
+        countEl.textContent = `Showing ${postsList.length} post${postsList.length === 1 ? '' : 's'}`;
+      }
+    }
+
+    // Initial Render from posts.js
+    const allPosts = window.POSTS || [];
+    renderPosts(allPosts);
+
+    // Theme Toggle
+    const themeSwitch = document.getElementById('themeSwitch');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.theme === savedTheme);
+    });
+
+    themeSwitch.addEventListener('click', (e) => {
+      const btn = e.target.closest('.theme-btn');
+      if (!btn) return;
+      const theme = btn.dataset.theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+
+    // Mobile Menu Toggle
+    const dotsBtn = document.getElementById('dotsBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    dotsBtn.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      dotsBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Search Filter
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase().trim();
+      const filtered = allPosts.filter(post =>
+        (post.title && post.title.toLowerCase().includes(term)) ||
+        (post.excerpt && post.excerpt.toLowerCase().includes(term)) ||
+        (post.category && post.category.toLowerCase().includes(term))
+      );
+      renderPosts(filtered);
+    });
+
+    // Category Pill Filter
+    document.querySelectorAll('.pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter').toLowerCase();
+
+        if (filter === 'all') {
+          renderPosts(allPosts);
+        } else {
+          const filtered = allPosts.filter(post =>
+            post.category && post.category.toLowerCase().includes(filter)
+          );
+          renderPosts(filtered);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+
+         
