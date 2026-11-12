@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smartphonehacks247 — Mobile Reviews, Tips & Tech News</title>
-  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="icon" type="image/jpeg" href="Smartphonehacks247_under_1mb.jpg" />
   <style>
     :root {
       --bg: #f4f6fb;
@@ -83,10 +83,12 @@
     }
 
     .brand img {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
       object-fit: cover;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
     }
 
     .brand .accent {
@@ -464,6 +466,10 @@
       margin-bottom: 8px;
     }
 
+    .card-body h3 a:hover {
+      color: var(--primary);
+    }
+
     .card-body p {
       font-size: 0.9rem;
       color: var(--muted);
@@ -680,6 +686,62 @@
       display: flex;
       gap: 16px;
     }
+
+    .foot-links a {
+      cursor: pointer;
+    }
+
+    .foot-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Modal / Popup for Privacy & Terms */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      place-items: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+
+    .modal-overlay.active {
+      display: grid;
+    }
+
+    .modal-box {
+      background: var(--surface);
+      color: var(--text);
+      max-width: 500px;
+      width: 100%;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal-box h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .modal-box p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .modal-close {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -688,7 +750,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="#" class="brand">
-        <img src="logo.png" alt="Logo" onerror="this.style.display='none'" />
+        <img src="Smartphonehacks247_under_1mb.jpg" alt="Logo" />
         <span>Smartphone<span class="accent">hacks247</span></span>
       </a>
 
@@ -859,7 +921,7 @@
       <div class="foot-grid">
         <div>
           <a href="#" class="brand">
-            <img src="logo.png" alt="Logo" onerror="this.style.display='none'" />
+            <img src="Smartphonehacks247_under_1mb.jpg" alt="Logo" />
             <span>Smartphone<span class="accent">hacks247</span></span>
           </a>
           <p class="foot-desc">Smartphone reviews, expert tips, hidden tricks, and breaking mobile tech news — around the clock.</p>
@@ -897,12 +959,29 @@
       <div class="foot-bottom">
         <div>&copy; <span id="year">2026</span> Smartphonehacks247. All rights reserved.</div>
         <div class="foot-links">
-          <a href="#privacy">Privacy Policy</a>
-          <a href="#terms">Terms of Use</a>
+          <a id="privacyBtn">Privacy Policy</a>
+          <a id="termsBtn">Terms of Use</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- MODALS FOR PRIVACY & TERMS -->
+  <div class="modal-overlay" id="privacyModal">
+    <div class="modal-box">
+      <h3>Privacy Policy</h3>
+      <p>At Smartphonehacks247, accessible from our website, your privacy is important to us. This Privacy Policy document contains types of information that is collected and recorded by us and how we use it. We do not share your personal information with third parties.</p>
+      <button class="modal-close" id="closePrivacy">Close</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="termsModal">
+    <div class="modal-box">
+      <h3>Terms of Use</h3>
+      <p>By accessing Smartphonehacks247, you agree to be bound by these terms of service and agree that you are responsible for agreement with any applicable local laws. All content provided on this blog is for informational purposes only.</p>
+      <button class="modal-close" id="closeTerms">Close</button>
+    </div>
+  </div>
 
   <!-- LOAD POSTS DATA -->
   <script src="posts.js"></script>
@@ -972,6 +1051,19 @@
       dotsBtn.setAttribute('aria-expanded', isOpen);
     });
 
+    // Privacy & Terms Modal Handlers
+    const privacyBtn = document.getElementById('privacyBtn');
+    const termsBtn = document.getElementById('termsBtn');
+    const privacyModal = document.getElementById('privacyModal');
+    const termsModal = document.getElementById('termsModal');
+    const closePrivacy = document.getElementById('closePrivacy');
+    const closeTerms = document.getElementById('closeTerms');
+
+    privacyBtn.addEventListener('click', () => privacyModal.classList.add('active'));
+    termsBtn.addEventListener('click', () => termsModal.classList.add('active'));
+    closePrivacy.addEventListener('click', () => privacyModal.classList.remove('active'));
+    closeTerms.addEventListener('click', () => termsModal.classList.remove('active'));
+
     // Search Filter
     const searchInput = document.getElementById('searchInput');
     searchInput.addEventListener('input', (e) => {
@@ -1004,5 +1096,3 @@
   </script>
 </body>
 </html>
-
-         
