@@ -299,95 +299,6 @@ button{font-family:inherit}
         <span class="count" id="count">Showing 10 posts</span>
       </div>
       <div class="feed" id="feed">
-        <!-- Article 1 -->
-        <article class="card cat-Camera">
-          <a href="#" class="thumb"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80" alt="Camera Review"><span class="badge">Camera</span></a>
-          <div class="card-body">
-            <div class="date"><span>Nov 11, 2026</span></div>
-            <h3><a href="#">Camera Review: Low Light Sensor Breakthroughs</a></h3>
-            <p>How new AI hardware transforms night photography completely.</p>
-            <div class="author">By Admin</div>
-          </div>
-        </article>
-        <!-- Article 2 -->
-        <article class="card cat-Battery">
-          <a href="#" class="thumb"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=80" alt="Battery Test"><span class="badge">Battery</span></a>
-          <div class="card-body">
-            <div class="date"><span>Nov 10, 2026</span></div>
-            <h3><a href="#">Battery Life & Speed Test Performance</a></h3>
-            <p>Pushing modern processors to their absolute thermal limits.</p>
-            <div class="author">By Admin</div>
-          </div>
-        </article>
-        <!-- Article 3 -->
-        <article class="card cat-Hacks">
-          <a href="#" class="thumb"><img src="https://images.unsplash.com/photo-1607936854279-559dfee83758?auto=format&fit=crop&w=600&q=80" alt="Android Hacks"><span class="badge">Hacks</span></a>
-          <div class="card-body">
-            <div class="date"><span>Nov 9,2026</span></div>
-            <h3><a href="#">Top Android Hacks & Hidden Shortcuts</a></h3>
-            <p>Unlock secret menus and speed up your daily device navigation.</p>
-            <div class="author">By Admin</div>
-          </div>
-        </article>
-        <!-- Article 4 -->
-        <article class="card cat-Reviews">
-          <a href="#" class="thumb"><img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=600&q=80" alt="Budget Phones"><span class="badge">Reviews</span></a>
-          <div class="card-body">
-            <div class="date"><span>Nov 8, 2026</span></div>
-            <h3><a href="#">Best Budget Smartphone Value Picks</a></h3>
-            <p>High-end performance without breaking your wallet.</p>
-            <div class="author">By Admin</div>
-          </div>
-        </article>
-        <!-- Article 5 -->
-        <article class="card cat-Hacks">
-          <a href="#" class="thumb"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Factory Reset"><span class="badge">Hacks</span></a>
-          <div class="card-body">
-            <div class="date"><span>Nov 7, 2026</span></div>
-            <h3><a href="#">Factory Reset & Secure Cloud Backups</a></h3>
-            <p>Everything you need to know before wiping your old device.</p>
-            <div class="author">By Admin</div>
-          </div>
-        </article>
-        <!-- Article 6 -->
-        <article class="card cat-Reviews">
-          <a href="#" class="thumb"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Gaming Review"><span class="badge">Reviews</span></a>
-          <div class="card-body">
-            <div class="date"><span>Nov 6, 2026</span></div>
-            <h3><a href="#">Processor Benchmark & Mobile Gaming Review</a></h3>
-            <p>Can mobile chips truly replace dedicated handheld consoles?</p>
-            <div class="author">By Admin</div>
-          </div>
-        </article>
-        <!-- Article 7 -->
-        <article class="card cat-Android">
-          <a href="#" class="thumb"><img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80" alt="Display Tech"><span class="badge">Android</span></a>
-          <div class="card-body">
-            <div class="date"><span>Nov 5, 2026</span></div>
-            <h3><a href="#">Display Technology & Screen Protection Guide</a></h3>
-            <p>Evaluating glass durability and high refresh rate efficiency.</p>
-            <div class="author">By Admin</div>
-          </div>
-        </article>
-        <!-- Article 8 -->
-        <article class="card cat-Battery">
-          <a href="#" class="thumb"><img src="https://images.unsplash.com/photo-1586816879360-004f5b0c51e3?auto=format&fit=crop&w=600&q=80" alt="Charging Accessories"><span class="badge">Battery</span></a>
-          <div class="card-body">
-            <div class="date"><span>Nov 4, 2026</span></div>
-            <h3><a href="#">Wireless Charging & MagSafe Accessories</a></h3>
-            <p>Fast magnetic charging standards tested for daily convenience.</p>
-            <div class="author">By Admin</div>
-          </div>
-        </article>
-        <!-- Article 9 -->
-        <article class="card cat-Revie  <div class="layout">
-    <section>
-      <div class="section-head">
-        <div><div class="eyebrow">Latest Posts</div><h2>Fresh from the newsroom</h2></div>
-        <span class="count" id="count">Showing 10 posts</span>
-      </div>
-      <div class="feed" id="feed"></div>
-    </section>
 
     <!-- SIDEBAR -->
     <aside class="side">
@@ -507,52 +418,7 @@ button{font-family:inherit}
     </div>
   </div>
 </footer>
+<article class="card"><a href="#" class="thumb"><img src="${post.image}" alt=""></a><div class="card-body"><div class="date"><span>${post.date}</span></div><h3><a href="#">${post.title}</a></h3><p>${post.excerpt}</p><div class="author">By ${post.author}</div></div></article>
 
-<script>
-  // Theme Toggle
-  const themeSwitch = document.getElementById('themeSwitch');
-  themeSwitch.addEventListener('click', (e) => {
-    const btn = e.target.closest('button');
-    if (!btn) return;
-    const theme = btn.getAttribute('data-theme-set');
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  });
-
-  // Mobile Menu Toggle
-  const dotsBtn = document.getElementById('dotsBtn');
-  const nav = document.getElementById('nav');
-  dotsBtn.addEventListener('click', () => {
-    const expanded = dotsBtn.getAttribute('aria-expanded') === 'true';
-    dotsBtn.setAttribute('aria-expanded', !expanded);
-    nav.classList.toggle('open');
-  });
-
-  // Article Search Filter
-  const searchInput = document.getElementById('searchInput');
-  searchInput.addEventListener('input', (e) => {
-    const term = e.target.value.toLowerCase();
-    document.querySelectorAll('.feed .card').forEach(card => {
-      const text = card.textContent.toLowerCase();
-      card.style.display = text.includes(term) ? '' : 'none';
-    });
-  });
-
-  // Category Pill Filter
-  document.querySelectorAll('.pill').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.pill').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter');
-      document.querySelectorAll('.feed .card').forEach(card => {
-        if (filter === 'All' || card.classList.contains(`cat-${filter}`)) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-</script>
 </body>
 </html>
