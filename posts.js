@@ -10,7 +10,7 @@ window.POSTS = [
   "readTime": "5 min read",
   "views": "500",
   "excerpt": "Lagging frames and overheating ruining your rank? Here is the complete, no-root guide to unlocking hidden Android developer settings, stabilizing FPS, and keeping your phone cool during heavy gaming sessions.",
-  "image": "file_00000000060248211b7117579dbfcf950.png",
+  "image": "file_0000000060248211b7117579dbfcf950.png",
   "featured": true,
   "pick": true,
   "takeaways": [
