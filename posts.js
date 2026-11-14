@@ -4,7 +4,7 @@ window.POSTS = [
   {
   "slug": "how-to-turn-any-budget-android-phone-into-a-lag-free-gaming-beast-in-2026",
   "title": "How to Turn Any Budget Android Phone into a Lag-Free Gaming Beast in 2026",
-  "category": "TIPS & HACKS",
+  "category": "Hacks",
   "author": "By Editorial Team",
   "date": "2026-11-14",
   "readTime": "5 min read",
