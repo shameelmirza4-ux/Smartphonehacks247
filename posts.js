@@ -9,7 +9,7 @@ window.POSTS = [
     "date": "2026-11-15",
     "readTime": "4 min read",
     "views": "150",
-    "image": "file_00000000dd70821182c54452faf5b77d",
+    "image": "file_00000000dd70821182c54452faf5b77d.png",
     "featured": true,
     "pick": true,
     "takeaways": [
