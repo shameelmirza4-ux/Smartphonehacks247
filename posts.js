@@ -2,6 +2,25 @@
 window.POSTS = [
 
   {
+   "slug": "5-secret-battery-settings-to-turn-off-now",
+    "title": "5 Secret Battery Settings You Need to Turn OFF Right Now 🔋",
+    "category": "Battery",
+    "author": "Editorial Team",
+    "date": "2026-11-15",
+    "readTime": "4 min read",
+    "views": "150",
+    "image": "file_00000000dd70821182c54452faf5b77d",
+    "featured": true,
+    "pick": true,
+    "takeaways": [
+        "Turn off Wi-Fi and Bluetooth background scanning to save standby drain.",
+        "Disable background app refresh for apps you rarely use.",
+        "Switch your display refresh rate from 120Hz to 60Hz for daily reading and browsing."
+    ],
+    "content": "## Stop Secret Battery Drain Today\n\nDoes your phone's battery percentage drop even when it's sitting in your pocket? You aren't imagining things. Modern smartphones come packed with hidden tracking, scanning, and background features enabled by default that constantly drain your juice.\n\nHere are 5 hidden settings you need to turn off right now to instantly double your standby time and keep your phone cool.\n\n### 1. Disable Wi-Fi and Bluetooth Scanning\nEven when your Wi-Fi and Bluetooth are turned off in the quick settings panel, Android and iOS often keep scanning for nearby networks and devices in the background to improve location accuracy.\n* **How to fix it:** Go to **Settings > Location > Location Services** and turn off **Wi-Fi scanning** and **Bluetooth scanning**.\n\n### 2. Limit Background App Refresh\nApps like social media, navigation, and shopping tools keep running processes even after you close them, consuming RAM and battery.\n* **How to fix it:** Head to **Settings > Apps**, select heavy apps, and restrict their background battery usage to 'Restricted'.\n\n### 3. Lower Your Screen Refresh Rate\nThat buttery-smooth 120Hz display looks amazing, but it forces your GPU and battery to work twice as hard during simple tasks like reading articles or scrolling text.\n* **How to fix it:** Go to **Settings > Display > Smooth Display / Refresh Rate** and lock it to 60Hz when you don't need high frame rates.\n\n### 4. Turn Off Adaptive Brightness (If It Glitches)\nWhile adaptive brightness sounds convenient, buggy light sensors often keep your screen brighter than necessary, draining battery rapidly indoors.\n* **How to fix it:** Manually set your brightness to a comfortable level and adjust it only when stepping outside.\n\n### 5. Disable 'Hey Google' Voice Wake-up\nConstantly listening for your voice command keeps your microphone and audio processing chip active 24/7.\n* **How to fix it:** Open Google Assistant settings and disable **Hey Google & Voice Match** if you rarely use voice commands.\n\n### Conclusion\nBy turning off these five hidden power-guzzlers, you will notice an immediate improvement in your daily battery backup without sacrificing your phone's performance!"
+},
+  
+    {
   "slug": "how-to-turn-any-budget-android-phone-into-a-lag-free-gaming-beast-in-2026",
   "title": "How to Turn Any Budget Android Phone into a Lag-Free Gaming Beast in 2026",
   "category": "Hacks",
