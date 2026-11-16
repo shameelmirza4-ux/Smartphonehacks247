@@ -1055,7 +1055,6 @@
 
     // Open Full Article Reader Modal
     function openArticle(post) {
-    // Agar aap chahte hain ke click karne par naya full page khule ya modal poori screen le le
     const modal = document.getElementById('articleModal');
     const titleEl = document.getElementById('modalArtTitle');
     const authorEl = document.getElementById('modalArtAuthor');
@@ -1137,10 +1136,11 @@
         <article class="post-card" data-index="${index}">
           <img src="${post.image || 'pexels-media-1028674.jpeg'}" onerror="this.src='pexels-media-1028674.jpeg'" class="thumb" alt="${post.title}" />
           <div class="card-body">
-            <div class="card-meta-top">
-            <span class="card-cat ${post.category === 'Reviews' ? 'badge-reviews' : 'badge-default'}">
-              <span class="date">${post.date || '2026'}</span>
-            </div>
+<div class="card-meta-top">
+  <span class="card-cat">${post.category || 'TECH'}</span>
+  <span class="date">${post.date || '2026'}</span>
+</div>
+
             <h3>${post.title}</h3>
             <p>${post.excerpt || ''}</p>
             <div class="author">By ${post.author || 'Editorial Team'}</div>
