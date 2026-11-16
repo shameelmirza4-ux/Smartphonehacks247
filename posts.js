@@ -60,6 +60,7 @@ window.POSTS = [
     ],
     "content": "Spec sheets love big numbers, but the best camera phone is the one that gives you a good photo almost every time.\n\n## What actually matters\n- Consistency: does it nail focus, color and exposure on the first tap?\n- Processing: natural skin tones and balanced highlights beat heavy sharpening.\n- Zoom quality: check 2x and 5x, not just the main lens.\n- Video: stabilization and audio are where flagships separate.\n- Speed: shutter lag ruins photos of kids and pets.\n\n## How to compare fairly\nTake the same scene on each phone in daylight, indoors and at night. View the photos on a big screen, not only on the phone. The winner is often a phone that looks less flashy on paper.\n\n## Our advice\nIgnore the megapixel race. Pick the phone whose photos you like when you look at them side by side."
   },
+  
   {
     "slug": "next-wave-foldables-thinner-tougher-cheaper",
     "title": "Breaking: The Next Wave of Foldables Is Thinner, Tougher, and Cheaper",
@@ -79,6 +80,7 @@ window.POSTS = [
     ],
     "content": "Foldable phones started as expensive experiments. The newest generation is fixing the problems that held buyers back.\n\n## What is improving\n- Thinner bodies that feel closer to regular phones when closed.\n- Stronger hinges and tougher outer glass.\n- Better water resistance on many models.\n- A less visible crease on the inner screen.\n- More mid-range options, which pushes prices down.\n\n## What to check before buying\n- Repair cost: ask what a screen replacement costs.\n- Software: make sure apps use the big screen properly.\n- Battery: folding screens use more power.\n- Warranty: look for coverage that includes the inner display.\n\n## Should you buy one?\nIf you love multitasking and big-screen reading, yes. If you want the cheapest reliable phone, a regular phone is still the safer choice."
   },
+  
   {
     "slug": "12-battery-hacks-that-actually-work",
     "title": "12 Battery Hacks That Actually Work (And 5 Myths to Ignore)",
@@ -98,6 +100,7 @@ window.POSTS = [
     ],
     "content": "Your screen and background apps use most of your battery. Start with these twelve tweaks.\n\n## 12 hacks that work\n- Turn on dark mode if your phone has an OLED screen.\n- Use adaptive brightness instead of full brightness.\n- Lower the refresh rate to 60 or 90 Hz when you do not need smoothness.\n- Set screen timeout to 30 seconds.\n- Switch off the always-on display.\n- Restrict background activity for apps you rarely open.\n- Set location access to While using the app.\n- Uninstall apps you no longer use.\n- Turn on battery saver at 20% instead of 5%.\n- Prefer Wi-Fi over weak mobile signal, weak signal drains power fast.\n- Keep your phone out of hot places such as cars and direct sun.\n- Update your system and apps, updates often fix battery bugs.\n\n## 5 myths to ignore\n- Closing apps from recent apps saves battery: it usually uses more power when they reload.\n- Charging overnight destroys the battery: modern phones stop at full charge.\n- You must drain to 0% first: partial charges are healthier.\n- Battery saver apps help: they often drain more than they save.\n- Dark mode saves power on every phone: it only helps on OLED screens."
   },
+  
   {
     "slug": "15-hidden-android-features",
     "title": "15 Hidden Android Features You're Probably Not Using",
@@ -117,6 +120,7 @@ window.POSTS = [
     ],
     "content": "Android is packed with tools that most people never open. Menu names vary slightly by brand, so use the search bar in Settings.\n\n## 15 features to try\n- Developer options: tap Build number seven times to unlock it.\n- Quick Share: send files to nearby phones quickly.\n- Screen pinning: lock the phone to one app before handing it to someone.\n- Focus mode: pause distracting apps.\n- Live Caption: automatic captions for any audio or video.\n- One-handed mode: shrink the screen for big phones.\n- Camera shortcut: double-press the power button.\n- Split screen: use two apps at once.\n- Built-in screen recorder in the quick settings panel.\n- Notification history: read notifications you swiped away by mistake.\n- QR code scanner in quick settings.\n- Guest user mode for friends or kids.\n- Lockdown option in the power menu to disable fingerprint temporarily.\n- Do Not Disturb schedules and Bedtime mode.\n- Find My Device to locate, lock or erase a lost phone.\n\n## Tip\nOpen Settings and search the feature name. If you cannot find it, your brand may call it something slightly different."
   },
+  
   {
     "slug": "pro-camera-phone-review-computational-photography",
     "title": "Pro Camera Phone Review: Computational Photography Hits a New Peak",
@@ -136,6 +140,7 @@ window.POSTS = [
     ],
     "content": "Modern phone cameras use many frames and smart software to make one photo. This is called computational photography.\n\n## What it does for you\n- HDR merges bright and dark areas so skies and faces both look right.\n- Night mode combines frames to brighten dark scenes with less noise.\n- Portrait mode separates the subject from the background.\n- AI zoom recovers detail when you zoom in.\n\n## Where it can go wrong\n- Over-sharpened details and a painted look.\n- Skin that looks too smooth.\n- Moving subjects can show ghosting at night.\n\n## How to review a camera fairly\nShoot the same scenes on each phone, turn off beauty filters and compare the unedited photos. Check faces, text on signs and bright lights.\n\n## Verdict\nThe best camera is the one with natural results. If photos look real and consistent, the processing is doing its job."
   },
+  
   {
     "slug": "does-fast-charging-ruin-battery",
     "title": "Does Fast Charging Ruin Your Battery? We Tested It for 6 Months",
@@ -155,6 +160,7 @@ window.POSTS = [
     ],
     "content": "The short answer: fast charging is mostly safe on modern phones, but heat is the thing to watch.\n\n## Why it is less scary than it sounds\n- Phones charge fastest between low and about 80%, then slow down automatically.\n- Built-in chips control voltage and temperature.\n- Good chargers talk to the phone and only send what it can handle.\n\n## When it can hurt\n- Charging in a hot car or under a pillow.\n- Using very cheap chargers and cables.\n- Playing heavy games while fast charging.\n\n## Our tips\n- Use the charger that came with the phone or a trusted brand.\n- Take off thick cases if the phone gets hot.\n- Turn on adaptive or optimized charging for overnight use.\n- Use slower charging when you are not in a hurry.\n\n## Result\nTreat speed as a tool. Fast when you need it, gentle when you do not, and keep the phone cool."
   },
+  
   {
     "slug": "night-photography-hacks-low-light",
     "title": "Night Photography Hacks: Shoot Stunning Low-Light Photos on Any Phone",
@@ -174,6 +180,7 @@ window.POSTS = [
     ],
     "content": "Low light is hard for small sensors, but good technique makes a big difference.\n\n## Before you shoot\n- Clean the lens with a soft cloth. A greasy lens makes glowing blur.\n- Turn on Night mode if your phone has it.\n- Use the main camera. Ultra-wide and zoom lenses have smaller sensors.\n\n## While shooting\n- Hold the phone with both hands and lean on a wall or table.\n- Tap to focus on the brightest important area, then lower exposure slightly to keep lights from blowing out.\n- Wait until the Night mode timer finishes before moving.\n- Use a small tripod for long exposures.\n\n## Light matters\nStand near streetlights, shop windows or neon signs. Side light gives faces more shape than dark flat light.\n\n## Editing\nLift shadows a little, reduce highlights and add light contrast. Avoid heavy noise reduction, it removes detail."
   },
+  
   {
     "slug": "20-hidden-iphone-tricks",
     "title": "20 Hidden iPhone Tricks That Will Make You Feel Like a Power User",
