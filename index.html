@@ -1054,31 +1054,26 @@
 
     // Open Full Article Reader Modal
     function openArticle(post) {
-      if (!post) return;
-      document.getElementById('modalArtImg').src = post.image || 'pexels-media-1028674.jpeg';
-      document.getElementById('modalArtCat').textContent = post.category || 'TECH';
-      document.getElementById('modalArtTitle').textContent = post.title || '';
-      document.getElementById('modalArtAuthor').textContent = 'By ' + (post.author || 'Editorial Team');
-      document.getElementById('modalArtDate').textContent = post.date || '';
-      document.getElementById('modalArtReadTime').textContent = post.readTime || '3 min read';
-      document.getElementById('modalArtContent').textContent = post.content || post.excerpt || 'Full article content coming soon.';
+    // Agar aap chahte hain ke click karne par naya full page khule ya modal poori screen le le
+    const modal = document.getElementById('articleModal');
+    const titleEl = document.getElementById('modalArtTitle');
+    const authorEl = document.getElementById('modalArtAuthor');
+    const dateEl = document.getElementById('modalArtDate');
+    const timeEl = document.getElementById('modalArtReadTime');
+    const bodyEl = document.getElementById('modalArtContent');
 
-      const takeawaysBox = document.getElementById('modalTakeawaysBox');
-      const takeawaysList = document.getElementById('modalTakeawaysList');
-      if (post.takeaways && post.takeaways.length > 0) {
-        takeawaysList.innerHTML = post.takeaways.map(item => `<li>${item}</li>`).join('');
-        takeawaysBox.style.display = 'block';
-      } else {
-        takeawaysBox.style.display = 'none';
-      }
+    titleEl.textContent = post.title;
+    authorEl.textContent = `By ${post.author || 'Editorial Team'}`;
+    dateEl.textContent = post.date || '2026-11-16';
+    timeEl.textContent = post.readTime || '4 min read';
+    
+    // Yahan post ka content HTML format mein render hoga taaki bold, italic aur highlights dikhein
+    bodyEl.innerHTML = post.content;
 
-      document.getElementById('articleModal').classList.add('open');
-    }
-
-    document.getElementById('closeArticleModal').addEventListener('click', () => {
-      document.getElementById('articleModal').classList.remove('open');
-    });
-
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Background scroll rokne ke liye
+}
+    
     // Setup Hero Top Story
     const heroPost = allPosts.find(p => p.featured) || allPosts[0];
     if (heroPost) {
