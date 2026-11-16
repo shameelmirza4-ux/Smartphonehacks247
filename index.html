@@ -747,19 +747,18 @@
       display: flex;
     }
 
-.modal-box {
-  background: var(--surface);
-  color: var(--text);
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 0;
-  padding: 20px;
-  overflow-y: auto;
-  box-shadow: none;
-  border: none;
-}
+    .modal-box {
+      background: var(--surface);
+      color: var(--text);
+      max-width: 680px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 24px;
+      max-height: 88vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border);
+    }
 
     .article-modal-img {
       width: 100%;
@@ -917,7 +916,7 @@
         <h2>Explore Topics</h2>
         <div class="topic-chips">
           <button class="topic-chip" onclick="filterByCategory('all')">Home</button>
-            <button class="topic-chip" onclick="filterByCategory('News')">News</button>
+          <button class="topic-chip" onclick="filterByCategory('News')">News</button>
           <button class="topic-chip" onclick="filterByCategory('Reviews')">Reviews</button>
           <button class="topic-chip" onclick="filterByCategory('Hacks')">Tips & Hacks</button>
           <button class="topic-chip" onclick="filterByCategory('Android')">Android</button>
@@ -931,7 +930,7 @@
       <div class="digest-card">
         <h2>The 24/7 Hacks Digest</h2>
         <p>One email a week: the best tips, reviews, and breaking phone news. No spam.</p>
-​<form class="digest-form" onsubmit="event.preventDefault(); alert('🎉 Congratulations! You are now subscribed to The 24/7 Hacks Digest!'); this.reset();">
+<form class="digest-form" onsubmit="event.preventDefault(); alert('🎉 Congratulations! You are now subscribed to The 24/7 Hacks Digest!'); this.reset();">
   <input type="email" name="email" placeholder="Email address" required />
           <button type="submit">Subscribe free</button>
         </form>
@@ -1055,25 +1054,31 @@
 
     // Open Full Article Reader Modal
     function openArticle(post) {
-    const modal = document.getElementById('articleModal');
-    const titleEl = document.getElementById('modalArtTitle');
-    const authorEl = document.getElementById('modalArtAuthor');
-    const dateEl = document.getElementById('modalArtDate');
-    const timeEl = document.getElementById('modalArtReadTime');
-    const bodyEl = document.getElementById('modalArtContent');
+      if (!post) return;
+      document.getElementById('modalArtImg').src = post.image || 'pexels-media-1028674.jpeg';
+      document.getElementById('modalArtCat').textContent = post.category || 'TECH';
+      document.getElementById('modalArtTitle').textContent = post.title || '';
+      document.getElementById('modalArtAuthor').textContent = 'By ' + (post.author || 'Editorial Team');
+      document.getElementById('modalArtDate').textContent = post.date || '';
+      document.getElementById('modalArtReadTime').textContent = post.readTime || '3 min read';
+      document.getElementById('modalArtContent').textContent = post.content || post.excerpt || 'Full article content coming soon.';
 
-    titleEl.textContent = post.title;
-    authorEl.textContent = `By ${post.author || 'Editorial Team'}`;
-    dateEl.textContent = post.date || '2026-11-16';
-    timeEl.textContent = post.readTime || '4 min read';
-    
-    // Yahan post ka content HTML format mein render hoga taaki bold, italic aur highlights dikhein
-    bodyEl.innerHTML = post.content;
+      const takeawaysBox = document.getElementById('modalTakeawaysBox');
+      const takeawaysList = document.getElementById('modalTakeawaysList');
+      if (post.takeaways && post.takeaways.length > 0) {
+        takeawaysList.innerHTML = post.takeaways.map(item => `<li>${item}</li>`).join('');
+        takeawaysBox.style.display = 'block';
+      } else {
+        takeawaysBox.style.display = 'none';
+      }
 
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden'; // Background scroll rokne ke liye
-}
-    
+      document.getElementById('articleModal').classList.add('open');
+    }
+
+    document.getElementById('closeArticleModal').addEventListener('click', () => {
+      document.getElementById('articleModal').classList.remove('open');
+    });
+
     // Setup Hero Top Story
     const heroPost = allPosts.find(p => p.featured) || allPosts[0];
     if (heroPost) {
@@ -1136,11 +1141,10 @@
         <article class="post-card" data-index="${index}">
           <img src="${post.image || 'pexels-media-1028674.jpeg'}" onerror="this.src='pexels-media-1028674.jpeg'" class="thumb" alt="${post.title}" />
           <div class="card-body">
-<div class="card-meta-top">
-  <span class="card-cat">${post.category || 'TECH'}</span>
-  <span class="date">${post.date || '2026'}</span>
-</div>
-
+            <div class="card-meta-top">
+            <span class="card-cat ${post.category === 'Reviews' ? 'badge-reviews' : 'badge-default'}">
+              <span class="date">${post.date || '2026'}</span>
+            </div>
             <h3>${post.title}</h3>
             <p>${post.excerpt || ''}</p>
             <div class="author">By ${post.author || 'Editorial Team'}</div>
