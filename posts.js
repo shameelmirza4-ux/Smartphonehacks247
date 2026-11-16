@@ -2,24 +2,31 @@
 window.POSTS = [
 
   {
-    "slug": "5-secret-battery-settings-to-turn-off-now",
-    "title": "5 Secret Battery Settings You Need to Turn OFF Right Now 🔋",
-    "category": "Battery",
-    "author": "Editorial Team",
-    "date": "2026-11-15",
-    "readTime": "4 min read",
-    "views": "150",
-    "image": "file_00000000dd70821182c54452faf5b77d",
-    "featured": true,
-    "pick": true,
-    "takeaways": [
-        "Turn off Wi-Fi and Bluetooth background scanning to save standby drain.",
-        "Disable background app refresh for apps you rarely use.",
-        "Switch your display refresh rate from 120Hz to 60Hz for daily reading and browsing."
-    ],
-    "content": "Stop Secret Battery Drain Today. Does your phone's battery percentage drop even when it's sitting in your pocket? You aren't imagining things. Modern smartphones come packed with hidden tracking, scanning, and background features enabled by default that constantly drain your juice. Here are 5 hidden settings you need to turn off right now to instantly double your standby time and keep your phone cool. 1. Disable Wi-Fi and Bluetooth Scanning. Even when your Wi-Fi and Bluetooth are turned off in the quick settings panel, Android and iOS often keep scanning for nearby networks and devices in the background to improve location accuracy. How to fix it: Go to Settings > Location > Location Services and turn off Wi-Fi scanning and Bluetooth scanning. 2. Limit Background App Refresh. Apps like social media, navigation, and shopping tools keep running processes even after you close them, consuming RAM and battery. How to fix it: Head to Settings > Apps, select heavy apps, and restrict their background battery usage to 'Restricted'. 3. Lower Your Screen Refresh Rate. That buttery-smooth 120Hz display looks amazing, but it forces your GPU and battery to work twice as hard during simple tasks like reading articles or scrolling text. How to fix it: Go to Settings > Display > Smooth Display / Refresh Rate and lock it to 60Hz when you don't need high frame rates. 4. Turn Off Adaptive Brightness. While adaptive brightness sounds convenient, buggy light sensors often keep your screen brighter than necessary, draining battery rapidly indoors. How to fix it: Manually set your brightness to a comfortable level and adjust it only when stepping outside. 5. Disable Hey Google Voice Wake-up. Constantly listening for your voice command keeps your microphone and audio processing chip active 24/7. How to fix it: Open Google Assistant settings and disable Hey Google & Voice Match if you rarely use voice commands. Conclusion. By turning off these five hidden power-guzzlers, you will notice an immediate improvement in your daily battery backup without sacrificing your phone's performance!"
-},
- 
+  window.POSTS = [
+  {
+    slug: "5-secret-battery-settings",
+    title: "5 Secret Battery Settings You Need to TURN OFF Right Now",
+    category: "Battery",
+    author: "Editorial Team",
+    date: "2026-11-15",
+    readTime: "4 min read",
+    views: "150",
+    image: "pexels-media-1028674.jpeg",
+    featured: true,
+    excerpt: "Does your phone's battery percentage drop even when it's sitting in your pocket? You're not imagining things.",
+    content: `
+      <p>Does your phone's battery percentage drop even when it's sitting in your pocket? <em>You're not imagining things.</em> Modern smartphones come packed with hidden tracking, scanning, and background features enabled by default that constantly drain your juice.</p>
+      
+      <blockquote><strong>"The best battery life is the one that doesn't force you to hunt for an outlet midday."</strong></blockquote>
+
+      <h3>1. Turn off Wi-Fi and Bluetooth Background Scanning</h3>
+      <p>Android and iOS often keep scanning for nearby networks and devices in the background to improve location accuracy. <strong>How to fix it:</strong> Go to Settings > Location > Scanning and turn off both Wi-Fi and Bluetooth scanning.</p>
+      
+      <h3>2. Disable Background App Refresh</h3>
+      <p>Apps you rarely open are constantly fetching new data behind the scenes. Restricting this will give you an immediate boost in daily battery backup.</p>
+    `
+  }
+];
     {
   "slug": "how-to-turn-any-budget-android-phone-into-a-lag-free-gaming-beast-in-2026",
   "title": "How to Turn Any Budget Android Phone into a Lag-Free Gaming Beast in 2026",
