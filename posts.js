@@ -2,29 +2,24 @@
 window.POSTS = [
 
   {
-    slug: "5-secret-battery-settings",
-    title: "5 Secret Battery Settings You Need to TURN OFF Right Now",
-    category: "Battery",
-    author: "Editorial Team",
-    date: "2026-11-15",
-    readTime: "4 min read",
-    views: "150",
-    image: "file_00000000dd70821182c54452faf5b77d.png",
-    featured: true,
-    excerpt: "Does your phone's battery percentage drop even when it's sitting in your pocket? You're not imagining things.",
-    content: `
-      <p>Does your phone's battery percentage drop even when it's sitting in your pocket? <em>You're not imagining things.</em> Modern smartphones come packed with hidden tracking, scanning, and background features enabled by default that constantly drain your juice.</p>
-      
-      <blockquote><strong>"The best battery life is the one that doesn't force you to hunt for an outlet midday."</strong></blockquote>
-
-      <h3>1. Turn off Wi-Fi and Bluetooth Background Scanning</h3>
-      <p>Android and iOS often keep scanning for nearby networks and devices in the background to improve location accuracy. <strong>How to fix it:</strong> Go to Settings > Location > Scanning and turn off both Wi-Fi and Bluetooth scanning.</p>
-      
-      <h3>2. Disable Background App Refresh</h3>
-      <p>Apps you rarely open are constantly fetching new data behind the scenes. Restricting this will give you an immediate boost in daily battery backup.</p>
-    `
-  }
-];
+   "slug": "5-secret-battery-settings-to-turn-off-now",
+    "title": "5 Secret Battery Settings You Need to Turn OFF Right Now 🔋",
+    "category": "Battery",
+    "author": "Editorial Team",
+    "date": "2026-11-15",
+    "readTime": "4 min read",
+    "views": "150",
+    "image": "file_00000000dd70821182c54452faf5b77d.png",
+    "featured": true,
+    "pick": true,
+    "takeaways": [
+        "Turn off Wi-Fi and Bluetooth background scanning to save standby drain.",
+        "Disable background app refresh for apps you rarely use.",
+        "Switch your display refresh rate from 120Hz to 60Hz for daily reading and browsing."
+    ],
+    "content": "## Stop Secret Battery Drain Today\n\nDoes your phone's battery percentage drop even when it's sitting in your pocket? You aren't imagining things. Modern smartphones come packed with hidden tracking, scanning, and background features enabled by default that constantly drain your juice.\n\nHere are 5 hidden settings you need to turn off right now to instantly double your standby time and keep your phone cool.\n\n### 1. Disable Wi-Fi and Bluetooth Scanning\nEven when your Wi-Fi and Bluetooth are turned off in the quick settings panel, Android and iOS often keep scanning for nearby networks and devices in the background to improve location accuracy.\n* **How to fix it:** Go to **Settings > Location > Location Services** and turn off **Wi-Fi scanning** and **Bluetooth scanning**.\n\n### 2. Limit Background App Refresh\nApps like social media, navigation, and shopping tools keep running processes even after you close them, consuming RAM and battery.\n* **How to fix it:** Head to **Settings > Apps**, select heavy apps, and restrict their background battery usage to 'Restricted'.\n\n### 3. Lower Your Screen Refresh Rate\nThat buttery-smooth 120Hz display looks amazing, but it forces your GPU and battery to work twice as hard during simple tasks like reading articles or scrolling text.\n* **How to fix it:** Go to **Settings > Display > Smooth Display / Refresh Rate** and lock it to 60Hz when you don't need high frame rates.\n\n### 4. Turn Off Adaptive Brightness (If It Glitches)\nWhile adaptive brightness sounds convenient, buggy light sensors often keep your screen brighter than necessary, draining battery rapidly indoors.\n* **How to fix it:** Manually set your brightness to a comfortable level and adjust it only when stepping outside.\n\n### 5. Disable 'Hey Google' Voice Wake-up\nConstantly listening for your voice command keeps your microphone and audio processing chip active 24/7.\n* **How to fix it:** Open Google Assistant settings and disable **Hey Google & Voice Match** if you rarely use voice commands.\n\n### Conclusion\nBy turning off these five hidden power-guzzlers, you will notice an immediate improvement in your daily battery backup without sacrificing your phone's performance!"
+},
+  
     {
   "slug": "how-to-turn-any-budget-android-phone-into-a-lag-free-gaming-beast-in-2026",
   "title": "How to Turn Any Budget Android Phone into a Lag-Free Gaming Beast in 2026",
@@ -196,44 +191,4 @@ window.POSTS = [
       "Shortcuts can automate repeated tasks",
       "Menus may differ slightly by iOS version"
     ],
-    "content": "The iPhone hides many time-savers in plain sight. Menu names may vary a little by iOS version.\n\n## 20 tricks to try\n- Back Tap: Settings > Accessibility > Touch > Back Tap to trigger actions.\n- Hold the space bar to move the text cursor.\n- Shake the phone to undo typing.\n- Tap the top of the screen to scroll to the top.\n- Hold the shutter or volume button for quick video.\n- Hold the number key and slide to type a number fast.\n- Text Replacement: type a short code and get a full phrase.\n- Focus modes to silence distractions automatically.\n- Scan documents inside the Notes app.\n- Live Text: copy text from any photo.\n- Long-press a subject in a photo to lift it out.\n- Hide photos in the Hidden album, protected by Face ID.\n- Hold the flashlight icon to change brightness.\n- Screen recording from Control Center.\n- Measure app to measure objects with the camera.\n- Hold the back arrow in Safari to see history.\n- Hold the tabs button in Safari to close all tabs.\n- Shortcuts app: build automations such as sending an ETA.\n- Customize Control Center with your favorite toggles.\n- Check Settings > Battery > Battery Health to see capacity.\n\n## Start small\nPick three tricks and use them for a week. They become habit quickly."
-  },
-  {
-    "slug": "mobile-chip-race-2nm-processors",
-    "title": "The Mobile Chip Race Heats Up: What 2 nm Processors Mean for Your Next Phone",
-    "category": "News",
-    "author": "Editorial Team",
-    "date": "2026-10-20",
-    "readTime": "4 min read",
-    "views": 13200,
-    "excerpt": "Smaller chips promise speed and efficiency. Here is what 2 nm processors could change for your next phone.",
-    "image": "pexels-media-31862950.jpeg",
-    "featured": false,
-    "pick": false,
-    "takeaways": [
-      "Smaller chips can mean better efficiency",
-      "Real-life gains depend on design and software",
-      "Do not upgrade only for a nanometer number"
-    ],
-    "content": "Chipmakers are racing toward smaller manufacturing processes such as 2 nm. The number is a marketing name, but the direction matters.\n\n## What smaller chips can offer\n- Better efficiency, which can mean longer battery life.\n- More performance at the same power.\n- Stronger on-device AI features.\n- Less heat when gaming or recording video.\n\n## What to keep in mind\n- Gains depend on the chip design, not just the process.\n- New chips usually appear first in expensive phones.\n- Software, cooling and battery size still decide your real experience.\n\n## Should you wait?\nIf your phone is working well, you do not need to rush. If you are buying now, compare real reviews for battery and heat rather than process numbers.\n\n## Bottom line\nSmaller chips are good news, but the best upgrade is the one you can feel in daily use."
-  },
-  {
-    "slug": "10-privacy-security-hacks-every-phone-owner",
-    "title": "Lock It Down: 10 Privacy & Security Hacks Every Phone Owner Needs",
-    "category": "Hacks",
-    "author": "Editorial Team",
-    "date": "2026-10-18",
-    "readTime": "5 min read",
-    "views": 26700,
-    "excerpt": "Ten simple settings that protect your accounts, photos and identity, and take only a few minutes.",
-    "image": "pexels-media-27742642.jpeg",
-    "featured": false,
-    "pick": false,
-    "takeaways": [
-      "A strong lock screen and 2FA stop most attacks",
-      "Review app permissions every few months",
-      "Install apps only from official stores"
-    ],
-    "content": "You do not need to be a tech expert to protect your phone. Do these ten things today.\n\n## 10 hacks\n- Use a strong PIN of six digits or more, plus fingerprint or face unlock.\n- Install system and app updates as soon as they arrive.\n- Review app permissions and remove camera, mic and location access you do not need.\n- Turn off or reset the advertising ID in privacy settings.\n- Use an authenticator app for two-factor codes instead of SMS.\n- Use a password manager so every account has a unique password.\n- Set a short auto-lock time, such as 30 seconds.\n- Hide notification content on the lock screen.\n- Avoid public Wi-Fi for banking, or use a trusted VPN.\n- Turn on Find My Device or Find My iPhone so you can lock or erase a lost phone.\n\n## Warning signs\nSudden battery drain, unknown apps or pop-ups promising prizes can mean trouble. Install apps only from the official store and never share verification codes."
-  }
-];
+    "content": "The iPhone hides many time-savers in plain sight. Menu names may vary a little by iOS version.\n\n## 20 tricks to try\n- Back Tap: Settings > Accessi
