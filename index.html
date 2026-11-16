@@ -1142,7 +1142,7 @@
           <img src="${post.image || 'pexels-media-1028674.jpeg'}" onerror="this.src='pexels-media-1028674.jpeg'" class="thumb" alt="${post.title}" />
           <div class="card-body">
             <div class="card-meta-top">
-              <span class="card-cat">${post.category || 'TECH'}</span>
+            <span class="card-cat ${post.category === 'Reviews' ? 'badge-reviews' : 'badge-default'}">
               <span class="date">${post.date || '2026'}</span>
             </div>
             <h3>${post.title}</h3>
