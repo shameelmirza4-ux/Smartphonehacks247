@@ -2,8 +2,6 @@
 window.POSTS = [
 
   {
-  window.POSTS = [
-  {
     slug: "5-secret-battery-settings",
     title: "5 Secret Battery Settings You Need to TURN OFF Right Now",
     category: "Battery",
@@ -11,7 +9,7 @@ window.POSTS = [
     date: "2026-11-15",
     readTime: "4 min read",
     views: "150",
-    image: "pexels-media-1028674.jpeg",
+    image: "file_00000000dd70821182c54452faf5b77d.png",
     featured: true,
     excerpt: "Does your phone's battery percentage drop even when it's sitting in your pocket? You're not imagining things.",
     content: `
